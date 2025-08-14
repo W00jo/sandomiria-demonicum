@@ -1,7 +1,36 @@
-[gd_scene load_steps=10 format=3 uid="uid://m8ln7pje2p4t"]
+[gd_scene load_steps=18 format=3 uid="uid://m8ln7pje2p4t"]
 
 [ext_resource type="Texture2D" uid="uid://colidyf32vtc3" path="res://assets/art/wolfweapons.png" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://gajm6ss7601p" path="res://src/ui.gd" id="1_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://0f3hb1p6ywl3" path="res://assets/art/crossbow.png" id="2_yev5y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgfq5"]
+atlas = ExtResource("2_yev5y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dvkv"]
+atlas = ExtResource("2_yev5y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdcm2"]
+atlas = ExtResource("2_yev5y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rmj2"]
+atlas = ExtResource("2_yev5y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsj0x"]
+atlas = ExtResource("2_yev5y")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsv74"]
+atlas = ExtResource("2_yev5y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1mc3"]
+atlas = ExtResource("2_yev5y")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yev5y"]
 atlas = ExtResource("1_nt7q6")
@@ -29,6 +58,37 @@ region = Rect2(256, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yev5y"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgfq5")
+}],
+"loop": true,
+"name": &"crossbow_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dvkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdcm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rmj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsj0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsv74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1mc3")
+}],
+"loop": false,
+"name": &"crossbow_shoot",
+"speed": 2.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
@@ -67,11 +127,10 @@ animations = [{
 script = ExtResource("1_x4jx1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(927, 415)
-scale = Vector2(6.15, 9.3125)
+position = Vector2(854.2, 415)
+scale = Vector2(10.7, 9.3125)
 sprite_frames = SubResource("SpriteFrames_yev5y")
-animation = &"knife_stab"
-autoplay = "knife_idle"
+animation = &"crossbow_idle"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 7
