@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="sandomiria-demonicum"
+run/main_scene="uid://blgoxu3ckes25"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
