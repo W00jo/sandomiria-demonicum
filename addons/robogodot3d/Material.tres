@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bkwubp77jip4l"]
+
+[ext_resource type="Texture2D" uid="uid://cos4f70c0wqw8" path="res://addons/robogodot3d/GodotRobot3rdPersonShooterFinal_GodotPalette.png" id="1_cdsx2"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_cdsx2")
+metallic = 0.601449
+roughness = 0.5
