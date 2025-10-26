@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bljq3vkud567q"]
+
+[ext_resource type="PackedScene" uid="uid://cv8ymunnvfgx5" path="res://scenes/weapons/knife/knife.tscn" id="1_7uws0"]
+[ext_resource type="Script" uid="uid://di0sqvga2pnrb" path="res://scenes/characters/player/player.gd" id="1_t61fv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcx1r"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 2
+script = ExtResource("1_t61fv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bcx1r")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Knife" parent="Head" instance=ExtResource("1_7uws0")]
