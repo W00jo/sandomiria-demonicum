@@ -31,3 +31,4 @@ Commity:
 - Stare sceny i skrypty + cały plik `.project`.
 
 ## 2025-10-29
+- Poprawiono poruszanie się gracza i teraz działa: `scenes/characters/player` ~Dominik
