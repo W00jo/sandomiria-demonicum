@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1vv1xxbsyoh5"
-path="res://.godot/imported/CommandoAttack2.png-b614650f2a0f0f713238ba3c18748c9b.ctex"
+path="res://.godot/imported/CommandoAttack2.png-dfe73ea90b5057f0ba76b1587a4aa71d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/CommandoAttack2.png"
-dest_files=["res://.godot/imported/CommandoAttack2.png-b614650f2a0f0f713238ba3c18748c9b.ctex"]
+source_file="res://assets/sprites/enemies/CommandoAttack2.png"
+dest_files=["res://.godot/imported/CommandoAttack2.png-dfe73ea90b5057f0ba76b1587a4aa71d.ctex"]
 
 [params]
 

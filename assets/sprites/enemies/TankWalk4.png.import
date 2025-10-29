@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccepk1sftv36"
-path="res://.godot/imported/TankWalk4.png-d1c6fff470e009b3816af2b734e1b4c6.ctex"
+path="res://.godot/imported/TankWalk4.png-d00a04cebae44ecd9e3b99f2f784bf1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/TankWalk4.png"
-dest_files=["res://.godot/imported/TankWalk4.png-d1c6fff470e009b3816af2b734e1b4c6.ctex"]
+source_file="res://assets/sprites/enemies/TankWalk4.png"
+dest_files=["res://.godot/imported/TankWalk4.png-d00a04cebae44ecd9e3b99f2f784bf1b.ctex"]
 
 [params]
 

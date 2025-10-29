@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bng6vopclmxmv"
-path="res://.godot/imported/CommandoDamage1.png-13d451ad7eb0491af4192af73c4dc288.ctex"
+path="res://.godot/imported/CommandoDamage1.png-51b8221ff99f326c6e073297c5a4fba1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/CommandoDamage1.png"
-dest_files=["res://.godot/imported/CommandoDamage1.png-13d451ad7eb0491af4192af73c4dc288.ctex"]
+source_file="res://assets/sprites/enemies/CommandoDamage1.png"
+dest_files=["res://.godot/imported/CommandoDamage1.png-51b8221ff99f326c6e073297c5a4fba1.ctex"]
 
 [params]
 

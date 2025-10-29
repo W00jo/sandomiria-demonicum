@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4dj7pg3f18ot"
-path="res://.godot/imported/ZombieWalk2.png-86ada43009c33bdc1a3dec8235c2f77d.ctex"
+path="res://.godot/imported/ZombieWalk2.png-fe6c0276164b1970818ed5b204f534fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/ZombieWalk2.png"
-dest_files=["res://.godot/imported/ZombieWalk2.png-86ada43009c33bdc1a3dec8235c2f77d.ctex"]
+source_file="res://assets/sprites/enemies/ZombieWalk2.png"
+dest_files=["res://.godot/imported/ZombieWalk2.png-fe6c0276164b1970818ed5b204f534fb.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7bs6bk4b235j"
-path="res://.godot/imported/SlayerWalk2.png-2e4eeec73a37ffa287bd675700eac99d.ctex"
+path="res://.godot/imported/SlayerWalk2.png-89133032beb78ab948dc013c67a2df7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/SlayerWalk2.png"
-dest_files=["res://.godot/imported/SlayerWalk2.png-2e4eeec73a37ffa287bd675700eac99d.ctex"]
+source_file="res://assets/sprites/enemies/SlayerWalk2.png"
+dest_files=["res://.godot/imported/SlayerWalk2.png-89133032beb78ab948dc013c67a2df7e.ctex"]
 
 [params]
 

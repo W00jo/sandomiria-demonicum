@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hr2m087xydb"
-path="res://.godot/imported/SlayerAttack1.png-83f1198c41e15f7fe535ee94590b5407.ctex"
+path="res://.godot/imported/SlayerAttack1.png-52cabbd0503b448d69aecc746ca08df4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/SlayerAttack1.png"
-dest_files=["res://.godot/imported/SlayerAttack1.png-83f1198c41e15f7fe535ee94590b5407.ctex"]
+source_file="res://assets/sprites/enemies/SlayerAttack1.png"
+dest_files=["res://.godot/imported/SlayerAttack1.png-52cabbd0503b448d69aecc746ca08df4.ctex"]
 
 [params]
 

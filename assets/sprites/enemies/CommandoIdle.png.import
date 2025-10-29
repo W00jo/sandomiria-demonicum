@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://braweeqfmw82u"
-path="res://.godot/imported/CommandoIdle.png-0e89b6d4e8be64c42958bb1d9c0ab07e.ctex"
+path="res://.godot/imported/CommandoIdle.png-ca25e0e83b174c4d4174612ce01b98a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/CommandoIdle.png"
-dest_files=["res://.godot/imported/CommandoIdle.png-0e89b6d4e8be64c42958bb1d9c0ab07e.ctex"]
+source_file="res://assets/sprites/enemies/CommandoIdle.png"
+dest_files=["res://.godot/imported/CommandoIdle.png-ca25e0e83b174c4d4174612ce01b98a9.ctex"]
 
 [params]
 

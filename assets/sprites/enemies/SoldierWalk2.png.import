@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2nld5b7p0bfw"
-path="res://.godot/imported/SoldierWalk2.png-a15dae6611e84fdd1ef2fad9b44d8895.ctex"
+path="res://.godot/imported/SoldierWalk2.png-2d99519928cf7234f13d934c7e92e6ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/SoldierWalk2.png"
-dest_files=["res://.godot/imported/SoldierWalk2.png-a15dae6611e84fdd1ef2fad9b44d8895.ctex"]
+source_file="res://assets/sprites/enemies/SoldierWalk2.png"
+dest_files=["res://.godot/imported/SoldierWalk2.png-2d99519928cf7234f13d934c7e92e6ab.ctex"]
 
 [params]
 

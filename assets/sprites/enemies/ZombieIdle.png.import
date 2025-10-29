@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7o0gg1xfvaub"
-path="res://.godot/imported/ZombieIdle.png-09869184e5bf0cae7673f9789a8e9627.ctex"
+path="res://.godot/imported/ZombieIdle.png-8d2af02ca6b20985aa6a6cac1f49c9d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/ZombieIdle.png"
-dest_files=["res://.godot/imported/ZombieIdle.png-09869184e5bf0cae7673f9789a8e9627.ctex"]
+source_file="res://assets/sprites/enemies/ZombieIdle.png"
+dest_files=["res://.godot/imported/ZombieIdle.png-8d2af02ca6b20985aa6a6cac1f49c9d6.ctex"]
 
 [params]
 

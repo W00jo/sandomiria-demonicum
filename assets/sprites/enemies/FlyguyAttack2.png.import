@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db6l1q0p518r8"
-path="res://.godot/imported/FlyguyAttack2.png-04e8078ed8732bcb298e6615860c99f3.ctex"
+path="res://.godot/imported/FlyguyAttack2.png-56bae4808e33f027e09889fd8819ea27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/FlyguyAttack2.png"
-dest_files=["res://.godot/imported/FlyguyAttack2.png-04e8078ed8732bcb298e6615860c99f3.ctex"]
+source_file="res://assets/sprites/enemies/FlyguyAttack2.png"
+dest_files=["res://.godot/imported/FlyguyAttack2.png-56bae4808e33f027e09889fd8819ea27.ctex"]
 
 [params]
 

@@ -1,5 +1,9 @@
 # Changelog / Devlog
 
+Template:
+
+<https://keepachangelog.com/en/1.0.0/>
+
 ## Opis
 
 Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch notes'y.
@@ -26,6 +30,4 @@ Commity:
 
 - Stare sceny i skrypty + cały plik `.project`.
 
-### Uwagi
-
-- Zmiany porządkują projekt pod kątem dalszego rozwoju zaliczenia, a potem rozwoju samej gry :>
+## 2025-10-29

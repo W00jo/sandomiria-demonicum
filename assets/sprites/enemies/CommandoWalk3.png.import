@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw3v6pxjooqdo"
-path="res://.godot/imported/CommandoWalk3.png-802500ba70471a294983a955315b6cf8.ctex"
+path="res://.godot/imported/CommandoWalk3.png-b10dceaa7a3f8771732f0676eb8789f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/CommandoWalk3.png"
-dest_files=["res://.godot/imported/CommandoWalk3.png-802500ba70471a294983a955315b6cf8.ctex"]
+source_file="res://assets/sprites/enemies/CommandoWalk3.png"
+dest_files=["res://.godot/imported/CommandoWalk3.png-b10dceaa7a3f8771732f0676eb8789f6.ctex"]
 
 [params]
 

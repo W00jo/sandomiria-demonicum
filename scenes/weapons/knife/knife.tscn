@@ -1,12 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv8ymunnvfgx5"]
+[gd_scene load_steps=8 format=3 uid="uid://cv8ymunnvfgx5"]
 
-[ext_resource type="Texture2D" uid="uid://colidyf32vtc3" path="res://assets/sprites/wolfweapons.png" id="1_36fc5"]
+[ext_resource type="Texture2D" uid="uid://colidyf32vtc3" path="res://assets/sprites/weapons/wolfweapons.png" id="1_36fc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp3py"]
+atlas = ExtResource("1_36fc5")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d3jq"]
+atlas = ExtResource("1_36fc5")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53qgy"]
+atlas = ExtResource("1_36fc5")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpw21"]
+atlas = ExtResource("1_36fc5")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iairm"]
+atlas = ExtResource("1_36fc5")
+region = Rect2(256, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2cjf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_36fc5")
+"texture": SubResource("AtlasTexture_yp3py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d3jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53qgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpw21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iairm")
 }],
 "loop": true,
 "name": &"idle",
@@ -37,6 +69,7 @@ grow_vertical = 0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="WeaponLayer/Control"]
 texture_filter = 1
-position = Vector2(134, 40)
+position = Vector2(134, -40.999996)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_a2cjf")
 animation = &"idle"

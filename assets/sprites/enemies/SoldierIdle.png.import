@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://y51sxetfrho8"
-path="res://.godot/imported/SoldierIdle.png-397b917863ff4f130aaeda0c919b4626.ctex"
+path="res://.godot/imported/SoldierIdle.png-6fad6c1ff325d62583b14ded6f869485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/SoldierIdle.png"
-dest_files=["res://.godot/imported/SoldierIdle.png-397b917863ff4f130aaeda0c919b4626.ctex"]
+source_file="res://assets/sprites/enemies/SoldierIdle.png"
+dest_files=["res://.godot/imported/SoldierIdle.png-6fad6c1ff325d62583b14ded6f869485.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3o124gv7kye0"
-path="res://.godot/imported/SoldierDamage1.png-a93c56cdcd979efbf616a09f6014f09b.ctex"
+path="res://.godot/imported/SoldierDamage1.png-838519b9e4e7d2e5477d4faacdb2de12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/SoldierDamage1.png"
-dest_files=["res://.godot/imported/SoldierDamage1.png-a93c56cdcd979efbf616a09f6014f09b.ctex"]
+source_file="res://assets/sprites/enemies/SoldierDamage1.png"
+dest_files=["res://.godot/imported/SoldierDamage1.png-838519b9e4e7d2e5477d4faacdb2de12.ctex"]
 
 [params]
 

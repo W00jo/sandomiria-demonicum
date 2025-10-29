@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy3o6okfcwfdd"
-path="res://.godot/imported/ZombieDamage1.png-a708fede39b185a7618c9e823d4f6c96.ctex"
+path="res://.godot/imported/ZombieDamage1.png-c665b25d7da6124144979fb8e1742f7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/ZombieDamage1.png"
-dest_files=["res://.godot/imported/ZombieDamage1.png-a708fede39b185a7618c9e823d4f6c96.ctex"]
+source_file="res://assets/sprites/enemies/ZombieDamage1.png"
+dest_files=["res://.godot/imported/ZombieDamage1.png-c665b25d7da6124144979fb8e1742f7c.ctex"]
 
 [params]
 
