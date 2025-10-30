@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkmxb0kcxsusi"
-path="res://.godot/imported/hexen_vblade_fire.png-e0638f65678bd25ef98f5f166aa7c8cf.ctex"
+uid="uid://7d7wpckyeyiv"
+path="res://.godot/imported/hexen_blade.png-a29938630a6111ce5f65a6ec116cdf8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/weapons/hexen_vblade_fire.png"
-dest_files=["res://.godot/imported/hexen_vblade_fire.png-e0638f65678bd25ef98f5f166aa7c8cf.ctex"]
+source_file="res://assets/sprites/weapons/hexen_blade.png"
+dest_files=["res://.godot/imported/hexen_blade.png-a29938630a6111ce5f65a6ec116cdf8f.ctex"]
 
 [params]
 
