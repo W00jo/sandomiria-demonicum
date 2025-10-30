@@ -32,3 +32,5 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 
 - Stworzenie podstawowej animacji [placeholder] ataku oraz jej dźwięku.
 - Dodałem komentarze, żebym lepiej rozumiał kod poruszania się (w przyszłości).
+- Stworzenie nowego folderu `models/` w `assets/`, na modele 3D.
+  - Stworzenie nowej sceny z kukłą treningową `training_dummy.tscn`.

@@ -76,15 +76,22 @@ public const int Disc = 50;
 
 ### Organizacja folderów
 
-- **assets** → folder z podfolderami na dźwięki, muzykę, czcionki/fonty oraz grafiki.
-  - audio
-  - fonts
-  - sprites
-- **docs** → zbiór plików .md.
-- **scenes** → zarówno sceny (.tscn), jak i skrypty (.gd).
-  - characters
-  - levels
-  - weapons
+```text
+project/
+├── assets/
+│   ├── audio/
+│   ├── fonts/
+│   └── sprites/
+├── docs/
+│   ├── changelog.md
+│   ├── CODING-STANDARDS.md
+│   └── design-notes.md
+├── scenes/
+│   ├── characters/
+│   ├── levels/
+│   └── weapons/
+└── README.md
+```
 
 ### Konwencje nazewnictwa w silniku Godot oraz GDScript
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://duobiyv8ws4fs"]
+[gd_scene load_steps=6 format=3 uid="uid://duobiyv8ws4fs"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://scenes/characters/player/player.tscn" id="1_tsias"]
+[ext_resource type="PackedScene" uid="uid://dqhmdm0ssbbu6" path="res://scenes/characters/training_dummy.tscn" id="2_7k8c1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7k8c1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,3 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 use_collision = true
 collision_layer = 2
 size = Vector3(20, 0.5, 20)
+
+[node name="TrainingDummy" parent="." instance=ExtResource("2_7k8c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -5)
