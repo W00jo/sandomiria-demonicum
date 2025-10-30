@@ -10,10 +10,6 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 
 ## 2025-10-26
 
-Commity:
-
-- `697e73e14fe997f1c1278876dda719eab72b3d55`
-
 ### Zmieniono
 
 - Uporządkowano strukturę repozytorium.
@@ -31,4 +27,5 @@ Commity:
 - Stare sceny i skrypty + cały plik `.project`.
 
 ## 2025-10-29
+
 - Poprawiono poruszanie się gracza i teraz działa: `scenes/characters/player` ~Dominik
