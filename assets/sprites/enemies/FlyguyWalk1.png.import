@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0es0uahotkgw"
-path="res://.godot/imported/FlyguyWalk1.png-6a95339740efd8aff8fd47fb756254ee.ctex"
+path="res://.godot/imported/FlyguyWalk1.png-eb3a256c77f5676500537f6a8eb9c49b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/FlyguyWalk1.png"
-dest_files=["res://.godot/imported/FlyguyWalk1.png-6a95339740efd8aff8fd47fb756254ee.ctex"]
+source_file="res://assets/sprites/enemies/FlyguyWalk1.png"
+dest_files=["res://.godot/imported/FlyguyWalk1.png-eb3a256c77f5676500537f6a8eb9c49b.ctex"]
 
 [params]
 

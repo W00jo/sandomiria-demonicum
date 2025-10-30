@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qckqfo5bycvv"
-path="res://.godot/imported/FlyguyDamage2.png-d75b389fb61ce975b786ec2aee5028cf.ctex"
+path="res://.godot/imported/FlyguyDamage2.png-5a24d0518a5794a37a040b89cf7eb443.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/FlyguyDamage2.png"
-dest_files=["res://.godot/imported/FlyguyDamage2.png-d75b389fb61ce975b786ec2aee5028cf.ctex"]
+source_file="res://assets/sprites/enemies/FlyguyDamage2.png"
+dest_files=["res://.godot/imported/FlyguyDamage2.png-5a24d0518a5794a37a040b89cf7eb443.ctex"]
 
 [params]
 

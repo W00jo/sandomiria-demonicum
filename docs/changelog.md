@@ -1,14 +1,14 @@
 # Changelog / Devlog
 
+Template:
+
+<https://keepachangelog.com/en/1.0.0/>
+
 ## Opis
 
 Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch notes'y.
 
 ## 2025-10-26
-
-Commity:
-
-- `697e73e14fe997f1c1278876dda719eab72b3d55`
 
 ### Zmieniono
 
@@ -26,6 +26,6 @@ Commity:
 
 - Stare sceny i skrypty + cały plik `.project`.
 
-### Uwagi
+## 2025-10-29
 
-- Zmiany porządkują projekt pod kątem dalszego rozwoju zaliczenia, a potem rozwoju samej gry :>
+- Poprawiono poruszanie się gracza i teraz działa: `scenes/characters/player` ~Dominik

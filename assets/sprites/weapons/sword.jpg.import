@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxjw568snhecp"
-path="res://.godot/imported/FlyguyIdle.png-61cb8874ef256c114fd5dfb1e7863251.ctex"
+uid="uid://cppdywj1b1qbd"
+path="res://.godot/imported/sword.jpg-657c120faf15d644352abb3de4a2bbda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/FlyguyIdle.png"
-dest_files=["res://.godot/imported/FlyguyIdle.png-61cb8874ef256c114fd5dfb1e7863251.ctex"]
+source_file="res://assets/sprites/weapons/sword.jpg"
+dest_files=["res://.godot/imported/sword.jpg-657c120faf15d644352abb3de4a2bbda.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csfdrjw6j1tyd"
-path="res://.godot/imported/TankDeath2.png-4a0e3b215cdf659c1012ef92b5adc72d.ctex"
+path="res://.godot/imported/TankDeath2.png-aa4d36d750f00a6aebf522e20a8ffa1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/TankDeath2.png"
-dest_files=["res://.godot/imported/TankDeath2.png-4a0e3b215cdf659c1012ef92b5adc72d.ctex"]
+source_file="res://assets/sprites/enemies/TankDeath2.png"
+dest_files=["res://.godot/imported/TankDeath2.png-aa4d36d750f00a6aebf522e20a8ffa1d.ctex"]
 
 [params]
 

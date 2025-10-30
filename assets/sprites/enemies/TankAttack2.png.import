@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cglrg7nwsf08h"
-path="res://.godot/imported/TankAttack2.png-21570d1e93ac1be1b4b2d4a39d985e26.ctex"
+path="res://.godot/imported/TankAttack2.png-7ea0a1a4b8913e22ce3def23e4bcd144.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/TankAttack2.png"
-dest_files=["res://.godot/imported/TankAttack2.png-21570d1e93ac1be1b4b2d4a39d985e26.ctex"]
+source_file="res://assets/sprites/enemies/TankAttack2.png"
+dest_files=["res://.godot/imported/TankAttack2.png-7ea0a1a4b8913e22ce3def23e4bcd144.ctex"]
 
 [params]
 

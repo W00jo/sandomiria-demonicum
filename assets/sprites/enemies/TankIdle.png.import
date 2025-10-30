@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n8qgc0y3o4of"
-path="res://.godot/imported/TankIdle.png-d2f8f4446caa4cac633d8eddb5902304.ctex"
+path="res://.godot/imported/TankIdle.png-b37056d1f239038d603bf3e649da71e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/TankIdle.png"
-dest_files=["res://.godot/imported/TankIdle.png-d2f8f4446caa4cac633d8eddb5902304.ctex"]
+source_file="res://assets/sprites/enemies/TankIdle.png"
+dest_files=["res://.godot/imported/TankIdle.png-b37056d1f239038d603bf3e649da71e3.ctex"]
 
 [params]
 

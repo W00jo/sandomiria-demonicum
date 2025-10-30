@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxjw568snhecp"
-path="res://.godot/imported/FlyguyIdle.png-61cb8874ef256c114fd5dfb1e7863251.ctex"
+uid="uid://bkmxb0kcxsusi"
+path="res://.godot/imported/hexen_vblade_fire.png-e0638f65678bd25ef98f5f166aa7c8cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/FlyguyIdle.png"
-dest_files=["res://.godot/imported/FlyguyIdle.png-61cb8874ef256c114fd5dfb1e7863251.ctex"]
+source_file="res://assets/sprites/weapons/hexen_vblade_fire.png"
+dest_files=["res://.godot/imported/hexen_vblade_fire.png-e0638f65678bd25ef98f5f166aa7c8cf.ctex"]
 
 [params]
 

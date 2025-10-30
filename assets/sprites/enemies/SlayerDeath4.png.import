@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm61u0tl32kop"
-path="res://.godot/imported/SlayerDeath4.png-9d10b7033c2e78827045bcb011a358d5.ctex"
+path="res://.godot/imported/SlayerDeath4.png-d6cdbd7ecc2589d3a686fc995f90860e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/SlayerDeath4.png"
-dest_files=["res://.godot/imported/SlayerDeath4.png-9d10b7033c2e78827045bcb011a358d5.ctex"]
+source_file="res://assets/sprites/enemies/SlayerDeath4.png"
+dest_files=["res://.godot/imported/SlayerDeath4.png-d6cdbd7ecc2589d3a686fc995f90860e.ctex"]
 
 [params]
 

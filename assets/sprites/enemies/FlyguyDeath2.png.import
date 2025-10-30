@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brg83redsdb5d"
-path="res://.godot/imported/FlyguyDeath2.png-2112aee324584590bbc8ea518e2f29e7.ctex"
+path="res://.godot/imported/FlyguyDeath2.png-661fd20adb5dd8855e66e1306884de00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/FlyguyDeath2.png"
-dest_files=["res://.godot/imported/FlyguyDeath2.png-2112aee324584590bbc8ea518e2f29e7.ctex"]
+source_file="res://assets/sprites/enemies/FlyguyDeath2.png"
+dest_files=["res://.godot/imported/FlyguyDeath2.png-661fd20adb5dd8855e66e1306884de00.ctex"]
 
 [params]
 

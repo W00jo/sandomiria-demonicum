@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmoeed5wf06fy"
-path="res://.godot/imported/SoldierAttack2.png-22072962f14be6692b2b440d6fc4ca39.ctex"
+path="res://.godot/imported/SoldierAttack2.png-c0a376c012ac551bf3ba46800cd0d4b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Free Characters with Animations For FPS game/SoldierAttack2.png"
-dest_files=["res://.godot/imported/SoldierAttack2.png-22072962f14be6692b2b440d6fc4ca39.ctex"]
+source_file="res://assets/sprites/enemies/SoldierAttack2.png"
+dest_files=["res://.godot/imported/SoldierAttack2.png-c0a376c012ac551bf3ba46800cd0d4b0.ctex"]
 
 [params]
 
