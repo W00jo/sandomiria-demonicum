@@ -1,66 +1,72 @@
 # Nowa jakość kodu
 
-*Standardy kodowania oparte o zasady "Clean code" Roberta C. Martina [https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29]. Projekt będzie stopniowo dostosowywany do tych zasad.*
+Lwia część projektu składać się będzie z **GDScript**, C# może w ogóle się nie pojawić.
+
+*Standardy kodowania oparte o zasady **"Clean code"** Roberta C. Martina [https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29].*
+
+## Kluczki i kruczki
+
+- W Godocie `:=` służy do dawania zmiennym własnej ręki w określeniu typu wartości, który się pojawi po `=`.
+- Za pomocą dwóch ## można dokumentować dany skrypt w wewnętrznej dokumentacji danego projektu w Godocie (F1).
 
 ## Zasady Clean Code
 
 ### Fundamenty
 
-1. **Czytelność ponad wszystko** - kod jest czytany częściej niż pisany
-2. **Jedna odpowiedzialność** - klasa/funkcja robi jedną rzecz i robi ją dobrze
-3. **DRY (Don't Repeat Yourself)** - eliminuj duplikację kodu
-4. **KISS (Keep It Simple, Stupid)** - prostsze rozwiązania są lepsze
-5. **Fail Fast** - wykrywaj błędy jak najwcześniej
+1. **Czytelność ponad wszystko** - kod jest czytany częściej niż pisany.
+2. **Jedna odpowiedzialność** - klasa/funkcja robi jedną rzecz i robi ją dobrze.
+3. **DRY (Don't Repeat Yourself)** - eliminuj duplikację kodu.
+4. **KISS (Keep It Simple, Stupid)** - prostsze rozwiązania są lepsze.
+5. **Fail Fast** - wykrywaj błędy jak najwcześniej.
 
 ## Konwencje nazewnictwa
 
 ### GDScript
 
-- **Klasy:** `PascalCase` - `TicketValidator`, `PassengerGenerator`
-- **Zmienne:** `snake_case` - `is_valid`, `passenger_count`
-- **Funkcje:** `snake_case` - `validate_ticket()`, `generate_passenger()`
-- **Stałe:** `SCREAMING_SNAKE_CASE` - `MAX_PASSENGERS`, `DEFAULT_FINE_AMOUNT`
-- **Pliki prywatne:** prefix `_` - `_internal_helper.gd`
-- **Interfejsy:** suffix `Interface` - `ValidatorInterface`
+| Typ | Konwencja nazewnictwa | Przykład |
+| --- | --- | --- |
+| **Klasy:** | `PascalCase` | `TicketValidator`, `PassengerGenerator` |
+| **Zmienne:** | `snake_case` | `is_valid`, `passenger_count` |
+| **Funkcje:** | `snake_case` | `validate_ticket()`, `generate_passenger()` |
+| **Stałe:** | `SCREAMING_SNAKE_CASE` | `MAX_PASSENGERS`, `DEFAULT_FINE_AMOUNT` |
+| **Interfejsy:** | suffix `Interface` | `ValidatorInterface` |
 
-### C# (przyszłościowe)
+### C# (przyszłościowo/potencjalnie)
 
-- **Klasy:** `PascalCase` - `TicketValidator`, `PassengerGenerator`
-- **Metody:** `PascalCase` - `ValidateTicket()`, `GeneratePassenger()`
-- **Zmienne:** `camelCase` - `isValid`, `passengerCount`
-- **Właściwości:** `PascalCase` - `IsTicketExpired { get; set; }`
-- **Stałe:** `PascalCase` - `MaxPassengers`, `DefaultFineAmount`
-- **Interfejsy:** prefix `I` - `ITicketValidator`, `IPassengerRepository`
-- **Pliki prywatne:** prefix `_` - `_InternalHelper.cs`
+| Typ | Konwencja nazewnictwa | Przykład |
+| --- | --- | --- |
+| **Klasy:** | `PascalCase` | `TicketValidator`, `PassengerGenerator`
+| **Metody:** | `PascalCase` | `ValidateTicket()`, `GeneratePassenger()`
+| **Zmienne:** | `camelCase` | `isValid`, `passengerCount`
+| **Właściwości:** | `PascalCase` | `IsTicketExpired { get; set; }`
+| **Stałe:** | `PascalCase` | `MaxPassengers`, `DefaultFineAmount`
+| **Interfejsy:** | prefix `I` | `ITicketValidator`, `IPassengerRepository`
 
 ### Nazwy opisowe
 
 **GDScript:**
 
 ```gdscript
-# DOBRE - jasne i konkretne
+# ✅ DOBRE - jasne i konkretne
 func calculate_fine_amount(violation_type: String) -> int
 var is_ticket_expired: bool
 const STUDENT_DISCOUNT_PERCENTAGE = 50
 
-# ZŁE - niejasne i skrócone  
+# ❌ ZŁE - niejasne i skrócone  
 func calc(type: String) -> int
 var flag: bool
 const DISC = 50
 ```
 
-**C# (przyszłościowe):**
+**C#:**
 
 ```csharp
-**C# (przyszłościowe):**
-
-```csharp
-// DOBRE - jasne i konkretne
+// ✅ DOBRE - jasne i konkretne
 public int CalculateFineAmount(string violationType)
 public bool IsTicketExpired { get; set; }
 public const int StudentDiscountPercentage = 50;
 
-// ZŁE - niejasne i skrócone  
+// ❌ ZŁE - niejasne i skrócone  
 public int Calc(string type)
 public bool Flag { get; set; }
 public const int Disc = 50;
@@ -70,18 +76,29 @@ public const int Disc = 50;
 
 ### Organizacja folderów
 
-```text
+- **assets** → folder z podfolderami na dźwięki, muzykę, czcionki/fonty oraz grafiki.
+  - audio
+  - fonts
+  - sprites
+- **docs** → zbiór plików .md.
+- **scenes** → zarówno sceny (.tscn), jak i skrypty (.gd).
+  - characters
+  - levels
+  - weapons
 
-```
+### Konwencje nazewnictwa w silniku Godot oraz GDScript
 
-### Nazewnictwo plików
-
-- **Klasy biznesowe GDScript:** `PascalCase.gd` - `TicketValidator.gd`
-- **Klasy biznesowe C#:** `PascalCase.cs` - `TicketValidator.cs`
-- **Controllers:** `PascalCaseController.gd/.cs` - `PassengerController.gd`
-- **Sceny:** `kebab-case.tscn` - `ticket-validation.tscn`
-- **Testy GDScript:** `test_ClassName.gd` - `test_TicketValidator.gd`
-- **Testy C#:** `ClassNameTests.cs` - `TicketValidatorTests.cs`
+| Typ | Konwencja | Przykład |
+| --- | --- | --- |
+| **File names** | snake_case | `yaml_parsed.gd` |
+| **class_name** | PascalCase | `class_name YAMLParser` |
+| **Node names** | PascalCase | `Camera3D`, `Player` |
+| **Functions** | snake_case | `func load_level():` |
+| **Variables** | snake_case | `var particle_effect` |
+| **Signals** | snake_case | always in past tense `signal door_opened` |
+| **Constants** | CONSTANT_CASE | `const MAX_SPEED = 200` |
+| **enum names** | PascalCase | `enum Element` |
+| **enum members** | CONSTANT_CASE | `{EARTH, WATER, AIR, FIRE}` |
 
 ## Funkcje i metody
 
@@ -90,7 +107,7 @@ public const int Disc = 50;
 **GDScript:**
 
 ```gdscript
-# DOBRE - jedna odpowiedzialność
+# ✅ DOBRE - jedna odpowiedzialność
 class TicketValidator:
    func is_valid(ticket: Ticket) -> bool:
       return not _is_expired(ticket) and _has_valid_format(ticket)
@@ -101,7 +118,7 @@ class TicketValidator:
    func _has_valid_format(ticket: Ticket) -> bool:
       return ticket.number.length() == 10
 
-# ZŁE - robi za dużo rzeczy
+# ❌ ZŁE - robi za dużo rzeczy
 class TicketManager:
    func handle_ticket(ticket):
       # waliduje
@@ -111,10 +128,7 @@ class TicketManager:
       # 50 linii kodu...
 ```
 
-**C# (przyszłościowe):**
-
-```csharp
-**C# (przyszłościowe):**
+**C#:**
 
 ```csharp
 // ✅ DOBRE - jedna odpowiedzialność
@@ -172,10 +186,7 @@ func process_ticket_with_all_validations_and_discounts(...):
  # 50+ linii z zagnieżdżonymi if-ami
 ```
 
-**C# (przyszłościowe):**
-
-```csharp
-**C# (przyszłościowe):**
+**C#:**
 
 ```csharp
 // ✅ DOBRE - mała i czytelna
@@ -421,7 +432,6 @@ func check(t):
 ### Przed: Legacy kod
 
 ```gdscript
-```gdscript
 # ❌ ZŁY PRZYKŁAD
 extends Node2D
 
@@ -529,35 +539,4 @@ class PassengerFactory:
 
 ### Boy Scout Rule
 
-"Zawsze zostaw kod w lepszym stanie niż go zastałeś"
-
-## Status języków programowania
-
-### GDScript - język główny
-
-- **Status:** ✅ **Aktywnie używany**
-- **Zastosowanie:** Cała logika gry, UI, systemy gameplay
-- **Zalety:** Natywna integracja z Godot, szybki rozwój prototypów
-- **Wady:** Brak silnego typowania, mniejsza wydajność
-
-### C# - język przyszłościowy
-
-- **Status:** 📋 **Planowany do wprowadzenia**
-- **Zastosowanie:** Krytyczne systemy wymagające wydajności
-- **Kandydaci do przepisania:**
-  - `PersonalDataManager` - algorytmy generowania danych
-  - `TicketValidator` - logika walidacji biletów
-  - `StatisticsManager` - obliczenia statystyk
-- **Zalety:** Silne typowanie, lepsza wydajność, zaawansowane narzędzia
-- **Wady:** Większa złożoność, dłuższy czas kompilacji
-
-### Strategia migracji *(potencjalna)*
-
-1. **Faza 1:** Wszystko w GDScript (obecna)
-2. **Faza 2:** Krytyczne systemy w C# + interfejsy
-3. **Faza 3:** Stopniowa migracja pozostałych komponentów
-4. **Cel:** Hybrydowa architektura - GDScript dla UI, C# dla logiki
-
----
-
-*Wizja Clean Code dla projektu. Refaktoryzacja będzie stopniowa!*
+*"Zawsze zostaw kod w lepszym stanie niż go zastałeś"*.

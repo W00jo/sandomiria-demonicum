@@ -22,15 +22,15 @@ These naming conventions follow the Godot Engine style. Breaking these will make
 
 | Type | Convention | Example |
 | --- | --- | --- |
-| File names | snake_case | `yaml_parsed.gd` |
-| class_name | PascalCase | `class_name YAMLParser` |
-| Node names | PascalCase | `Camera3D`, `Player` |
-| Functions | snake_case | `func load_level():` |
-| Variables | snake_case | `var particle_effect` |
-| Signals | snake_case | always in past tense `signal door_opened` |
-| Constants | CONSTANT_CASE | `const MAX_SPEED = 200` |
-| enum names | PascalCase | `enum Element` |
-| enum members | CONSTANT_CASE | `{EARTH, WATER, AIR, FIRE}` |
+| **File names** | snake_case | `yaml_parsed.gd` |
+| **class_name** | PascalCase | `class_name YAMLParser` |
+| **Node names** | PascalCase | `Camera3D`, `Player` |
+| **Functions** | snake_case | `func load_level():` |
+| **Variables** | snake_case | `var particle_effect` |
+| **Signals** | snake_case | always in past tense `signal door_opened` |
+| **Constants** | CONSTANT_CASE | `const MAX_SPEED = 200` |
+| **enum names** | PascalCase | `enum Element` |
+| **enum members** | CONSTANT_CASE | `{EARTH, WATER, AIR, FIRE}` |
 
 ## Code order
 
