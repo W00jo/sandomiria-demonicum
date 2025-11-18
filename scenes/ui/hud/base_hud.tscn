@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb85lq2cqeq6m"]
+
+[ext_resource type="Script" uid="uid://jsn1ks7oo4tb" path="res://scenes/ui/hud/base_hud.gd" id="1_53ugk"]
+
+[node name="BaseHud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_53ugk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

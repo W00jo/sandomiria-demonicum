@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bljq3vkud567q"]
+[gd_scene load_steps=5 format=3 uid="uid://bljq3vkud567q"]
 
 [ext_resource type="PackedScene" uid="uid://cv8ymunnvfgx5" path="res://scenes/weapons/knife/knife.tscn" id="1_7uws0"]
 [ext_resource type="Script" uid="uid://di0sqvga2pnrb" path="res://scenes/characters/player/player.gd" id="1_t61fv"]
+[ext_resource type="PackedScene" uid="uid://bb85lq2cqeq6m" path="res://scenes/ui/hud/base_hud.tscn" id="3_686vu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcx1r"]
 
@@ -20,8 +21,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="Knife" parent="." instance=ExtResource("1_7uws0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BaseHud" parent="." instance=ExtResource("3_686vu")]
