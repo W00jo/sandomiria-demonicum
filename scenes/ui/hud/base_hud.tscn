@@ -7,4 +7,21 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_53ugk")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+
+[node name="GotHit" type="TextureRect" parent="HUDLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Crosshair" type="TextureRect" parent="HUDLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DirectionIndicator" type="TextureRect" parent="HUDLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hitmarker" type="TextureRect" parent="HUDLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
