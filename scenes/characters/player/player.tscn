@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcx1r"]
 
 [node name="Player" type="CharacterBody3D"]
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_t61fv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -18,7 +18,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
-[node name="Knife" parent="." instance=ExtResource("1_7uws0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="Knife" parent="Head" instance=ExtResource("1_7uws0")]
 
 [node name="BaseHud" parent="." instance=ExtResource("3_686vu")]
+
+[connection signal="player_hit" from="." to="BaseHud" method="_on_player_player_hit"]

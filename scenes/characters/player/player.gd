@@ -3,6 +3,8 @@ extends CharacterBody3D
 ##
 ## Skrypt odpowiada za ruch postaci gracza, jak i ruchu kamery.
 
+signal player_hit
+
 # Zmienne ruchu (możesz je edytować w Inspektorze > player.gd)
 ## Prędkość poruszania się.
 @export var SPEED: float = 5.0
@@ -74,3 +76,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, FRICTION * delta)
 
 	move_and_slide()
+
+func _got_hit():
+	emit_signal("player_hit")

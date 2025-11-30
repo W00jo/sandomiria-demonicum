@@ -1,10 +1,9 @@
 extends Node
 
-@onready var hud_container: CanvasLayer = $HUDLayer
-@onready var got_hit: TextureRect = $HUDLayer/GotHit
-@onready var crosshair: TextureRect = $HUDLayer/Crosshair
-@onready var direction_indicator: TextureRect = $HUDLayer/DirectionIndicator
-@onready var hitmarker: TextureRect = $HUDLayer/Hitmarkers
+@onready var got_hit: ColorRect = $GotHit
+@onready var crosshair: TextureRect = $Crosshair
+@onready var direction_indicator: TextureRect = $DirectionIndicator
+@onready var hitmarker: TextureRect = $Hitmarker
 
 func _ready():
 	crosshair.position.x = get_viewport().size.x / 2 - 32
@@ -22,3 +21,8 @@ func _ready():
 	#
 	## Connect signals
 	#hud.set_player(player)
+
+func _on_player_player_hit() -> void:
+	got_hit.visible = true
+	await get_tree().create_timer(0.2).timeout
+	got_hit.visible = false

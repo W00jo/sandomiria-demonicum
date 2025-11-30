@@ -7,7 +7,7 @@ albedo_texture = ExtResource("1_rnyxf")
 
 [node name="Tutorial" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="Ground" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ub0e1")
 use_collision = true
 collision_layer = 2
