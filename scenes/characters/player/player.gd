@@ -65,16 +65,29 @@ func _physics_process(delta: float) -> void:
 	
 	# W ogóle ciekawostka, domyślny ruch w Godocie obliczany jest w kierunku -Z.
 	
+	# Zamiast operować na velocity.x i velocity.z osobno, "rzutujemy" je na płaszczyznę 2D.
+	# Dzięki temu znamy dokładny kąt poruszania się gracza.
+	var current_velocity_plane := Vector2(velocity.x, velocity.z)
+	
+	# Cel, jaki chcemy osiągnąć (kierunek * prędkość maksymalna).
+	var target_velocity_plane := Vector2(move_direction.x, move_direction.z) * SPEED
+	
 	# Poruszanie się i hamowanie.
 	if move_direction:
-		# Mały delay w osiągnięciu pełnej prędkości.
-		velocity.x = move_toward(velocity.x, move_direction.x * SPEED, ACCELERATION * delta)
-		velocity.z = move_toward(velocity.z, move_direction.z * SPEED, ACCELERATION * delta)
+		# Jeśli gracz wciska klawisze:
+		# Przesuwamy W CAŁOŚCI wektor prędkości w stronę celu.
+		# To eliminuje drift, bo wektor rośnie prosto w stronę celu, a nie schodkami po X i Z.
+		current_velocity_plane = current_velocity_plane.move_toward(target_velocity_plane, ACCELERATION * delta)
 	else:
-		# Po zaprzestaniu wciskania inputu, gracz się jeszcze trochę "ślizga" przed wyhamowaniem do zera.
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
-		velocity.z = move_toward(velocity.z, 0, FRICTION * delta)
+		# Jeśli gracz puścił klawisze:
+		# Wygaszamy prędkość do zera (hamowanie).
+		current_velocity_plane = current_velocity_plane.move_toward(Vector2.ZERO, FRICTION * delta)
+	
+	# Przypisujemy obliczoną prędkość z powrotem do zmiennych silnika (velocity).
+	velocity.x = current_velocity_plane.x
+	velocity.z = current_velocity_plane.y
 
+	# Wykonanie ruchu z uwzględnieniem kolizji.
 	move_and_slide()
 
 func _got_hit():
