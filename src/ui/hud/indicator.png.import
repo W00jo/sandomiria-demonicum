@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq3u14d1jx74o"
-path="res://.godot/imported/texture_12.png-aa00f04d90038cfa7a155c245175254b.ctex"
+uid="uid://bj2n50rpy43xm"
+path="res://.godot/imported/indicator.png-7ce954531d2d532b6a08f953dd556876.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/greybox_textures/texture_12.png"
-dest_files=["res://.godot/imported/texture_12.png-aa00f04d90038cfa7a155c245175254b.ctex"]
+source_file="res://src/ui/hud/indicator.png"
+dest_files=["res://.godot/imported/indicator.png-7ce954531d2d532b6a08f953dd556876.ctex"]
 
 [params]
 

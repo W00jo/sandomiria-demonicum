@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bljq3vkud567q"]
+
+[ext_resource type="Script" uid="uid://di0sqvga2pnrb" path="res://src/characters/player/player.gd" id="1_t61fv"]
+[ext_resource type="PackedScene" uid="uid://bb85lq2cqeq6m" path="res://src/ui/hud/base_hud.tscn" id="3_686vu"]
+[ext_resource type="PackedScene" uid="uid://ddn28mp73ym0f" path="res://src/weapons/dagger/dagger.tscn" id="4_03ylq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcx1r"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 6
+script = ExtResource("1_t61fv")
+SPEED = null
+JUMP_VELOCITY = null
+ACCELERATION = null
+FRICTION = null
+MOUSE_SENS = null
+MIN_PITCH = null
+MAX_PITCH = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bcx1r")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Dagger" parent="Head" instance=ExtResource("4_03ylq")]
+transform = Transform3D(-4.371138e-08, 0, 0.9999999, -0.82361174, 0.56715393, -3.600121e-08, -0.5671538, -0.82361174, -2.4791081e-08, 0.3675722, -0.3978843, -0.13277486)
+
+[node name="BaseHud" parent="." instance=ExtResource("3_686vu")]
+
+[connection signal="player_hit" from="." to="BaseHud" method="_on_player_player_hit"]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcioqle48vr73"
-path.s3tc="res://.godot/imported/texture_04.png-73c12012278cb6c421d6efd9d3d8dd47.s3tc.ctex"
+uid="uid://b14orkhb3vtxm"
+path.s3tc="res://.godot/imported/greybox_checker_big_crosses.png-faf2f70015f5167063ec2f024fa50a77.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/greybox_textures/texture_04.png"
-dest_files=["res://.godot/imported/texture_04.png-73c12012278cb6c421d6efd9d3d8dd47.s3tc.ctex"]
+source_file="res://assets/greybox_textures/greybox_checker_big_crosses.png"
+dest_files=["res://.godot/imported/greybox_checker_big_crosses.png-faf2f70015f5167063ec2f024fa50a77.s3tc.ctex"]
 
 [params]
 

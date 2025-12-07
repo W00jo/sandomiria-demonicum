@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=4 uid="uid://duobiyv8ws4fs"]
 
-[ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://scenes/characters/player/player.tscn" id="1_8a5hx"]
-[ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/texture_06.png" id="2_0huwb"]
-[ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://scenes/characters/enemies/tatar.tscn" id="3_0huwb"]
+[ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_8a5hx"]
+[ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="2_0huwb"]
+[ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar.tscn" id="3_0huwb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7k8c1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -131,7 +131,7 @@ material = SubResource("StandardMaterial3D_w2p53")
 [node name="Player" parent="." instance=ExtResource("1_8a5hx")]
 
 [node name="Dummy" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.137945, -1.4169781, -5.906251)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.137945, -0.655035, -5.906251)
 collision_layer = 4
 collision_mask = 3
 

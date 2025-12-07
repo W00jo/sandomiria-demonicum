@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj2n50rpy43xm"
-path="res://.godot/imported/indicator.png-bc912e15f5fe562a7e8a4b307a335f51.ctex"
+uid="uid://cxox4alsbqobf"
+path="res://.godot/imported/greybox_checker_big.png-87da777e8e80a3876c6100cc7d2cbf49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/crosshairs/indicator.png"
-dest_files=["res://.godot/imported/indicator.png-bc912e15f5fe562a7e8a4b307a335f51.ctex"]
+source_file="res://assets/greybox_textures/greybox_checker_big.png"
+dest_files=["res://.godot/imported/greybox_checker_big.png-87da777e8e80a3876c6100cc7d2cbf49.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6rgy8f4q74j8"]
 
-[ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/texture_06.png" id="1_rnyxf"]
+[ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="1_rnyxf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub0e1"]
 albedo_texture = ExtResource("1_rnyxf")

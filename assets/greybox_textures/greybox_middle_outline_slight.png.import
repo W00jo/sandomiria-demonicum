@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxlbmreie5yqf"
-path.s3tc="res://.godot/imported/texture_05.png-d8130a7c6c57c006626c1fbd94b725da.s3tc.ctex"
+uid="uid://dcioqle48vr73"
+path.s3tc="res://.godot/imported/greybox_middle_outline_slight.png-0ae23d10c53eb5b9b8c350f2efb29743.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/greybox_textures/texture_05.png"
-dest_files=["res://.godot/imported/texture_05.png-d8130a7c6c57c006626c1fbd94b725da.s3tc.ctex"]
+source_file="res://assets/greybox_textures/greybox_middle_outline_slight.png"
+dest_files=["res://.godot/imported/greybox_middle_outline_slight.png-0ae23d10c53eb5b9b8c350f2efb29743.s3tc.ctex"]
 
 [params]
 

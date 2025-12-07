@@ -25,8 +25,13 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 
 ## 2025-10-29
 
-- Rozpoczęcie pracy nad lepszym skryptem poruszania się gracza i dodanie ruchu kamery w ogóle ~Jakub
-- Poprawiono poruszanie się gracza i teraz działa: `scenes/characters/player` ~Dominik
+### Jakub
+
+- Rozpoczęcie pracy nad lepszym skryptem poruszania się gracza i dodanie ruchu kamery w ogóle
+
+### Dominik
+
+- Poprawiono poruszanie się gracza i teraz działa: `scenes/characters/player`
 
 ## 2025-10-30
 
@@ -34,3 +39,15 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 - Dodałem komentarze, żebym lepiej rozumiał kod poruszania się (w przyszłości).
 - Stworzenie nowego folderu `models/` w `assets/`, na modele 3D.
   - Stworzenie nowej sceny z kukłą treningową `training_dummy.tscn`.
+
+## 2025-11
+
+- Uzupełnić z listopada rzeczy
+
+## 2025-12-07
+
+### Jakub
+
+- Dodanie "systemu ataku" dla tatara (`tatar.gd`).
+  - Pamiętać o podmienieniu w skrypcie zakomentowanych linijek, gdy dodamy animacje i modele 3D.
+  - Poza terminalem, przy "otrzymaniu obrażeń" gracz widzi wizualny indykator (czerwone ekran xd).

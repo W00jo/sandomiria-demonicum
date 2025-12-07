@@ -10,7 +10,7 @@ Blending real historical inspirations with the dark fantasy aesthetics of the 19
 
 - **assets/** → Art, audio, fonts, shaders
 - **docs/** → Notes and changelog
-- **scenes/** → Main game scenes and their respective `scripts`
+- **src/** → Main game scenes and their respective `scripts`
 
 ## How to run
 
@@ -22,7 +22,7 @@ These naming conventions follow the Godot Engine style. Breaking these will make
 
 | Type | Convention | Example |
 | --- | --- | --- |
-| **File names** | snake_case | `yaml_parsed.gd` |
+| **Folder and file names** | snake_case | `yaml_parsed.gd` |
 | **class_name** | PascalCase | `class_name YAMLParser` |
 | **Node names** | PascalCase | `Camera3D`, `Player` |
 | **Functions** | snake_case | `func load_level():` |
@@ -34,7 +34,7 @@ These naming conventions follow the Godot Engine style. Breaking these will make
 
 ## Code order
 
-```html
+```gdscript
 01. @tool, @icon, @static_unload
 02. class_name
 03. extends
