@@ -53,3 +53,5 @@ skeleton = NodePath("")
 
 [node name="DaggerAttackSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_uocx7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
