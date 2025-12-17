@@ -13,7 +13,7 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 	- Kiedy indykator jest zablokowany, powinien być pomarańczowy
 	- Jakieś czary magicznych liczb z internetu wykrywają czy przeciwnik jest przed graczem i wyprintują odpowiednio przypisane statystyki. Tj. jeśli machasz danym trybem ataku, to czy trafisz, bo masz określony zasięg, a jeśli tak, to ile zadasz obrażeń.
 - Dodanie modelu placeholder modelu `dagger.glb` z internetu. LEKKO przerobionego przeze mnie.
-- Zostawiłem komentarze w newralgicznych miejscach oraz podpisałem **TODO:** to co trzeba będzie podmienić/przerobić/jest placeholderem.
+- ==Zostawiłem komentarze w newralgicznych miejscach oraz podpisałem **TODO:** to co trzeba będzie podmienić/przerobić/jest placeholderem.==
 
 ### Removed
 
