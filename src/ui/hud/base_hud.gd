@@ -5,22 +5,49 @@ extends Node
 @onready var direction_indicator: TextureRect = $DirectionIndicator
 @onready var hitmarker: TextureRect = $Hitmarker
 
-func _ready():
-	crosshair.position.x = get_viewport().size.x / 2 - 32
-	crosshair.position.y = get_viewport().size.y / 2 - 32
-	hitmarker.position.x = get_viewport().size.x / 2 - 32
-	hitmarker.position.y = get_viewport().size.y / 2 - 32
+## Referencja do broni gracza
+var weapon: Node3D
 
-## Mysle nad czyms takim, aby podstawowy HUD byl dla kazdego
-#func spawn_player(character_type: String):
-	#var player = load("res://characters/" + character_type + ".tscn").instantiate()
-	#var hud = load("res://hud/" + character_type + "_hud.tscn").instantiate()
-	#
-	#add_child(player)
-	#hud_container.add_child(hud)
-	#
-	## Connect signals
-	#hud.set_player(player)
+func _ready():
+	var screen_size = get_viewport().size
+	# Wyśrodkuj crosshair, hitmarker i direction_indicator
+	crosshair.position = Vector2(screen_size.x / 2 - 32, screen_size.y / 2 - 32)
+	hitmarker.position = Vector2(screen_size.x / 2 - 32, screen_size.y / 2 - 32)
+	direction_indicator.position = Vector2(screen_size.x / 2 - 32, screen_size.y / 2 - 32)
+	
+	# Znajdź broń gracza
+	await get_tree().process_frame
+	var player = get_parent()
+	if player:
+		weapon = player.get_node_or_null("Head/Camera3D/Dagger")
+		if weapon:
+			print("Gracz gotowy na mogging")
+
+func _process(_delta: float) -> void:
+	if not weapon:
+		return
+	
+	# Obrót indykatora w zależności od kierunku ruchu myszki
+	match weapon.current_direction:
+		1:  # LEFT
+			direction_indicator.rotation_degrees = -90
+		2:  # RIGHT
+			direction_indicator.rotation_degrees = 90
+		3:  # UP
+			direction_indicator.rotation_degrees = 0
+		4:  # DOWN
+			direction_indicator.rotation_degrees = 180
+	
+	# Zmienia kolor, przy zablokowaniu
+	if weapon.direction_locked:
+		direction_indicator.modulate = Color(0.932, 0.602, 0.0, 1.0)
+	else:
+		direction_indicator.modulate = Color(1, 1, 1, 1)
+
+func _on_dagger_enemy_hit() -> void:
+	hitmarker.visible = true
+	await get_tree().create_timer(0.1).timeout
+	hitmarker.visible = false
 
 func _on_player_player_hit() -> void:
 	got_hit.visible = true

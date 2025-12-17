@@ -23,8 +23,9 @@ texture = ExtResource("2_bnghb")
 metadata/_edit_use_anchors_ = true
 
 [node name="DirectionIndicator" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
 texture = ExtResource("3_e78wx")
 
 [node name="Hitmarker" type="TextureRect" parent="."]

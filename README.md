@@ -2,15 +2,17 @@
 
 ## Overview
 
-Sandomiria Demonicum is set in medieval Sandomierz, where the player takes control of an immortal champion fighting against otherworldly creatures that have invaded once-holy and beautiful lands.
+*Sandomiria Demonicum* is set in medieval Sandomierz, where the player takes control of an immortal champion fighting against otherworldly creatures that have invaded once-holy and beautiful lands.
 
-Blending real historical inspirations with the dark fantasy aesthetics of the 1980s, Sandomiria Demonicum delivers a, first-person action experience focused on intense combat against hordes of the undead and monsters.
+Blending real historical inspirations with the dark fantasy aesthetics of the 1980s, first-person action experience focused on combat against hordes of the undead and monsters, while managing resources.
 
 ## Project structure
 
-- **assets/** → Art, audio, fonts, shaders
-- **docs/** → Notes and changelog
-- **src/** → Main game scenes and their respective `scripts`
+<br/>├── **assets/** → Art, audio, fonts, shaders
+<br/>├── **config/** → Settings and translations
+<br/>├── **docs/** → Notes and changelog
+<br/>├── **global/** → For global scripts
+<br/>└── **src/** → Main game scenes and their respective `scripts`
 
 ## How to run
 
@@ -65,5 +67,7 @@ These naming conventions follow the Godot Engine style. Breaking these will make
 ## Credits
 
 List any free/paid assets, tools, or contributors.
+
+---
 
 *Summarized from Godot Docs*.
