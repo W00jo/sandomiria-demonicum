@@ -1,0 +1,218 @@
+[gd_scene load_steps=13 format=3 uid="uid://dabf2vqq6byu7"]
+
+[ext_resource type="Script" uid="uid://nei5vtgi1n8a" path="res://src/ui/menu/main_menu.gd" id="1_5oo8x"]
+[ext_resource type="Texture2D" uid="uid://3mjujbb70od8" path="res://assets/sprites/interface/borders/default/Border/panel-border-028.png" id="3_border"]
+[ext_resource type="Texture2D" uid="uid://btw30n5woutf4" path="res://assets/sprites/interface/borders/default/Divider/divider-002.png" id="4_48cso"]
+[ext_resource type="Texture2D" uid="uid://d3q07pw1jc23u" path="res://assets/sprites/interface/borders/default/Transparent center/panel-transparent-center-028.png" id="4_button_border"]
+[ext_resource type="Texture2D" uid="uid://oc6otu466h13" path="res://assets/sprites/interface/borders/default/Panel/panel-028.png" id="5_panel"]
+[ext_resource type="FontFile" uid="uid://5pbnpbqdcoah" path="res://assets/fonts/pirata_one.ttf" id="5_pirata"]
+[ext_resource type="FontFile" uid="uid://jjd650a8cvxa" path="res://assets/fonts/ebgaramond_regular.ttf" id="6_garamond"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_panel"]
+texture = ExtResource("5_panel")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.010342089, 0.05581455, 0.03054549, 0.8627451)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_hover"]
+texture = ExtResource("4_button_border")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_normal"]
+texture = ExtResource("4_button_border")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.360784, 0.396078, 0.407843, 1)
+
+[sub_resource type="Theme" id="Theme_menu"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("6_garamond")
+Button/styles/hover = SubResource("StyleBoxTexture_button_hover")
+Button/styles/normal = SubResource("StyleBoxTexture_button_normal")
+Button/styles/pressed = SubResource("StyleBoxTexture_button_hover")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_panel"]
+texture = ExtResource("3_border")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.011764706, 0.05490196, 0.03137255, 0.8627451)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5oo8x")
+
+[node name="BackgroundGradient" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.101961, 0.109804, 1)
+
+[node name="BookSpine" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BookContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="LeftPage" type="VBoxContainer" parent="BookContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="TopMargin" type="Control" parent="BookContainer/LeftPage"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="MenuContainer" type="PanelContainer" parent="BookContainer/LeftPage"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_menu_panel")
+
+[node name="ContentVBox" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleSection" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("5_pirata")
+theme_override_font_sizes/font_size = 64
+text = "SANDOMIRIA"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.12, 0.12, 1)
+theme_override_fonts/font = ExtResource("5_pirata")
+theme_override_font_sizes/font_size = 48
+text = "DEMONICUM"
+horizontal_alignment = 1
+
+[node name="DividerContainer" type="HBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="DividerLeft" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_48cso")
+stretch_mode = 3
+flip_h = true
+
+[node name="DividerRight" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_48cso")
+stretch_mode = 3
+
+[node name="MenuButtons" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_menu")
+theme_override_constants/separation = 15
+
+[node name="PlayButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+layout_mode = 2
+text = "PLAY_BUTTON"
+
+[node name="SettingsButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+layout_mode = 2
+text = "SETTINGS_BUTTON"
+
+[node name="CreditsButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+layout_mode = 2
+text = "CREDITS_BUTTON"
+
+[node name="QuitButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+layout_mode = 2
+text = "QUIT_BUTTON"
+
+[node name="BottomSpacer" type="Control" parent="BookContainer/LeftPage"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightPage" type="VBoxContainer" parent="BookContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="TopMargin2" type="Control" parent="BookContainer/RightPage"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="ArtContainer" type="PanelContainer" parent="BookContainer/RightPage"]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_panel")
+
+[node name="ArtPlaceholder" type="ColorRect" parent="BookContainer/RightPage/ArtContainer"]
+layout_mode = 2
+color = Color(0.011764706, 0.05490196, 0.03137255, 0.8627451)
+
+[node name="PlaceholderLabel" type="Label" parent="BookContainer/RightPage/ArtContainer/ArtPlaceholder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -14.0
+offset_right = 100.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "[ Placeholder ]"
+horizontal_alignment = 1
+
+[node name="BottomSpacer2" type="Control" parent="BookContainer/RightPage"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
