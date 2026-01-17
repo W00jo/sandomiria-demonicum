@@ -4,7 +4,7 @@
 
 *Sandomiria Demonicum* is set in medieval Sandomierz, where the player takes control of an immortal champion fighting against otherworldly creatures that have invaded once-holy and beautiful lands.
 
-Blending real historical inspirations with the dark fantasy aesthetics of the 1980s, first-person action experience focused on combat against hordes of the undead and monsters, while managing resources.
+Blending real historical inspirations with the fatansy asethetics of the 60s and dark fantasy of the 80s, first-person action experience focused on combat against hordes of the undead and monsters, while managing resources.
 
 ## Project structure
 

@@ -4,6 +4,7 @@ extends CharacterBody3D
 ## Skrypt odpowiada za ruch postaci gracza, jak i ruchu kamery.
 
 signal player_hit
+signal player_died
 
 # Zmienne ruchu (możesz je edytować w Inspektorze > player.gd)
 ## Prędkość poruszania się.
@@ -19,6 +20,10 @@ signal player_hit
 ## Czułość myszy.
 @export var MOUSE_SENS: float = 0.3 # 0.5 to zwykle za dużo //ale niemiło, boomer shootery mają 0.5 :(
 
+## Zdrowie gracza
+@export var max_health: float = 100.0
+var current_health: float = 100.0
+
 ## Zmienna pobierająca grawitację z Project Settings.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -30,7 +35,9 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var MAX_PITCH: float = 90.0
 
 ## Blokuje mysz, aby zniknęła z ekranu ("capture") oraz nie pozwala kursorowi wylatywać poza ekran gry.
-func _ready() -> void: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	current_health = max_health
 
 ## Funkcja pozwalająca się graczowi obracać.
 func _input(event: InputEvent) -> void:
@@ -78,4 +85,18 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _got_hit():
+	take_damage(10.0)  # Domyślne obrażenia od wroga
+
+func take_damage(amount: float):
+	current_health -= amount
 	emit_signal("player_hit")
+	print("Gracz otrzymał ", amount, " dmg. Pozostało ", current_health, " HP")
+	
+	if current_health <= 0:
+		_die()
+
+func _die():
+	emit_signal("player_died")
+	print("NIE ŻYJESZ")
+	# Tutaj możesz dodać animację śmierci, ekran game over, itp.
+	get_tree().reload_current_scene()  # Tymczasowo - restart poziomu

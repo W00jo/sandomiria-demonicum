@@ -6,6 +6,12 @@ const SPEED = 1.0
 const ATTACK_RANGE = 2.5 
 ## Cooldown ataku Tatara (nie tego do jedzenia)
 @export var attack_cooldown = 2.0
+## Obrażenia zadawane graczowi
+@export var damage: float = 10.0
+## Zdrowie Tatara
+@export var max_health: float = 2.0
+var current_health: float = 2.0
+
 ## Jakiego gracza ma śledzić, do wyboru w inspektorze
 @export var player_path : NodePath
 
@@ -17,6 +23,7 @@ var is_attacking: bool = false
 
 func _ready() -> void:
 	player = get_node(player_path)
+	current_health = max_health
 
 func _process(_delta: float) -> void:
 	# Dla balansu zatrzymuje się podczas "animacji" ataku
@@ -65,5 +72,17 @@ func _perform_attack() -> void:
 	can_attack = true
 
 func _hit_finished():
-	player._got_hit()
-	print("Gracz trafiony")
+	if player and player.has_method("take_damage"):
+		player.take_damage(damage)
+		print("Gracz trafiony przez Tatara za ", damage, " dmg")
+
+func take_damage(amount: float):
+	current_health -= amount
+	print("Tatar otrzymał ", amount, " dmg. Pozostało ", current_health, " HP")
+	
+	if current_health <= 0:
+		_die()
+
+func _die():
+	print("Tatar =/= żywy")
+	queue_free()  # Usuń wroga ze sceny

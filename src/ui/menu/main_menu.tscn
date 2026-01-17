@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dabf2vqq6byu7"]
+[gd_scene load_steps=12 format=3 uid="uid://dabf2vqq6byu7"]
 
 [ext_resource type="Script" uid="uid://nei5vtgi1n8a" path="res://src/ui/menu/main_menu.gd" id="1_5oo8x"]
-[ext_resource type="Texture2D" uid="uid://3mjujbb70od8" path="res://assets/sprites/interface/borders/default/Border/panel-border-028.png" id="3_border"]
-[ext_resource type="Texture2D" uid="uid://btw30n5woutf4" path="res://assets/sprites/interface/borders/default/Divider/divider-002.png" id="4_48cso"]
+[ext_resource type="FontFile" uid="uid://iw5lyygtld5d" path="res://assets/fonts/alegreya_sans_sc_regular.ttf" id="4_4ty6e"]
 [ext_resource type="Texture2D" uid="uid://d3q07pw1jc23u" path="res://assets/sprites/interface/borders/default/Transparent center/panel-transparent-center-028.png" id="4_button_border"]
 [ext_resource type="Texture2D" uid="uid://oc6otu466h13" path="res://assets/sprites/interface/borders/default/Panel/panel-028.png" id="5_panel"]
 [ext_resource type="FontFile" uid="uid://5pbnpbqdcoah" path="res://assets/fonts/pirata_one.ttf" id="5_pirata"]
@@ -42,7 +41,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_button_normal")
 Button/styles/pressed = SubResource("StyleBoxTexture_button_hover")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_panel"]
-texture = ExtResource("3_border")
+texture = ExtResource("5_panel")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -100,6 +99,7 @@ layout_mode = 2
 [node name="MenuContainer" type="PanelContainer" parent="BookContainer/LeftPage"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_menu_panel")
 
 [node name="ContentVBox" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer"]
@@ -127,22 +127,15 @@ theme_override_font_sizes/font_size = 48
 text = "DEMONICUM"
 horizontal_alignment = 1
 
-[node name="DividerContainer" type="HBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
 layout_mode = 2
 alignment = 1
 
-[node name="DividerLeft" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
+[node name="Label" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("4_48cso")
-stretch_mode = 3
-flip_h = true
-
-[node name="DividerRight" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("4_48cso")
-stretch_mode = 3
+theme_override_fonts/font = ExtResource("4_4ty6e")
+text = "v.0.0.1"
+horizontal_alignment = 1
 
 [node name="MenuButtons" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
 layout_mode = 2

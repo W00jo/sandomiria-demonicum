@@ -52,10 +52,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		direction_locked = not direction_locked
-		if direction_locked:
-			print("Kierunek zablokowany: ", AttackDirection.keys()[current_direction - 1])
-		else:
-			print("Kierunek odblokowany")
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and not is_attacking:
@@ -137,7 +133,7 @@ func deal_damage_in_area(range: float, angle_degrees: float, damage: float) -> v
 	
 	var results = space_state.intersect_shape(query)
 	
-	print("Znaleziono ", results.size(), " potencjalnych celów w zasięgu")
+	print("Znaleziono ", results.size(), " celów w zasięgu")
 	
 	var hit_count = 0
 	for result in results:
@@ -152,6 +148,10 @@ func deal_damage_in_area(range: float, angle_degrees: float, damage: float) -> v
 		
 		if angle_to_enemy <= angle_degrees / 2.0:
 			print("Trafiony: ", enemy.name, " za = ", damage)
+			
+			# Zadaj obrażenia wrogowi
+			if enemy.has_method("take_damage"):
+				enemy.take_damage(damage)
 			
 			hit_count += 1
 			enemy_hit.emit()  # Sygnał dla hitmarkera

@@ -9,13 +9,6 @@
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 6
 script = ExtResource("1_t61fv")
-SPEED = null
-JUMP_VELOCITY = null
-ACCELERATION = null
-FRICTION = null
-MOUSE_SENS = null
-MIN_PITCH = null
-MAX_PITCH = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_bcx1r")
