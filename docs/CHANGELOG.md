@@ -20,11 +20,11 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 ### Added
 
 - Stworzenie bazy pod przyszłe dodanie animacji z poprawnymi hit boxami, w skrypcie `dagger.gd`. Skrypt póki co działa tak:
-	- Zaczyna na ataku (↓), czyli `stab` (pl. *pchnięcie*) w kodzie.
-	- Ruch myszką, ale nie byle jaki, tam jest dead zone, lewo/prawo/góra sprawia, że indykator Ci pokaże, jaki atak wykonasz wtedy.
-	- Prawy przycisk myszki blokuje owy indykator, że możesz spamić jeden typ ataku.
-	- Kiedy indykator jest zablokowany, powinien być pomarańczowy
-	- Jakieś czary magicznych liczb z internetu wykrywają czy przeciwnik jest przed graczem i wyprintują odpowiednio przypisane statystyki. Tj. jeśli machasz danym trybem ataku, to czy trafisz, bo masz określony zasięg, a jeśli tak, to ile zadasz obrażeń.
+  - Zaczyna na ataku (↓), czyli `stab` (pl. *pchnięcie*) w kodzie.
+  - Ruch myszką, ale nie byle jaki, tam jest dead zone, lewo/prawo/góra sprawia, że indykator Ci pokaże, jaki atak wykonasz wtedy.
+  - Prawy przycisk myszki blokuje owy indykator, że możesz spamić jeden typ ataku.
+  - Kiedy indykator jest zablokowany, powinien być pomarańczowy
+  - Jakieś czary magicznych liczb z internetu wykrywają czy przeciwnik jest przed graczem i wyprintują odpowiednio przypisane statystyki. Tj. jeśli machasz danym trybem ataku, to czy trafisz, bo masz określony zasięg, a jeśli tak, to ile zadasz obrażeń.
 - Dodanie modelu placeholder modelu `dagger.glb` z internetu. LEKKO przerobionego przeze mnie.
 - ==Zostawiłem komentarze w newralgicznych miejscach oraz podpisałem **TODO:** to co trzeba będzie podmienić/przerobić/jest placeholderem.==
 
@@ -37,15 +37,15 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 ### Changed
 
 - Zaktualizowanie dokumentację w folderze `docs/`
-	- Dodałem treść z **gdd** w pigułce, całość ma z 2-3 strony max. To ma być szybka referencja, a nie lektura nocna.
+  - Dodałem treść z **gdd** w pigułce, całość ma z 2-3 strony max. To ma być szybka referencja, a nie lektura nocna.
 
 ## 2025-12-07
 
 ### Added
 
 - Dodanie "systemu ataku" dla tatara (`tatar.gd`).
-	- ==Pamiętać o podmienieniu w skrypcie zakomentowanych linijek, gdy dodamy animacje i modele 3D.==
-	- Poza printem w terminalu, przy "otrzymaniu obrażeń" gracz widzi wizualny indykator (mryga czerwone na ekranie xd).
+  - ==Pamiętać o podmienieniu w skrypcie zakomentowanych linijek, gdy dodamy animacje i modele 3D.==
+  - Poza printem w terminalu, przy "otrzymaniu obrażeń" gracz widzi wizualny indykator (mryga czerwone na ekranie xd).
 
 ### Fixed - by Kacper
 
@@ -107,11 +107,11 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 ### Added
 
 - Stworzenie bazy pod przyszłe dodanie animacji z poprawnymi hit boxami, w skrypcie `dagger.gd`. Skrypt póki co działa tak:
-	- Zaczyna na ataku (↓), czyli `stab` (pl. *pchnięcie*) w kodzie.
-	- Ruch myszką, ale nie byle jaki, tam jest dead zone, lewo/prawo/góra sprawia, że indykator Ci pokaże, jaki atak wykonasz wtedy.
-	- Prawy przycisk myszki blokuje owy indykator, że możesz spamić jeden typ ataku.
-	- Kiedy indykator jest zablokowany, powinien być pomarańczowy
-	- Jakieś czary magicznych liczb z internetu wykrywają czy przeciwnik jest przed graczem i wyprintują odpowiednio przypisane statystyki. Tj. jeśli machasz danym trybem ataku, to czy trafisz, bo masz określony zasięg, a jeśli tak, to ile zadasz obrażeń.
+  - Zaczyna na ataku (↓), czyli `stab` (pl. *pchnięcie*) w kodzie.
+  - Ruch myszką, ale nie byle jaki, tam jest dead zone, lewo/prawo/góra sprawia, że indykator Ci pokaże, jaki atak wykonasz wtedy.
+  - Prawy przycisk myszki blokuje owy indykator, że możesz spamić jeden typ ataku.
+  - Kiedy indykator jest zablokowany, powinien być pomarańczowy
+  - Jakieś czary magicznych liczb z internetu wykrywają czy przeciwnik jest przed graczem i wyprintują odpowiednio przypisane statystyki. Tj. jeśli machasz danym trybem ataku, to czy trafisz, bo masz określony zasięg, a jeśli tak, to ile zadasz obrażeń.
 - Dodanie modelu placeholder modelu `dagger.glb` z internetu. LEKKO przerobionego przeze mnie.
 - ==Zostawiłem komentarze w newralgicznych miejscach oraz podpisałem **TODO:** to co trzeba będzie podmienić/przerobić/jest placeholderem.==
 
@@ -124,15 +124,15 @@ Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch n
 ### Changed
 
 - Zaktualizowanie dokumentację w folderze `docs/`
-	- Dodałem treść z **gdd** w pigułce, całość ma z 2-3 strony max. To ma być szybka referencja, a nie lektura nocna.
+  - Dodałem treść z **gdd** w pigułce, całość ma z 2-3 strony max. To ma być szybka referencja, a nie lektura nocna.
 
 ## 2025-12-07
 
 ### Added
 
 - Dodanie "systemu ataku" dla tatara (`tatar.gd`).
-	- ==Pamiętać o podmienieniu w skrypcie zakomentowanych linijek, gdy dodamy animacje i modele 3D.==
-	- Poza printem w terminalu, przy "otrzymaniu obrażeń" gracz widzi wizualny indykator (mryga czerwone na ekranie xd).
+  - ==Pamiętać o podmienieniu w skrypcie zakomentowanych linijek, gdy dodamy animacje i modele 3D.==
+  - Poza printem w terminalu, przy "otrzymaniu obrażeń" gracz widzi wizualny indykator (mryga czerwone na ekranie xd).
 
 ### Fixed - by Kacper
 
