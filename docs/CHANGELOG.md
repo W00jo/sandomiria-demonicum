@@ -2,6 +2,11 @@
 
 Dziennik rozwoju projektu (może pod bloga potem), notatki i wewnętrzne patch notes'y :>
 
+## [TODO:]
+
+- Zrobić będzie trzeba state machine, przy animacjach gracza.
+- Zaktualizować GitHub Projects.
+
 ## 2026-01-17
 
 ### Added

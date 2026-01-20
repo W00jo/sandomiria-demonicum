@@ -128,7 +128,6 @@ func deal_damage_in_area(range: float, angle_degrees: float, damage: float) -> v
 	shape.radius = range
 	query.shape = shape
 	query.transform = player.global_transform
-	# To jest do zaznacznia która to jest warstwa, bez inspektora
 	query.collision_mask = 4  # Warstwa wrogów = `layer 3`, jak coś
 	
 	var results = space_state.intersect_shape(query)
