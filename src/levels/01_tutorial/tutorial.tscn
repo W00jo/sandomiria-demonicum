@@ -31,18 +31,18 @@ collision_mask = 5
 size = Vector3(32, 0.001, 32)
 
 [node name="Wall" type="CSGBox3D" parent="StartingZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.3, 28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1.3, 28)
 use_collision = true
 collision_layer = 2
 collision_mask = 5
-size = Vector3(27, 2.5, 1)
+size = Vector3(12, 2.5, 1)
 
 [node name="Wall2" type="CSGBox3D" parent="StartingZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1.3, 28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1.3, 28)
 use_collision = true
 collision_layer = 2
 collision_mask = 5
-size = Vector3(27, 2.5, 1)
+size = Vector3(12, 2.5, 1)
 
 [node name="Gate" type="CSGBox3D" parent="StartingZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 28.13955)
@@ -52,6 +52,14 @@ collision_mask = 5
 size = Vector3(10, 2, 0.1)
 
 [node name="GorgeEntrance" type="Node3D" parent="."]
+
+[node name="Ground2" type="CSGBox3D" parent="GorgeEntrance"]
+transform = Transform3D(1, 0, 0, 0, 0.96592593, 0.25881907, 0, -0.25881907, 0.96592593, 0, -1, -28)
+material_override = SubResource("StandardMaterial3D_tlmpr")
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(8, 0.001, 8)
 
 [node name="Player" parent="." instance=ExtResource("2_tlmpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
