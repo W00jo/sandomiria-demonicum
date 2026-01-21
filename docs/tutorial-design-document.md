@@ -68,7 +68,7 @@ style F fill:#ff6666,stroke:#333,stroke-width:2px,color:black
 
 [^4]: Kullman Alexander, *Level Design. In Pursuit of Better Levels*, s. 46. https://docs.google.com/document/d/1fAlf2MwEFTwePwzbP3try1H0aYa9kpVBHPBkyIq-caY/edit?tab=t.0 (dostęp: 18.01.2026).
 
-[^5]: Zabieg typowy dla gier Valve (np. widok Cytadeli na początku Half-Life 2 jest "obietnicą" finałowej konfrontacji). Zob. *Half-Life 2*, prod. Valve Corporation, 2004, Komentarz Deweloperski (Developer Commentary), rozdz. 1: Point Insertion (komentarz Eric Kirchmer - The Citadel).
+[^5]: Zabieg typowy dla gier Valve (np. widok Cytadeli na początku Half-Life 2 jest "obietnicą" finałowej konfrontacji). Zob. *Half-Life 2*, prod. Valve Corporation, 2004, Komentarz Deweloperski (Developer Commentary), rozdz. 1: Point Insertion (komentarz Eric Kirchmer - The Citadel), https://youtu.be/iZMX1nMdGlE?t=834&si=rVPQyAmyqBel8n_g (dostęp: 18.01.2026).
 
 [^6]: Jest to *Homage* do oryginalnego *Diablo* (1996). Tekst ("*The sanctity of this place has been fouled*") wypowiada każda postać po wejściu do Katedry. Craddock D.L., *Stay Awhile and Listen: Book I*, Canton 2013. W *Diablo II* mamy do czynienia z podobnym zabiegiem, na początku gry, w "Siedlisku Zła" (*Den of Evil*), natomiast w [Diablo III gracz może napotkać się na easter egg z tym związany](https://allthetropes.org/wiki/Diablo_III#:~:text=Upon%20entering%20one%20of%20the%20random%20micro%2Ddungeons%20in%20Act%20IV%2C%20Kormac%20exclaims%20%22The%20Sanctity%20of%20this%20place%20has%20been%20fouled!%22).
 

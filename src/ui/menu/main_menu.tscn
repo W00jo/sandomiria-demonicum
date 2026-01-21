@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dabf2vqq6byu7"]
+[gd_scene load_steps=15 format=3 uid="uid://dabf2vqq6byu7"]
 
 [ext_resource type="Script" uid="uid://nei5vtgi1n8a" path="res://src/ui/menu/main_menu.gd" id="1_5oo8x"]
+[ext_resource type="Texture2D" uid="uid://c3syrcyv5uyia" path="res://assets/sprites/interface/borders/default/Panel/panel-022.png" id="2_52atu"]
+[ext_resource type="Texture2D" uid="uid://uv800otjmapi" path="res://assets/sprites/interface/borders/default/Border/panel-border-009.png" id="3_py4bp"]
 [ext_resource type="Texture2D" uid="uid://ckmm1dvqlfxy2" path="res://assets/sprites/interface/borders/default/Divider Fade/divider-fade-005.png" id="4_48cso"]
 [ext_resource type="Texture2D" uid="uid://d3q07pw1jc23u" path="res://assets/sprites/interface/borders/default/Transparent center/panel-transparent-center-028.png" id="4_button_border"]
 [ext_resource type="FontFile" uid="uid://iw5lyygtld5d" path="res://assets/fonts/alegreya_sans_sc_regular.ttf" id="5_4ty6e"]
@@ -9,12 +11,19 @@
 [ext_resource type="FontFile" uid="uid://jjd650a8cvxa" path="res://assets/fonts/ebgaramond_regular.ttf" id="6_garamond"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_panel"]
-texture = ExtResource("5_panel")
+texture = ExtResource("2_52atu")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 modulate_color = Color(0.16078432, 0.11764706, 0.08627451, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52atu"]
+texture = ExtResource("3_py4bp")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_normal"]
 texture = ExtResource("4_button_border")
@@ -81,7 +90,7 @@ theme_override_constants/separation = 20
 [node name="LeftPage" type="VBoxContainer" parent="BookContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 5
+theme_override_constants/separation = -15
 
 [node name="TopMargin" type="Control" parent="BookContainer/LeftPage"]
 custom_minimum_size = Vector2(0, 60)
@@ -96,12 +105,16 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_menu_panel")
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="TitleSection" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+[node name="Panel" type="PanelContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_52atu")
+
+[node name="TitleSection" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/Panel"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 5
 
-[node name="Title" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
+[node name="Title" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/Panel/TitleSection"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.1, 0.1, 1)
 theme_override_fonts/font = ExtResource("5_pirata")
@@ -109,7 +122,7 @@ theme_override_font_sizes/font_size = 64
 text = "SANDOMIRIA"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
+[node name="Subtitle" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/Panel/TitleSection"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.65, 0.12, 0.12, 1)
 theme_override_fonts/font = ExtResource("5_pirata")

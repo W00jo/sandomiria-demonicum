@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6rgy8f4q74j8"]
+
+[ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="1_rnyxf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub0e1"]
+albedo_texture = ExtResource("1_rnyxf")
+
+[node name="Tutorial" type="Node"]
+
+[node name="OpeningBackground" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="OpeningDialogue" type="RichTextLabel" parent="OpeningBackground"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "OPENING_DIALOGUE"
+
+[node name="StartingZone" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="StartingZone"]
+
+[node name="Ground" type="CSGBox3D" parent="StartingZone/NavigationRegion3D"]
+material_override = SubResource("StandardMaterial3D_ub0e1")
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(48, 0.001, 64)
+
+[node name="Wall" type="CSGBox3D" parent="StartingZone/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2.3, 28)
+size = Vector3(27, 5, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="StartingZone/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 2.3, 28)
+size = Vector3(27, 5, 1)
+
+[node name="Gate" type="CSGBox3D" parent="StartingZone/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 28.13955)
+size = Vector3(10, 5, 0.1)
