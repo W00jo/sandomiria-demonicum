@@ -129,13 +129,6 @@ size = Vector3(20, 0.01, 20)
 material = SubResource("StandardMaterial3D_w2p53")
 
 [node name="Player" parent="." instance=ExtResource("1_8a5hx")]
-SPEED = 5.0
-JUMP_VELOCITY = 4.5
-ACCELERATION = 8.0
-FRICTION = 10.0
-MOUSE_SENS = 0.3
-MIN_PITCH = -90.0
-MAX_PITCH = 90.0
 
 [node name="Dummy" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.137945, -0.655035, -5.906251)
