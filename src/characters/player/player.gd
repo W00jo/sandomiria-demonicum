@@ -102,6 +102,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _got_healed(amount):
+	current_health +=amount
+	print("Uleczylam cie! Aktualne hp: ", current_health)
+	
+	
+
 func _got_hit():
 	take_damage(10.0)  # Domyślne obrażenia od wroga
 

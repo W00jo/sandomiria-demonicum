@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwlmc44iv1d01"]
+
+[ext_resource type="Script" uid="uid://o6rtqv80t10g" path="res://src/objects/potions/health_potion.gd" id="1_8dq0o"]
+[ext_resource type="AudioStream" uid="uid://bl0mscijsylqw" path="res://assets/audio/gulp-37759.mp3" id="2_621r7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dq0o"]
+albedo_color = Color(0.7094018, 0.70344007, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1p2f5"]
+material = SubResource("StandardMaterial3D_8dq0o")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pah6n"]
+
+[node name="HealthPotion" type="Area3D"]
+script = ExtResource("1_8dq0o")
+
+[node name="PotionShape" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_1p2f5")
+
+[node name="CollisionPotion" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_pah6n")
+
+[node name="GulpSfx" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_621r7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
