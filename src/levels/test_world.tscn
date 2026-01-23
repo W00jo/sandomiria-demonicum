@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://duobiyv8ws4fs"]
+[gd_scene load_steps=16 format=4 uid="uid://duobiyv8ws4fs"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_8a5hx"]
 [ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="2_0huwb"]
 [ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar.tscn" id="3_0huwb"]
+[ext_resource type="PackedScene" uid="uid://bwlmc44iv1d01" path="res://src/objects/potions/health_potion.tscn" id="4_0nfa4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7k8c1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -147,3 +148,11 @@ shape = SubResource("CapsuleShape3D_7k8c1")
 [node name="Tatar" parent="." instance=ExtResource("3_0huwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.8202868)
 player_path = NodePath("../Player")
+
+[node name="HealthPotion" parent="." instance=ExtResource("4_0nfa4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2218475, -1.1949995, -0.84898424)
+healing_amount = 30
+
+[node name="HealthPotion2" parent="." instance=ExtResource("4_0nfa4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7330513, -1.1949999, 1.0483855)
+healing_amount = -50
