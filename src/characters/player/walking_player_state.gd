@@ -2,6 +2,9 @@ class_name WalkingPlayerState
 
 extends State
 
+func _enter() -> void:
+	print("ide")
+	
 func _physics_update(_delta: float) -> void:
 	#Grawitacja
 	if not owner.is_on_floor():
