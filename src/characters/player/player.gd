@@ -34,8 +34,13 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var MIN_PITCH: float = -90.0
 @export var MAX_PITCH: float = 90.0
 
+
+#Stan playera - czy znajduje sie na drabinie
+var is_on_ladder: bool = false
+
 ## Blokuje mysz, aby zniknęła z ekranu ("capture") oraz nie pozwala kursorowi wylatywać poza ekran gry.
 func _ready() -> void:
+	Global.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_health = max_health
 
@@ -54,53 +59,54 @@ func _input(event: InputEvent) -> void:
 			camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, MIN_PITCH, MAX_PITCH)
 
 ## Funkcja odpowiadająca za ruch i fizykę.
-func _physics_process(delta: float) -> void:
-	# Grawitacja
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-# Nie wiem czy w ogóle skok będzie nam potrzebny(?).
-	# Skok, pobranie inputu gracza (spacja).
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	## Pobranie inputu gracza (WSAD).
-	var input_direction: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	
-	## Obliczenie kierunku ruchu (względem obrotu postaci).
-	var move_direction: Vector3 = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
-	
-	# W ogóle ciekawostka, domyślny ruch w Godocie obliczany jest w kierunku -Z.
-	
-		# Zamiast operować na velocity.x i velocity.z osobno, "rzutujemy" je na płaszczyznę 2D.
-	# Dzięki temu znamy dokładny kąt poruszania się gracza.
-	var current_velocity_plane := Vector2(velocity.x, velocity.z)
-	
-	# Cel, jaki chcemy osiągnąć (kierunek * prędkość maksymalna).
-	var target_velocity_plane := Vector2(move_direction.x, move_direction.z) * SPEED
-	
-	# Poruszanie się i hamowanie.
-	if move_direction:
-		# Mały delay w osiągnięciu pełnej prędkości.
-		velocity.x = move_toward(velocity.x, move_direction.x * SPEED, ACCELERATION * delta)
-		velocity.z = move_toward(velocity.z, move_direction.z * SPEED, ACCELERATION * delta)
-		# Jeśli gracz wciska klawisze:
-		# Przesuwamy W CAŁOŚCI wektor prędkości w stronę celu.
-		# To eliminuje drift, bo wektor rośnie prosto w stronę celu, a nie schodkami po X i Z.
-		current_velocity_plane = current_velocity_plane.move_toward(target_velocity_plane, ACCELERATION * delta)
-	else:
-		# Po zaprzestaniu wciskania inputu, gracz się jeszcze trochę "ślizga" przed wyhamowaniem do zera.
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
-		velocity.z = move_toward(velocity.z, 0, FRICTION * delta)
-		# Jeśli gracz puścił klawisze:
-		# Wygaszamy prędkość do zera (hamowanie).
-		current_velocity_plane = current_velocity_plane.move_toward(Vector2.ZERO, FRICTION * delta)
-	
-	# Przypisujemy obliczoną prędkość z powrotem do zmiennych silnika (velocity).
-	velocity.x = current_velocity_plane.x
-	velocity.z = current_velocity_plane.y
-
-	move_and_slide()
+#func _physics_process(delta: float) -> void:
+	#
+	## Grawitacja
+	#if not is_on_floor():
+		#velocity.y -= gravity * delta
+#
+## Nie wiem czy w ogóle skok będzie nam potrzebny(?).
+	## Skok, pobranie inputu gracza (spacja).
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
+	#
+	### Pobranie inputu gracza (WSAD).
+	#var input_direction: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	#
+	### Obliczenie kierunku ruchu (względem obrotu postaci).
+	#var move_direction: Vector3 = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
+	#
+	## W ogóle ciekawostka, domyślny ruch w Godocie obliczany jest w kierunku -Z.
+	#
+		## Zamiast operować na velocity.x i velocity.z osobno, "rzutujemy" je na płaszczyznę 2D.
+	## Dzięki temu znamy dokładny kąt poruszania się gracza.
+	#var current_velocity_plane := Vector2(velocity.x, velocity.z)
+	#
+	## Cel, jaki chcemy osiągnąć (kierunek * prędkość maksymalna).
+	#var target_velocity_plane := Vector2(move_direction.x, move_direction.z) * SPEED
+	#
+	## Poruszanie się i hamowanie.
+	#if move_direction:
+		## Mały delay w osiągnięciu pełnej prędkości.
+		#velocity.x = move_toward(velocity.x, move_direction.x * SPEED, ACCELERATION * delta)
+		#velocity.z = move_toward(velocity.z, move_direction.z * SPEED, ACCELERATION * delta)
+		## Jeśli gracz wciska klawisze:
+		## Przesuwamy W CAŁOŚCI wektor prędkości w stronę celu.
+		## To eliminuje drift, bo wektor rośnie prosto w stronę celu, a nie schodkami po X i Z.
+		#current_velocity_plane = current_velocity_plane.move_toward(target_velocity_plane, ACCELERATION * delta)
+	#else:
+		## Po zaprzestaniu wciskania inputu, gracz się jeszcze trochę "ślizga" przed wyhamowaniem do zera.
+		#velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+		#velocity.z = move_toward(velocity.z, 0, FRICTION * delta)
+		## Jeśli gracz puścił klawisze:
+		## Wygaszamy prędkość do zera (hamowanie).
+		#current_velocity_plane = current_velocity_plane.move_toward(Vector2.ZERO, FRICTION * delta)
+	#
+	## Przypisujemy obliczoną prędkość z powrotem do zmiennych silnika (velocity).
+	#velocity.x = current_velocity_plane.x
+	#velocity.z = current_velocity_plane.y
+#
+	#move_and_slide()
 
 func _got_healed(amount):
 	current_health +=amount

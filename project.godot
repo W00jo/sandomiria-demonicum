@@ -16,6 +16,10 @@ run/main_scene="uid://duobiyv8ws4fs"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://global/global.gd"
+
 [dotnet]
 
 project/assembly_name="Projekt Tatar"

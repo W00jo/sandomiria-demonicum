@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bljq3vkud567q"]
+[gd_scene load_steps=9 format=3 uid="uid://bljq3vkud567q"]
 
 [ext_resource type="Script" uid="uid://di0sqvga2pnrb" path="res://src/characters/player/player.gd" id="1_t61fv"]
 [ext_resource type="PackedScene" uid="uid://bb85lq2cqeq6m" path="res://src/ui/hud/base_hud.tscn" id="3_686vu"]
 [ext_resource type="PackedScene" uid="uid://ddn28mp73ym0f" path="res://src/weapons/dagger/dagger.tscn" id="4_03ylq"]
+[ext_resource type="Script" uid="uid://comy6qcjgsg2m" path="res://global/state_machine.gd" id="4_hhnms"]
+[ext_resource type="Script" uid="uid://7lf0pprh12k4" path="res://src/characters/player/idle_player_state.gd" id="5_qf5tv"]
+[ext_resource type="Script" uid="uid://coxm8bxib8gl0" path="res://src/characters/player/walking_player_state.gd" id="6_hhaut"]
+[ext_resource type="Script" uid="uid://dgcssu5claejq" path="res://src/characters/player/ladder_player_state.gd" id="7_hhaut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcx1r"]
 
@@ -22,6 +26,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 transform = Transform3D(-2.7221057e-09, -7.791492e-10, 0.05, -0.041180592, 0.028357698, -1.8000608e-09, -0.028357698, -0.041180592, -2.1855695e-09, 0.3675722, -0.3978843, -0.13277486)
 
 [node name="BaseHud" parent="." instance=ExtResource("3_686vu")]
+
+[node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("CURRENT_STATE")]
+script = ExtResource("4_hhnms")
+CURRENT_STATE = NodePath("IdlePlayerState")
+
+[node name="IdlePlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("5_qf5tv")
+
+[node name="WalkingPlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("6_hhaut")
+
+[node name="LadderPlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("7_hhaut")
 
 [connection signal="player_hit" from="." to="BaseHud" method="_on_player_player_hit"]
 [connection signal="enemy_hit" from="Head/Camera3D/Dagger" to="BaseHud" method="_on_dagger_enemy_hit"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://duobiyv8ws4fs"]
+[gd_scene load_steps=17 format=4 uid="uid://duobiyv8ws4fs"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_8a5hx"]
 [ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="2_0huwb"]
 [ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar.tscn" id="3_0huwb"]
 [ext_resource type="PackedScene" uid="uid://bwlmc44iv1d01" path="res://src/objects/potions/health_potion.tscn" id="4_0nfa4"]
+[ext_resource type="PackedScene" uid="uid://lah3a1arll6j" path="res://src/objects/other/ladder.tscn" id="5_6w5xy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7k8c1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -156,3 +157,6 @@ healing_amount = 30
 [node name="HealthPotion2" parent="." instance=ExtResource("4_0nfa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7330513, -1.1949999, 1.0483855)
 healing_amount = -50
+
+[node name="Ladder" parent="." instance=ExtResource("5_6w5xy")]
+transform = Transform3D(2.9641972, 0, 0, 0, 3.086731, 0, 0, 0, 1, -6.2176843, 0.048365474, -8.301056)
