@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://8xjnta7u4oh"]
+
+[ext_resource type="Script" uid="uid://chic63shd8v6g" path="res://src/shared/arrow_trap/trap.gd" id="1_wovjy"]
+[ext_resource type="PackedScene" uid="uid://csukfcep87u4i" path="res://src/shared/arrow_trap/arrow.tscn" id="2_uxgec"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vqa2g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_63tk1"]
+
+[node name="Trap" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_wovjy")
+arrow_scene = ExtResource("2_uxgec")
+
+[node name="TrapMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_vqa2g")
+
+[node name="CollisionTrap" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_63tk1")
+
+[node name="Barell" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.38312617)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
