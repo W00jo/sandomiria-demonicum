@@ -9,5 +9,5 @@ extends StaticBody3D
 
 func _on_timer_timeout() -> void:
 	var new_arrow = arrow_scene.instantiate()
-	add_child(new_arrow)
+	get_tree().current_scene.add_child(new_arrow)
 	new_arrow.global_transform = spawn_point.global_transform
