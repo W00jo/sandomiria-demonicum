@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8xjnta7u4oh"]
 
-[ext_resource type="Script" uid="uid://chic63shd8v6g" path="res://src/shared/arrow_trap/trap.gd" id="1_wovjy"]
-[ext_resource type="PackedScene" uid="uid://csukfcep87u4i" path="res://src/shared/arrow_trap/arrow.tscn" id="2_uxgec"]
+[ext_resource type="Script" uid="uid://chic63shd8v6g" path="res://src/shared/traps/arrow_trap/trap.gd" id="1_wovjy"]
+[ext_resource type="PackedScene" uid="uid://csukfcep87u4i" path="res://src/shared/traps/arrow_trap/arrow.tscn" id="2_uxgec"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vqa2g"]
 

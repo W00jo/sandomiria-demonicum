@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csukfcep87u4i"]
 
-[ext_resource type="Script" uid="uid://bkgampslekhig" path="res://src/shared/arrow_trap/arrow_trap.gd" id="1_t5jp2"]
+[ext_resource type="Script" uid="uid://bkgampslekhig" path="res://src/shared/traps/arrow_trap/arrow_trap.gd" id="1_t5jp2"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_lwvtm"]
 

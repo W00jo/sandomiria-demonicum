@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://0ai35adpvimf"]
+
+[ext_resource type="Script" uid="uid://dhfxokera7kp8" path="res://src/shared/traps/axe_trap/axe_trap.gd" id="1_yl3hg"]
+[ext_resource type="Script" uid="uid://bcwhxw0x7p5q8" path="res://src/shared/traps/axe_trap/blade_area.gd" id="2_o3lyu"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3id34"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ay587"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yl3hg"]
+size = Vector3(2.1522903, 1.2182922, 0.47558594)
+
+[sub_resource type="Animation" id="Animation_o3lyu"]
+resource_name = "swing"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.0471976), Vector3(0, 0, 1.0471976), Vector3(0, 0, -1.0471976)]
+}
+
+[sub_resource type="Animation" id="Animation_3id34"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.0471976)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gily3"]
+_data = {
+&"RESET": SubResource("Animation_3id34"),
+&"swing": SubResource("Animation_o3lyu")
+}
+
+[node name="AxeTrap" type="Node3D"]
+script = ExtResource("1_yl3hg")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="AxeMesh" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(0.23267913, 0, 0, 0, 1.8221729, 0, 0, 0, 0.41063058, 0, -1.7999016, 0)
+mesh = SubResource("CylinderMesh_3id34")
+
+[node name="BladeInstance" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1.9582225, 0, 0, 0, 1.0002618, 0, 0, 0, 0.38121486, 0, -4.0793405, 0)
+mesh = SubResource("BoxMesh_ay587")
+skeleton = NodePath("../AxeMesh")
+
+[node name="BladeArea" type="Area3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10307503, -4.20399, 0)
+script = ExtResource("2_o3lyu")
+
+[node name="BladeCollision" type="CollisionShape3D" parent="Pivot/BladeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.120471954, 0.15797544, 0.00893867)
+shape = SubResource("BoxShape3D_yl3hg")
+
+[node name="AxeSwing" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gily3")
+}
+autoplay = "swing"
+
+[connection signal="body_entered" from="Pivot/BladeArea" to="." method="_on_blade_area_body_entered"]

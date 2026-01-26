@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://gefhtih4wx1y"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_30tvn"]
-[ext_resource type="PackedScene" uid="uid://8xjnta7u4oh" path="res://src/shared/arrow_trap/trap.tscn" id="2_xpxfb"]
+[ext_resource type="PackedScene" uid="uid://0ai35adpvimf" path="res://src/shared/traps/axe_trap/axe_trap.tscn" id="2_xpxfb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_30tvn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -213,5 +213,11 @@ size = Vector3(3.0916328, 0.001, 3.1005669)
 transform = Transform3D(-0.02620673, -0.00207091, 0.53585094, -0.00850423, 1.1169903, 0.003900953, -0.526464, -0.018695194, -0.025819983, -1.9488404, 2.3542957, -8.670128)
 size = Vector3(3.0916328, 0.001, 7.043208)
 
-[node name="Trap" parent="." instance=ExtResource("2_xpxfb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3162627, 2.5112262, -2.5331256)
+[node name="AxeTrap" parent="." instance=ExtResource("2_xpxfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.288928, 4.6578274, -3.7881746)
+
+[node name="AxeTrap2" parent="." instance=ExtResource("2_xpxfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.288928, 4.6578274, -2.1023874)
+
+[node name="AxeTrap3" parent="." instance=ExtResource("2_xpxfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.387135, 4.94516, -0.4283746)
