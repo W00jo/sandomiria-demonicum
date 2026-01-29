@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://gefhtih4wx1y"]
+[gd_scene load_steps=8 format=3 uid="uid://gefhtih4wx1y"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_30tvn"]
 [ext_resource type="PackedScene" uid="uid://0ai35adpvimf" path="res://src/shared/traps/axe_trap/axe_trap.tscn" id="2_xpxfb"]
 [ext_resource type="PackedScene" uid="uid://8xjnta7u4oh" path="res://src/shared/traps/arrow_trap/trap.tscn" id="3_ig866"]
+[ext_resource type="PackedScene" uid="uid://cakaokgbb05xc" path="res://src/levels/02_tutorial/tutorial2finished.glb" id="4_wmdah"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_30tvn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,13 +28,10 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Axes2" type="Node3D" parent="."]
+visible = false
 
 [node name="AxeTrap" parent="Axes2" instance=ExtResource("2_xpxfb")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 9.67827, 13.835038, 25.7509)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Axes2/AxeTrap"]
-transform = Transform3D(9.999996, 0, -3.126388e-13, 0, 10, 0, 3.126388e-13, 0, 9.999996, 43.000336, -0.34909534, -26.8018)
-size = Vector3(1, 0.001, 1)
 
 [node name="AxeTrap2" parent="Axes2" instance=ExtResource("2_xpxfb")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 5.7833548, 13.835038, 25.7509)
@@ -46,12 +44,15 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 
 [node name="AxeTrap" parent="." instance=ExtResource("2_xpxfb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 39.44139, 7.5241513, -0.31404233)
+visible = false
 
 [node name="Trap" parent="." instance=ExtResource("3_ig866")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.363297, 10.740402, -13.6633215)
+visible = false
 
 [node name="ArrowTraps" type="Node3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5551567, 12.642239, 19.618084)
+visible = false
 
 [node name="Trap2" parent="ArrowTraps" instance=ExtResource("3_ig866")]
 
@@ -63,9 +64,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7917795, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_30tvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2525644, 2.2945573, -0.27261162)
+visible = false
 
 [node name="Blockout" type="Node3D" parent="."]
 transform = Transform3D(1.8639494, 0, 0, 0, 0.8951317, 0, 0, 0, 1.896995, -4.9958553, 11.480338, -0.15695265)
+visible = false
 
 [node name="FirstSection" type="CSGCombiner3D" parent="Blockout"]
 transform = Transform3D(1.4633299, 0, 0, 0, 6.112223, 0, 0, 0, 2.233978, 2.680253, -12.825308, 0.08273753)
@@ -108,18 +111,6 @@ size = Vector3(0.11645508, 1, 6.4216156)
 transform = Transform3D(-2.4142919e-08, 0, -0.9934296, 0, 1, 0, 0.5523256, 0, -4.3424187e-08, 4.790275, 0.65032035, -1.9937679)
 use_collision = true
 size = Vector3(0.11645508, 0.8076172, 6.3265305)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Blockout/FirstSection"]
-transform = Transform3D(-5.8478776e-08, 0.8951317, 0, -1.3378383, -3.9127453e-08, 0, 0, 0, 2.3584301, 1.6344657, 0.7294626, -0.017280964)
-operation = 2
-radius = 0.20214844
-height = 0.46374512
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Blockout/FirstSection"]
-transform = Transform3D(-5.8478776e-08, 0.8951317, 0, -1.3378383, -3.9127453e-08, 0, 0, 0, 2.3584301, 7.8609924, 0.7294626, -0.017280964)
-operation = 2
-radius = 0.20214844
-height = 0.46374512
 
 [node name="FirstSecionDeco" type="CSGCombiner3D" parent="Blockout"]
 transform = Transform3D(0.53649527, 0, 0, 0, 1.1171542, 0, 0, 0, 0.5271497, 7.623333, -8.878996, 2.952264)
@@ -226,12 +217,6 @@ size = Vector3(21.617996, 0.001, 3.229454)
 transform = Transform3D(-0.026206734, -0.00207091, 0.5358509, 0.00045527774, 1.1171454, 0.004339712, -0.52652025, 0.00031460126, -0.025749195, 0.30874848, -0.010956764, -0.3568393)
 size = Vector3(8.162418, 0.001, 7.853628)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
-operation = 2
-radius = 0.7416992
-height = 0.46374512
-
 [node name="CSGBox3D12" type="CSGBox3D" parent="Blockout/ThirdSection"]
 transform = Transform3D(-0.02620673, -0.00207091, 0.53585094, 0.22877611, 1.0064651, 0.015078414, -0.4742272, 0.48481485, -0.021319287, 1.1358482, 0.41944408, -3.592133)
 size = Vector3(4.451008, 0.001, 3.229454)
@@ -251,3 +236,15 @@ size = Vector3(3.0916328, 0.001, 3.1005669)
 [node name="CSGBox3D16" type="CSGBox3D" parent="Blockout/ThirdSection"]
 transform = Transform3D(-0.02620673, -0.00207091, 0.53585094, -0.00850423, 1.1169903, 0.003900953, -0.526464, -0.018695194, -0.025819983, -1.9488404, 2.3542957, -8.670128)
 size = Vector3(3.0916328, 0.001, 7.043208)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Blockout/ThirdSection"]
+transform = Transform3D(-2.3983205e-07, 1.9986004e-09, 5.36495, -4.551883e-09, 11.171537, -4.1617216e-09, -5.2714925, 2.4485937e-08, -2.1994386e-07, -6.5064383, 2.24057, -9.010289)
+size = Vector3(1, 0.001, 1)
+
+[node name="tutorial2finished" parent="." instance=ExtResource("4_wmdah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4861698, 12.601061, 19.99394)
+
+[node name="Deco" type="Node3D" parent="tutorial2finished"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.536743e-07, 0)
+
+[editable path="tutorial2finished"]
