@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df36nwircr7s7"
-path.s3tc="res://.godot/imported/tutorial2finished_Rock02_1K_Roughness_10.png-49fbd59ae99e4eb2d9d1fb2d921b8b0b.s3tc.ctex"
+uid="uid://uv5v5db1mdhi"
+path.s3tc="res://.godot/imported/tutorialpolished2_columnandarch.jpg-536ccfe7e00db43ea28f6139e94c2f27.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "498e23c82ca78a4bcd7ba88e5243b6fc"
+"md5": "d08b8464f36883254a471b841b2ec58c"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_Rock02_1K_Roughness_10.png"
-dest_files=["res://.godot/imported/tutorial2finished_Rock02_1K_Roughness_10.png-49fbd59ae99e4eb2d9d1fb2d921b8b0b.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_columnandarch.jpg"
+dest_files=["res://.godot/imported/tutorialpolished2_columnandarch.jpg-536ccfe7e00db43ea28f6139e94c2f27.s3tc.ctex"]
 
 [params]
 

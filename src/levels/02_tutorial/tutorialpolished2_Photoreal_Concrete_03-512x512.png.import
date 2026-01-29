@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cymo0q2gu4fg7"
-path.s3tc="res://.godot/imported/tutorial2finished_barrel_upscayl_4x_upscayl-standard-4x.png-6e71cf74c286708621b57663a05910f7.s3tc.ctex"
+uid="uid://dysa6gtpoeakx"
+path.s3tc="res://.godot/imported/tutorialpolished2_Photoreal_Concrete_03-512x512.png-afa456dd49b3182d9c7b13014fe9a574.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cfc458347f4feb13a37b081dbcba63b7"
+"md5": "eae78f4201d67f5afe55972a0c760f54"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_barrel_upscayl_4x_upscayl-standard-4x.png"
-dest_files=["res://.godot/imported/tutorial2finished_barrel_upscayl_4x_upscayl-standard-4x.png-6e71cf74c286708621b57663a05910f7.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_Photoreal_Concrete_03-512x512.png"
+dest_files=["res://.godot/imported/tutorialpolished2_Photoreal_Concrete_03-512x512.png-afa456dd49b3182d9c7b13014fe9a574.s3tc.ctex"]
 
 [params]
 

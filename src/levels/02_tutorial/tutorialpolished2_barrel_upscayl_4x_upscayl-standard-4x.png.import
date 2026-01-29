@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d8erhrvkspb0"
-path.s3tc="res://.godot/imported/tutorial2finished_planks_upscayl_4x_upscayl-standard-4x.png-c0907e2ea683cb31ead78c0ffd079936.s3tc.ctex"
+uid="uid://ct274bwd60bxn"
+path.s3tc="res://.godot/imported/tutorialpolished2_barrel_upscayl_4x_upscayl-standard-4x.png-6b78bfe7e16938c92ce88d4d9def1bc6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cd37fc15ad22cb16635b85a5f0b233fa"
+"md5": "cfc458347f4feb13a37b081dbcba63b7"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_planks_upscayl_4x_upscayl-standard-4x.png"
-dest_files=["res://.godot/imported/tutorial2finished_planks_upscayl_4x_upscayl-standard-4x.png-c0907e2ea683cb31ead78c0ffd079936.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_barrel_upscayl_4x_upscayl-standard-4x.png"
+dest_files=["res://.godot/imported/tutorialpolished2_barrel_upscayl_4x_upscayl-standard-4x.png-6b78bfe7e16938c92ce88d4d9def1bc6.s3tc.ctex"]
 
 [params]
 

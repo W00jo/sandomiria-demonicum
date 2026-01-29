@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx0n8s17pwhag"
-path.s3tc="res://.godot/imported/tutorial2finished_Tileable8c.png-111aecb16f88ff99e9adf4aa5ea36f0b.s3tc.ctex"
+uid="uid://cnc1xecrc8iwh"
+path.s3tc="res://.godot/imported/tutorialpolished2_Photoreal_Metal_01-512x512.png-acd05c768d322b0c55d1df48afc438a1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "78fa961245fe92b849ae172e23fe2148"
+"md5": "3a66481ccfd096ac2eb19b97fd80644f"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_Tileable8c.png"
-dest_files=["res://.godot/imported/tutorial2finished_Tileable8c.png-111aecb16f88ff99e9adf4aa5ea36f0b.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_Photoreal_Metal_01-512x512.png"
+dest_files=["res://.godot/imported/tutorialpolished2_Photoreal_Metal_01-512x512.png-acd05c768d322b0c55d1df48afc438a1.s3tc.ctex"]
 
 [params]
 

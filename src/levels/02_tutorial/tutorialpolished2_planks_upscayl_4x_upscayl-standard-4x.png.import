@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm7bn1ci5sp61"
-path.s3tc="res://.godot/imported/tutorial2finished_Tileable9k.png-d37cfd2220763f6ac1248157840521fb.s3tc.ctex"
+uid="uid://djiqm03riec03"
+path.s3tc="res://.godot/imported/tutorialpolished2_planks_upscayl_4x_upscayl-standard-4x.png-760dddd173e2302b436efa71c3721b1f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2f657886300cb9a6c1ac04c97e408711"
+"md5": "cd37fc15ad22cb16635b85a5f0b233fa"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_Tileable9k.png"
-dest_files=["res://.godot/imported/tutorial2finished_Tileable9k.png-d37cfd2220763f6ac1248157840521fb.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_planks_upscayl_4x_upscayl-standard-4x.png"
+dest_files=["res://.godot/imported/tutorialpolished2_planks_upscayl_4x_upscayl-standard-4x.png-760dddd173e2302b436efa71c3721b1f.s3tc.ctex"]
 
 [params]
 

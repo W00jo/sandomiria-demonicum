@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cakaokgbb05xc"
-path="res://.godot/imported/tutorial2finished.glb-abff9ac8fbd1f799513f1fc63c6732e0.scn"
+uid="uid://cyoqsxvjvtjob"
+path="res://.godot/imported/tutorialpolished2.glb-33f8e83dd6784bff85b5ef3cb94296ee.scn"
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished.glb"
-dest_files=["res://.godot/imported/tutorial2finished.glb-abff9ac8fbd1f799513f1fc63c6732e0.scn"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2.glb"
+dest_files=["res://.godot/imported/tutorialpolished2.glb-33f8e83dd6784bff85b5ef3cb94296ee.scn"]
 
 [params]
 

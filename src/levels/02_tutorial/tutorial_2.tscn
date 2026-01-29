@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://gefhtih4wx1y"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_30tvn"]
+[ext_resource type="PackedScene" uid="uid://cyoqsxvjvtjob" path="res://src/levels/02_tutorial/tutorialpolished2.glb" id="2_5lyua"]
 [ext_resource type="PackedScene" uid="uid://0ai35adpvimf" path="res://src/shared/traps/axe_trap/axe_trap.tscn" id="2_xpxfb"]
-[ext_resource type="PackedScene" uid="uid://8xjnta7u4oh" path="res://src/shared/traps/arrow_trap/trap.tscn" id="3_ig866"]
-[ext_resource type="PackedScene" uid="uid://cakaokgbb05xc" path="res://src/levels/02_tutorial/tutorial2finished.glb" id="4_wmdah"]
+[ext_resource type="PackedScene" uid="uid://lah3a1arll6j" path="res://src/objects/other/ladder.tscn" id="3_wmdah"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_30tvn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,224 +27,3796 @@ environment = SubResource("Environment_ig866")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Axes2" type="Node3D" parent="."]
-visible = false
-
-[node name="AxeTrap" parent="Axes2" instance=ExtResource("2_xpxfb")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 9.67827, 13.835038, 25.7509)
-
-[node name="AxeTrap2" parent="Axes2" instance=ExtResource("2_xpxfb")]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 5.7833548, 13.835038, 25.7509)
-
-[node name="AxeTrap3" parent="Axes2" instance=ExtResource("2_xpxfb")]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 12.831154, 13.835038, 25.7509)
-
-[node name="AxeTrap4" parent="Axes2" instance=ExtResource("2_xpxfb")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 16.054531, 13.835038, 25.7509)
-
-[node name="AxeTrap" parent="." instance=ExtResource("2_xpxfb")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 39.44139, 7.5241513, -0.31404233)
-visible = false
-
-[node name="Trap" parent="." instance=ExtResource("3_ig866")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.363297, 10.740402, -13.6633215)
-visible = false
-
-[node name="ArrowTraps" type="Node3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5551567, 12.642239, 19.618084)
-visible = false
-
-[node name="Trap2" parent="ArrowTraps" instance=ExtResource("3_ig866")]
-
-[node name="Trap3" parent="ArrowTraps" instance=ExtResource("3_ig866")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3386688, 0, 4.7683716e-07)
-
-[node name="Trap4" parent="ArrowTraps" instance=ExtResource("3_ig866")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7917795, 0, 0)
-
 [node name="Player" parent="." instance=ExtResource("1_30tvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2525644, 2.2945573, -0.27261162)
-visible = false
+transform = Transform3D(0.007417567, 0, -0.99997246, 0, 1, 0, 0.99997246, 0, 0.007417567, 24.111458, -9.448455, 15.337038)
 
-[node name="Blockout" type="Node3D" parent="."]
-transform = Transform3D(1.8639494, 0, 0, 0, 0.8951317, 0, 0, 0, 1.896995, -4.9958553, 11.480338, -0.15695265)
-visible = false
+[node name="tutorialpolished2" parent="." instance=ExtResource("2_5lyua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.022245, -11.014095, 15.032575)
 
-[node name="FirstSection" type="CSGCombiner3D" parent="Blockout"]
-transform = Transform3D(1.4633299, 0, 0, 0, 6.112223, 0, 0, 0, 2.233978, 2.680253, -12.825308, 0.08273753)
-use_collision = true
-collision_layer = 6
-collision_mask = 6
+[node name="ROOFS" parent="tutorialpolished2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.614912, 28.85039, 15.999999)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Blockout/FirstSection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.554883, 0.087394565, -0.0044867992)
-use_collision = true
-collision_mask = 6
-size = Vector3(4.118164, 0.001, 1)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_001roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Blockout/FirstSection"]
-transform = Transform3D(0.97424436, -0.2254952, 0, 0.2254952, 0.9742443, 0, 0, 0, 1, 1.1076267, 0.23301506, -0.0044867992)
-use_collision = true
-size = Vector3(1.203186, 0.001, 1)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_002roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Blockout/FirstSection"]
-transform = Transform3D(1, 0, 0, 0, 0.67068595, 0, 0, 0, 0.55241364, 4.707912, 0.4129574, -0.107115366)
-use_collision = true
-size = Vector3(6.4150543, 0.001, 7.125305)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_003roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Blockout/FirstSection"]
-transform = Transform3D(1, 0, 0, 0, 0.67068595, 0, 0, 0, 0.55241364, 7.8599405, 0.7100436, -0.10828908)
-use_collision = true
-size = Vector3(0.11645508, 1, 7.1127625)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_004roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Blockout/FirstSection"]
-transform = Transform3D(1, 0, 0, 0, 0.67068595, 0, 0, 0, 0.55241364, 1.7044425, 0.7100436, -0.10828908)
-use_collision = true
-size = Vector3(0.11645508, 1, 7.1127625)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_005roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Blockout/FirstSection"]
-transform = Transform3D(0.012598277, 0, -0.99317116, 0, 0.67068595, 0, 0.5521819, 0, 0.022659644, 4.837493, 0.7100436, 1.8082511)
-use_collision = true
-size = Vector3(0.11645508, 1, 6.4216156)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_006roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Blockout/FirstSection"]
-transform = Transform3D(-2.4142919e-08, 0, -0.9934296, 0, 1, 0, 0.5523256, 0, -4.3424187e-08, 4.790275, 0.65032035, -1.9937679)
-use_collision = true
-size = Vector3(0.11645508, 0.8076172, 6.3265305)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_007roof" index="0"]
+collision_layer = 2
 
-[node name="FirstSecionDeco" type="CSGCombiner3D" parent="Blockout"]
-transform = Transform3D(0.53649527, 0, 0, 0, 1.1171542, 0, 0, 0, 0.5271497, 7.623333, -8.878996, 2.952264)
-use_collision = true
-collision_layer = 6
-collision_mask = 6
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_008roof" index="0"]
+collision_layer = 2
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Blockout/FirstSecionDeco"]
-height = 4.3134766
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_009roof" index="0"]
+collision_layer = 2
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Blockout/FirstSecionDeco"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.575736, 0, 0)
-height = 4.3134766
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_010roof" index="0"]
+collision_layer = 2
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Blockout/FirstSecionDeco"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.426286)
-height = 4.3134766
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_011roof" index="0"]
+collision_layer = 2
 
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Blockout/FirstSecionDeco"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.575736, 0, -12.426286)
-height = 4.3134766
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_012roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Blockout/FirstSecionDeco"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5665274, -0.91040564, -11.244204)
-size = Vector3(2.2919922, 1, 2.1220703)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_013roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Blockout/FirstSecionDeco"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1675634, -0.91040564, -1.6512766)
-size = Vector3(2.2919922, 1, 2.1220703)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_014roof" index="0"]
+collision_layer = 2
 
-[node name="SecondSection" type="CSGCombiner3D" parent="Blockout"]
-transform = Transform3D(0.52542424, -0.108427614, 0, 0.2257809, 1.0941008, 0, 0, 0, 0.5271497, 15.913445, -9.128566, -0.028091729)
-use_collision = true
-collision_layer = 6
-collision_mask = 6
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_015roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Blockout/SecondSection"]
-size = Vector3(5.8797607, 0.001, 3.031372)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_016roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(0.994149, 0.10801668, 0, -0.10801668, 0.994149, 0, 0, 0, 1, 9.647631, -0.79138756, -0.061882734)
-size = Vector3(13.633972, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_017roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(0.9793641, 0.20210359, 0, -0.20210359, 0.9793641, 0, 0, 0, 1, 23.063967, -2.9590297, -0.061882734)
-size = Vector3(13.633972, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_018roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.049617205, 0.20210357, 0.97810644, 0.010239108, 0.97936404, -0.20184405, -0.99871576, 0, -0.050662678, 31.590223, -4.7185254, -0.061882734)
-size = Vector3(13.633972, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_019roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(0.00086933, 0.19567934, 0.98066765, 0.25488946, 0.9482331, -0.1894335, -0.96696967, 0.25012654, -0.04905227, 31.268312, -3.7214718, -10.705464)
-size = Vector3(9.23703, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_020roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.047841664, 0.19013788, 0.980591, 0.009872705, 0.9817571, -0.18988235, -0.998806, 0.0005967971, -0.04884608, 31.539656, -2.7299519, -17.549538)
-size = Vector3(4.974663, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_021roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.04223159, 0.49201074, 0.8695642, 0.02455175, 0.87058884, -0.49139816, -0.9988061, 0.0005967971, -0.04884609, 24.647745, 0.29814577, -17.414276)
-size = Vector3(4.974663, 0.001, 10.358246)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_022roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.047841664, 0.19013788, 0.980591, 0.009872705, 0.9817571, -0.18988235, -0.998806, 0.0005967971, -0.04884608, 8.029413, 5.1313853, -16.52954)
-size = Vector3(4.974663, 0.001, 24.922356)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_023roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.047841664, 0.19013788, 0.980591, 0.009872705, 0.9817571, -0.18988235, -0.998806, 0.0005967971, -0.04884608, -6.68025, 8.165575, -15.588712)
-size = Vector3(4.8316717, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_024roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.12628725, 0.17430112, 0.9765606, -0.37026298, 0.9050145, -0.2094131, -0.9203025, -0.3880305, -0.049754553, -6.1596355, 8.902753, -11.188783)
-size = Vector3(4.8316717, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_025roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.04784162, 0.19013786, 0.9805914, 0.009872719, 0.9817571, -0.18988258, -0.998806, 0.0005967971, -0.04884608, -3.6715488, 9.314705, -1.0374657)
-size = Vector3(16.413883, 0.001, 1.0892181)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_026roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(0.9774057, 0.13554806, 0.03419673, -0.20169947, 0.6568458, -0.0070569073, -0.06320857, 0, 0.551309, -2.8129883, 10.696049, -0.9617002)
-use_collision = true
-size = Vector3(0.11645508, 4.7022705, 29.431486)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_027roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Blockout/SecondSection"]
-transform = Transform3D(-0.04784162, 0.19013786, 0.9805914, 0.009872719, 0.9817571, -0.18988258, -0.998806, 0.0005967971, -0.04884608, -4.721346, 9.52261, 15.778745)
-size = Vector3(17.087801, 0.001, 4.8200073)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_028roof" index="0"]
+collision_layer = 2
 
-[node name="ThirdSection" type="CSGCombiner3D" parent="Blockout"]
-transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 2.3841858e-07, 0, 1.4901161e-08)
-use_collision = true
-collision_layer = 6
-collision_mask = 6
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_029roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.026206734, -0.00207091, 0.5358509, 0.00045527774, 1.1171454, 0.004339712, -0.52652025, 0.00031460126, -0.025749195, 7.1913395, 0.08721256, 13.94909)
-size = Vector3(4.8316717, 0.001, 25.292892)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_030roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.026206734, -0.00207091, 0.5358509, 0.00045527774, 1.1171454, 0.004339712, -0.52652025, 0.00031460126, -0.025749195, 0.9109025, 0.11768055, 7.3599215)
-size = Vector3(21.617996, 0.001, 3.229454)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_031roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.026206734, -0.00207091, 0.5358509, 0.00045527774, 1.1171454, 0.004339712, -0.52652025, 0.00031460126, -0.025749195, 0.30874848, -0.010956764, -0.3568393)
-size = Vector3(8.162418, 0.001, 7.853628)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_032roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.02620673, -0.00207091, 0.53585094, 0.22877611, 1.0064651, 0.015078414, -0.4742272, 0.48481485, -0.021319287, 1.1358482, 0.41944408, -3.592133)
-size = Vector3(4.451008, 0.001, 3.229454)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_033roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.026206734, -0.00207091, 0.53585094, 0.00045527992, 1.1171466, 0.0043397136, -0.52652514, 0.00031460426, -0.025749465, 0.98326397, 0.939723, -5.422645)
-size = Vector3(3.0916328, 0.001, 3.229454)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_034roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.02620673, -0.0020709082, 0.53585094, 0.33704585, 0.85868305, 0.019802416, -0.40451342, 0.71462053, -0.017021667, 0.888342, 1.6323318, -7.115938)
-size = Vector3(4.451008, 0.001, 3.229454)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_035roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D15" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.02620673, -0.00207091, 0.53585094, -0.00850423, 1.1169903, 0.003900931, -0.5264583, -0.018694993, -0.025819667, 0.7702898, 2.3619852, -8.811415)
-size = Vector3(3.0916328, 0.001, 3.1005669)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_036roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D16" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-0.02620673, -0.00207091, 0.53585094, -0.00850423, 1.1169903, 0.003900953, -0.526464, -0.018695194, -0.025819983, -1.9488404, 2.3542957, -8.670128)
-size = Vector3(3.0916328, 0.001, 7.043208)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_037roof" index="0"]
+collision_layer = 2
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Blockout/ThirdSection"]
-transform = Transform3D(-2.3983205e-07, 1.9986004e-09, 5.36495, -4.551883e-09, 11.171537, -4.1617216e-09, -5.2714925, 2.4485937e-08, -2.1994386e-07, -6.5064383, 2.24057, -9.010289)
-size = Vector3(1, 0.001, 1)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_038roof" index="0"]
+collision_layer = 2
 
-[node name="tutorial2finished" parent="." instance=ExtResource("4_wmdah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4861698, 12.601061, 19.99394)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_039roof" index="0"]
+collision_layer = 2
 
-[node name="Deco" type="Node3D" parent="tutorial2finished"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.536743e-07, 0)
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_040roof" index="0"]
+collision_layer = 2
 
-[editable path="tutorial2finished"]
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_041roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_042roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_043roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_044roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_045roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_046roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_047roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_048roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_049roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_050roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_051roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_052roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_053roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_054roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_055roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_056roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_057roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_058roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_059roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_060roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_061roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_062roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_063roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_064roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_065roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_066roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_067roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_068roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_069roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_070roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_071roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_072roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_073roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_074roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_075roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_076roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_077roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_078roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_079roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_080roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_081roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_082roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_083roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_084roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_085roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_086roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_087roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_088roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_089roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_090roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_091roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_092roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_093roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_094roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_095roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_096roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_097roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_098roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_099roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_100roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_101roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_102roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_103roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_104roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_105roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_106roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_107roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_108roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_109roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_110roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_111roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_112roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_113roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_114roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_115roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_116roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_117roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_118roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_119roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_120roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_121roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_122roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_123roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_124roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_125roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_126roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_127roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_128roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_129roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_130roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_131roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_132roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_133roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_134roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_135roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_136roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_137roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_138roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_139roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_140roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_141roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_142roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_143roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_144roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_145roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_146roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_147roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_148roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_149roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_150roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_151roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_152roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_153roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_154roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_155roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_156roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_157roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_158roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_159roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_160roof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roofroof" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_001" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_003" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_004" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_005" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_006" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_008" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_009" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_010" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_011" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_012" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_013" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_014" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_015" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_016" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_017" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_018" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_019" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_020" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_021" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_022" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_023" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_024" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_025" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_026" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_027" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_028" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_029" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_030" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_031" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_032" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_033" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_034" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_035" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_036" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_037" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_038" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_039" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_040" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_041" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_042" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_043" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_044" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_045" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_046" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_047" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_048" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_049" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_050" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_051" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_052" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_053" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_054" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_055" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_056" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_057" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_058" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_059" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_060" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_061" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_062" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_063" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_064" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_065" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_066" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_067" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_068" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_069" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_070" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_071" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_072" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_073" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_074" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_075" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_076" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_077" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_078" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_079" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_080" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_081" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_082" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_083" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_084" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_085" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_086" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_087" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_088" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_089" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_090" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_091" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_092" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_093" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_094" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_095" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_096" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_097" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_098" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_099" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_100" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_101" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_102" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_103" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_104" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_105" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_106" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_107" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_108" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_109" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_110" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_111" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_112" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_113" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_114" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_115" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_116" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_117" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_118" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_119" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_120" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_121" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_122" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_123" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_124" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_125" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_126" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_127" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_128" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_129" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_130" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_131" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_132" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_133" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_134" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_135" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_136" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_137" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_138" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_139" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_140" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_141" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_142" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_143" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_144" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_145" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_146" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_147" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_148" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_149" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_150" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_151" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_152" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_153" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_154" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_155" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_156" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_157" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_158" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_159" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_160" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_161" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_162" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_163" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_164" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_165" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_166" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_167" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_168" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_169" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_170" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_171" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_172" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_173" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_174" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_175" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_176" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_177" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_178" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_179" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_180" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_181" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_182" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_183" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_184" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_185" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_186" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_187" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_188" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_189" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_190" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_191" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_192" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_193" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_194" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_195" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_196" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_197" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_198" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_199" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_200" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_201" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_202" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_203" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_204" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_205" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_206" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_207" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_208" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_209" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_210" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_211" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_212" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_213" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_214" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_215" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_216" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_217" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_218" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_219" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_220" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_221" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_222" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_223" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_224" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_225" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_226" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_227" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_228" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_229" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_230" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_231" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_232" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_233" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_234" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_235" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_236" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_237" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_238" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_239" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_240" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_241" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_242" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_243" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_244" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_245" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_246" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_247" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_248" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_249" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_250" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_251" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_252" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_253" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_254" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_255" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_256" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_257" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_258" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_259" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_260" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_261" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_262" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_263" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_264" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_265" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_266" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_267" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_268" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_269" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_270" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_271" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_272" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_273" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_274" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_275" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_276" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_277" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_278" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_279" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_280" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_281" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_282" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_283" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_284" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_285" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_286" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_287" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_288" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_289" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_290" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_291" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_292" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_293" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_294" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_295" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_296" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_297" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_298" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_299" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_300" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_301" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_302" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_303" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_304" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_305" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_306" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_307" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_308" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_309" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_310" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_311" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_312" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_313" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_314" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_315" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_316" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_317" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_318" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_319" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_320" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_321" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_322" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_323" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_324" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_325" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_326" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_327" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_328" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_329" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_330" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_331" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_332" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_333" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_334" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_335" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_336" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_337" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_338" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_339" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_340" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_341" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_342" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_343" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_344" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_345" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_346" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_347" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_348" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_349" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_350" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_351" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_352" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_353" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_354" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_355" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_356" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_357" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_358" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_359" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_360" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_361" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_362" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_363" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_364" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_365" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_366" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_367" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_368" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_369" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_370" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_371" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_372" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_373" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_374" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_375" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_376" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_377" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_378" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_379" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_380" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_381" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_382" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_383" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_384" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_385" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_386" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_387" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_388" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_389" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_390" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_391" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_392" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_393" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_394" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_395" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_396" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_397" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_398" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_399" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_400" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_401" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_402" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_403" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_404" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_405" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_406" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_407" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_408" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_409" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_410" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_411" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_412" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_413" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_414" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_415" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_416" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_417" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_418" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_419" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_420" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_421" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_422" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_423" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_424" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_425" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_426" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_427" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_428" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_429" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_430" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_431" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_432" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_433" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_434" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_435" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_436" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_437" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_438" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_439" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_440" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_441" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_442" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_443" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_444" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_445" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_446" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_447" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_448" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_449" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_450" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_451" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_452" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_453" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_454" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_455" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_456" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_457" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_458" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_459" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_460" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_461" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_462" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_463" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_464" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_465" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_466" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_467" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_468" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_469" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_470" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_471" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_472" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_473" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_474" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_475" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_476" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_477" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_478" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_479" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_480" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_481" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_482" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_483" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_484" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_485" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_486" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_487" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_488" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_489" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_490" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_491" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_492" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_493" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_494" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_495" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_496" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_497" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_498" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_499" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_500" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_501" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_502" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_503" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_504" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_505" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_506" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_507" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_508" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_509" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_510" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_511" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_512" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_513" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_514" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_515" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_516" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_517" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_518" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_519" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_520" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_521" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_522" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_523" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_524" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_525" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_526" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_527" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_528" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_529" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_530" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_531" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_532" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_533" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_534" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_535" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_536" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_537" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_538" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_539" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_540" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_541" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_542" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_543" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_544" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_545" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_546" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_547" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_548" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_549" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_550" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_551" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_552" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_553" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_554" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_555" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_556" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_557" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_558" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_559" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_560" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_561" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_562" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_563" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_564" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_565" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_566" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_567" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_568" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_569" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_570" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_571" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_572" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_573" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_574" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_575" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_576" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_577" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_578" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_579" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_580" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_581" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_582" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_583" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_584" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_585" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_586" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_587" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_588" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_589" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_590" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_591" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_592" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_593" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_594" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_595" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_596" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_597" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_598" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_599" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_600" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_601" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_602" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_603" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_604" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_605" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_606" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_607" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_608" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_609" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_610" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_611" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_612" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_613" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_614" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_615" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_616" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_617" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_618" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_619" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_620" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_621" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_622" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_623" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_624" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_625" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_626" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_627" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_628" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_629" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_630" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_631" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_632" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_633" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_634" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_635" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_636" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_637" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_638" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_639" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_640" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_641" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_642" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_643" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_644" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_645" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_646" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_647" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_648" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_649" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_650" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_651" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_652" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_653" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_654" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_655" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_656" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_657" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_658" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_659" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_660" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_661" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_662" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_663" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_664" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_665" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_666" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_667" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_668" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_669" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_670" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_671" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_672" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_673" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_674" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_675" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_676" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_677" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_678" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_679" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_680" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_681" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_682" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_683" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_684" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_685" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_686" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_687" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_688" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_689" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_690" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_691" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_692" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_693" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_694" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_695" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_696" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_697" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_698" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_699" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_700" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_701" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_702" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_703" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_704" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_705" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_706" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_707" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_708" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_709" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_710" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_711" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_712" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_713" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_714" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_715" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_716" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_717" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_718" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_719" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_720" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_721" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_722" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_723" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_724" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_725" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_726" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_727" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_728" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_729" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_730" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_731" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_732" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_733" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_734" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_735" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_736" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_737" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_738" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_739" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_740" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_741" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_742" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_743" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_744" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_745" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_746" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_747" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_748" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_749" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_750" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_751" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_752" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_753" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_754" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_755" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_756" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_757" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_758" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_759" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_760" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_761" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_762" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_763" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_764" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_765" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_766" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_767" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_768" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_769" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_770" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_771" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_772" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_773" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_774" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_775" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_776" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_777" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_778" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_779" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_780" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_781" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_782" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/WALLS/wall_783" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_001" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_002" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_003" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_004" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_005" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_006" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_007" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_008" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_009" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_010" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_011" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_012" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_013" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_014" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_015" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_016" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_017" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_018" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_019" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_020" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_021" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_022" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_023" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_024" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_025" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_026" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_027" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_028" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_029" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_030" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_031" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_032" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_033" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_034" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_035" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_036" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_037" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_038" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_039" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_040" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_041" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_042" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_043" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_044" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_045" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_046" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_047" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_048" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_049" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_050" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_051" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_052" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_053" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_054" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_055" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_056" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_057" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_058" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_059" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_060" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_061" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_062" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_063" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_064" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_065" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_066" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_067" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_068" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_069" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_070" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_071" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_072" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_073" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_074" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_075" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_076" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_077" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_078" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_079" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_080" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_081" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_082" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_083" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_084" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_085" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_086" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_087" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_088" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_089" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_090" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_091" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_092" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_093" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_094" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_095" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_096" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_097" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_098" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_099" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_100" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_101" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_102" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_103" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_104" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_105" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_106" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_107" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_108" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_109" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_110" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_111" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_112" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_113" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_114" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_115" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_116" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_117" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_118" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_119" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_120" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_121" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_122" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_123" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_124" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_125" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_126" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_127" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_128" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_129" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_130" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_131" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_132" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_133" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_134" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_135" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_136" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_137" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_138" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_139" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_140" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_141" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_142" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_143" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_144" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_145" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_146" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_147" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_148" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_149" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_150" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_151" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_152" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_153" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_154" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_155" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_156" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_157" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_158" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_159" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_160" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_161" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_162" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_163" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_164" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_165" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_166" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_167" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_168" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_169" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_170" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_171" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_172" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_173" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_174" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_175" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_176" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_177" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_178" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_179" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_180" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_181" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_182" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_183" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_184" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_185" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_186" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_187" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_188" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_189" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_190" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_191" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_192" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_193" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_194" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_195" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_196" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_197" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_198" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_199" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_200" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_201" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_202" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_203" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_204" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_205" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_206" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_207" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_208" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_209" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_210" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_211" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_212" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_213" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_214" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_215" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_216" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_217" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_218" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_219" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_220" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_221" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_222" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_223" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_224" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_225" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_226" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_227" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_228" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_229" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_230" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_231" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_232" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_233" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_234" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_235" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_236" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_237" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_238" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_239" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_240" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_241" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_242" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_243" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_244" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_245" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_246" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_247" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_248" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_249" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_250" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_251" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_252" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_253" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_254" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_255" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_256" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_257" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_258" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_259" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_260" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_261" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_262" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_263" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_264" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_265" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_266" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_267" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_268" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_269" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_270" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_271" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_272" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_273" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_274" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_275" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_276" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_277" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_278" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_279" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_280" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_281" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_282" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_283" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_284" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_285" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_286" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_287" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_288" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_289" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_290" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/FLOORS/Floor_291" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_001" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_002" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_004" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_005" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_006" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_007" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_008" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_009" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_010" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_012" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/PILLARS AND DOORFRAMES/Pillar_013" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone" index="0"]
+collision_layer = 2
+
+[node name="Gravestone_001" parent="tutorialpolished2/DECORATIONS" index="1"]
+transform = Transform3D(1.7881393e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1.7881393e-07, -2.7569885, -1.0335808, 8.569901)
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_001" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_002" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_003" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_004" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_005" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_006" index="0"]
+collision_layer = 2
+
+[node name="Gravestone_007" parent="tutorialpolished2/DECORATIONS" index="7"]
+transform = Transform3D(-1.553161, 0, 1.5063825, 0, 2.1636767, 0, -1.5063825, 0, -1.553161, 60.363335, -6.4584217, -11.017496)
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_007" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_008" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_009" index="0"]
+collision_layer = 2
+
+[node name="StaticBody3D" parent="tutorialpolished2/DECORATIONS/Gravestone_010" index="0"]
+collision_layer = 2
+
+[node name="Ladder" parent="tutorialpolished2/DECORATIONS" index="58" instance=ExtResource("3_wmdah")]
+transform = Transform3D(0.047714233, 0, -1.0075082, 0, 4.766213, 0, 5.579073, 0, 0.00861657, -23.416817, 1.0556545, -4.593045)
+
+[node name="AxeTrap" parent="tutorialpolished2/DECORATIONS" index="59" instance=ExtResource("2_xpxfb")]
+transform = Transform3D(-0.08178499, 0, -1.0150564, 0, 0.6981277, 0, 0.797131, 0, -0.10414396, -6.444023, 0.60483336, 33.981125)
+
+[editable path="tutorialpolished2"]

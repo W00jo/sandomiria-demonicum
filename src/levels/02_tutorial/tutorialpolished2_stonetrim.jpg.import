@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxc78f78pf8va"
-path.s3tc="res://.godot/imported/tutorial2finished_Photoreal_Metal_01-512x512.png-d8f069fd1d7b1f4c5d05ca1de8c966cc.s3tc.ctex"
+uid="uid://ctayqt5rhra3n"
+path.s3tc="res://.godot/imported/tutorialpolished2_stonetrim.jpg-1ffe098cb6494cd65738326d795ac2c8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3a66481ccfd096ac2eb19b97fd80644f"
+"md5": "5369efcd7244e10989a4807b2156a3ca"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_Photoreal_Metal_01-512x512.png"
-dest_files=["res://.godot/imported/tutorial2finished_Photoreal_Metal_01-512x512.png-d8f069fd1d7b1f4c5d05ca1de8c966cc.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_stonetrim.jpg"
+dest_files=["res://.godot/imported/tutorialpolished2_stonetrim.jpg-1ffe098cb6494cd65738326d795ac2c8.s3tc.ctex"]
 
 [params]
 

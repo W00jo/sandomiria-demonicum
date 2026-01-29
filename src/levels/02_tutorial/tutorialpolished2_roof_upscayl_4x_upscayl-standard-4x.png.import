@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxcsrp12ko87"
-path.s3tc="res://.godot/imported/tutorial2finished_Photoreal_Concrete_03-512x512.png-986d07375b58f28c429a389f41437031.s3tc.ctex"
+uid="uid://dirhhp6decwc3"
+path.s3tc="res://.godot/imported/tutorialpolished2_roof_upscayl_4x_upscayl-standard-4x.png-d951e5944c47d15a888fce888c8ab84c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "eae78f4201d67f5afe55972a0c760f54"
+"md5": "5220a01483a693f3bcfea173407275be"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_Photoreal_Concrete_03-512x512.png"
-dest_files=["res://.godot/imported/tutorial2finished_Photoreal_Concrete_03-512x512.png-986d07375b58f28c429a389f41437031.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_roof_upscayl_4x_upscayl-standard-4x.png"
+dest_files=["res://.godot/imported/tutorialpolished2_roof_upscayl_4x_upscayl-standard-4x.png-d951e5944c47d15a888fce888c8ab84c.s3tc.ctex"]
 
 [params]
 

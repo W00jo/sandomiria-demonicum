@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8ib8tjq4v3s4"
-path.s3tc="res://.godot/imported/tutorial2finished_stonetrim.jpg-9659dcaa45d939f79d3b2e35d8979efa.s3tc.ctex"
+uid="uid://6m05kj54ir23"
+path.s3tc="res://.godot/imported/tutorialpolished2_WeatheredWood_N.jpg-0bd021d66a8d7876852d25df6cb8a3e5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5369efcd7244e10989a4807b2156a3ca"
+"md5": "82d351ece0d84e89754d89534d135527"
 }
 
 [deps]
 
-source_file="res://src/levels/02_tutorial/tutorial2finished_stonetrim.jpg"
-dest_files=["res://.godot/imported/tutorial2finished_stonetrim.jpg-9659dcaa45d939f79d3b2e35d8979efa.s3tc.ctex"]
+source_file="res://src/levels/02_tutorial/tutorialpolished2_WeatheredWood_N.jpg"
+dest_files=["res://.godot/imported/tutorialpolished2_WeatheredWood_N.jpg-0bd021d66a8d7876852d25df6cb8a3e5.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://src/levels/02_tutorial/tutorialpolished2_WeatheredWood_N.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
