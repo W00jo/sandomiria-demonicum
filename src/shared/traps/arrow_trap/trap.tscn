@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://8xjnta7u4oh"]
+[gd_scene load_steps=6 format=3 uid="uid://8xjnta7u4oh"]
 
 [ext_resource type="Script" uid="uid://chic63shd8v6g" path="res://src/shared/traps/arrow_trap/trap.gd" id="1_wovjy"]
 [ext_resource type="PackedScene" uid="uid://csukfcep87u4i" path="res://src/shared/traps/arrow_trap/arrow.tscn" id="2_uxgec"]
 [ext_resource type="PackedScene" uid="uid://58ro1wildyej" path="res://assets/models/arrpw_trap/ArrowBolterblend.glb" id="3_ihrg7"]
+[ext_resource type="AudioStream" uid="uid://cp5d48e2dx83" path="res://assets/audio/steampunk-gadget-lock-and-unlock-188053.mp3" id="4_05u4b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63tk1"]
 
 [node name="Trap" type="StaticBody3D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_wovjy")
 arrow_scene = ExtResource("2_uxgec")
 
@@ -25,5 +26,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.38312617)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_05u4b")
+volume_db = -5.0
+max_distance = 5.0
+max_polyphony = 5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

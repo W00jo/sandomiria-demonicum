@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://0ai35adpvimf"]
+[gd_scene load_steps=11 format=3 uid="uid://0ai35adpvimf"]
 
 [ext_resource type="Script" uid="uid://dhfxokera7kp8" path="res://src/shared/traps/axe_trap/axe_trap.gd" id="1_yl3hg"]
 [ext_resource type="Script" uid="uid://bcwhxw0x7p5q8" path="res://src/shared/traps/axe_trap/blade_area.gd" id="2_o3lyu"]
 [ext_resource type="PackedScene" uid="uid://d3x24ecjmnmus" path="res://assets/models/axe_trap/Axetrap.glb" id="3_o3lyu"]
+[ext_resource type="AudioStream" uid="uid://cww72f6vnomnq" path="res://assets/audio/sfx_axe_swing_random.tres" id="4_gily3"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3id34"]
 
@@ -42,6 +43,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, -1.0471976), Vector3(0, 0, 1.0471976), Vector3(0, 0, -1.0471976)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SwingSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 1.5899998,
+"start_offset": 0.0,
+"stream": ExtResource("4_gily3")
+}, {
+"end_offset": 1.6500001,
+"start_offset": 0.0,
+"stream": ExtResource("4_gily3")
+}],
+"times": PackedFloat32Array(0.43333334, 1.5)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gily3"]
 _data = {
@@ -82,5 +102,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_gily3")
 }
 autoplay = "swing"
+
+[node name="SwingSound" type="AudioStreamPlayer3D" parent="."]
+volume_db = -0.5
+max_distance = 10.0
 
 [connection signal="body_entered" from="Pivot/BladeArea" to="." method="_on_blade_area_body_entered"]
