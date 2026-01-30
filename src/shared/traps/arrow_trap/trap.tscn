@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chic63shd8v6g" path="res://src/shared/traps/arrow_trap/trap.gd" id="1_wovjy"]
 [ext_resource type="PackedScene" uid="uid://csukfcep87u4i" path="res://src/shared/traps/arrow_trap/arrow.tscn" id="2_uxgec"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_vqa2g"]
+[ext_resource type="PackedScene" uid="uid://58ro1wildyej" path="res://assets/models/arrpw_trap/ArrowBolterblend.glb" id="3_ihrg7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63tk1"]
 
@@ -13,9 +12,8 @@ collision_mask = 2
 script = ExtResource("1_wovjy")
 arrow_scene = ExtResource("2_uxgec")
 
-[node name="TrapMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("BoxMesh_vqa2g")
+[node name="ArrowBolterblend" parent="." instance=ExtResource("3_ihrg7")]
+transform = Transform3D(-2.4966077e-08, 0, 0.5514558, 0, 0.53138363, 0, -0.57115734, 0, -2.4104894e-08, 0, 0, 0)
 
 [node name="CollisionTrap" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

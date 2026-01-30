@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkqwfh0agtdsh"]
+
+[ext_resource type="Script" uid="uid://cccmr02dcfyu0" path="res://fx_torch_light.gd" id="1_qewbd"]
+
+[node name="FXTorchLight" type="Node3D"]
+script = ExtResource("1_qewbd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.6401571, 0.4173812, 0.19741374, 1)
+light_energy = 2.0
