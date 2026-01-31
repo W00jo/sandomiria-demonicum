@@ -2,53 +2,88 @@ extends Node3D
 ## System ataku kierunkowego dla sztyletu.
 ##
 ## Gracz wybiera kierunek ruchem myszy, blokuje go prawym przyciskiem,
-## a następnie atakuje lewym przyciskiem.
+## a następnie atakuje lewym przyciskiem. Inspirowane mechaniką z [i]Dark Messiah[/i].[br]
+## [br]
+## Kierunki ataku:[br]
+## - [b]Lewo/Prawo[/b]: standardowe cięcia boczne[br]
+## - [b]Góra[/b]: overhead z bonusem do obrażeń[br]
+## - [b]Dół[/b]: pchnięcie z większym zasięgiem[br]
+##
+## @experimental
 
+## Emitowany gdy wróg zostanie trafiony. Używany do hitmarkera w HUD.
 signal enemy_hit
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-## Typy kierunków ataku
+## Kierunki ataku dostępne dla gracza.[br]
+## Każdy kierunek ma inne statystyki obrażeń i zasięgu.
 enum AttackDirection {
+	## Cięcie z lewej strony.
 	LEFT = 1,
+	## Cięcie z prawej strony.
 	RIGHT = 2,
+	## Overhead - cios z góry, większe obrażenia.
 	UP = 3,
-	DOWN = 4
+	## Pchnięcie - większy zasięg, mniejsze obrażenia.
+	DOWN = 4,
 }
 
-## Aktualnie wybrany kierunek ataku (domyślnie pchnięcie)
+## Aktualnie wybrany kierunek ataku (domyślnie pchnięcie).
 var current_direction: AttackDirection = AttackDirection.DOWN
-## Czy kierunek jest zablokowany prawym przyciskiem myszy
+## Czy kierunek jest zablokowany prawym przyciskiem myszy.
 var direction_locked: bool = false
-## Czy obecnie trwa animacja ataku
+## Czy obecnie trwa animacja ataku (blokuje kolejne ataki).
 var is_attacking: bool = false
 
-## Strefa "martwa" dla myszy (aby uniknąć przypadkowych zmian kierunku)
+## Strefa "martwa" dla myszy (aby uniknąć przypadkowych zmian kierunku).[br]
+## Im większa wartość, tym bardziej trzeba machać myszą.
 @export var dead_zone: float = 50.0
 
-@export_group("Damage stats") # Statystyki obrażeń ataków
+## Statystyki obrażeń dla różnych typów ataków.
+@export_group("Damage stats")
+## Bazowe obrażenia dla cięć bocznych.
 @export var base_damage: float = 1
+## Mnożnik obrażeń dla overheadu (góra).
 @export var overhead_damage_multiplier: float = 1.5
+## Obrażenia pchnięcia (dół) - niższe, ale za to większy zasięg.
 @export var stab_damage: float = 0.75
 
-@export_group("Attack ranges") # Statystyki szerokości ataków
+## Zasięgi dla różnych typów ataków (w jednostkach Godota).
+@export_group("Attack ranges")
+## Zasięg cięć bocznych.
 @export var side_attack_range: float = 1
+## Zasięg overheadu.
 @export var overhead_attack_range: float = 1
+## Zasięg pchnięcia - najdłuższy.
 @export var stab_attack_range: float = 1.2
 
-@export_group("Attack areas") # Statystyki zasięgu ataków
+## Kąty stożka ataku (w stopniach).[br]
+## Określają jak "szeroki" jest atak.
+@export_group("Attack areas")
+## Kąt cięć bocznych - szeroki łuk.
 @export var side_attack_angle: float = 90.0
+## Kąt overheadu - węższy, bardziej precyzyjny.
 @export var overhead_attack_angle: float = 45.0
 
-## Pozycja myszy na środku ekranu
+## Pozycja środka ekranu (cache'owana w [method _ready]).
 var screen_center: Vector2
-## Kiedy kierunek się zmieni (jak bardzo kamerą trzeba majtać)
+## Akumulowana pozycja myszy do określenia kierunku ataku.[br]
+## Resetuje się po przekroczeniu limitu lub zmianie kierunku.
 var accumulated_mouse_pos: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	screen_center = get_viewport().get_visible_rect().size / 2.0
 
-## Lewy przycisk myszy = atak; Prawy przycisk myszy = toggle blokowania/odblokowania kierunku. Sterowanie można modyfikować w `Project > Project Settings` jak coś.
+
+## Obsługuje input gracza dla systemu walki.[br]
+## [br]
+## [b]Sterowanie:[/b][br]
+## - [kbd]LPM[/kbd]: wykonaj atak w wybranym kierunku[br]
+## - [kbd]PPM[/kbd]: zablokuj/odblokuj kierunek ataku[br]
+## - [b]Ruch myszy[/b]: zmień kierunek (gdy odblokowany)[br]
+## [br]
+## Sterowanie można modyfikować w [code]Project > Project Settings[/code].
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		direction_locked = not direction_locked
@@ -63,7 +98,15 @@ func _input(event: InputEvent) -> void:
 		accumulated_mouse_pos = accumulated_mouse_pos.limit_length(200.0)
 		update_attack_direction(accumulated_mouse_pos)
 
-## Określa kierunek ataku na podstawie pozycji myszy (lub względnego ruchu)
+## Określa kierunek ataku na podstawie ruchu myszy.[br]
+## [br]
+## Używa akumulowanej pozycji myszy i dzieli ekran na 4 sektory:[br]
+## - [b]315°-45°[/b]: prawo[br]
+## - [b]45°-135°[/b]: dół (pchnięcie)[br]
+## - [b]135°-225°[/b]: lewo[br]
+## - [b]225°-315°[/b]: góra (overhead)[br]
+## [br]
+## @param mouse_pos Akumulowana pozycja względna myszy.
 func update_attack_direction(mouse_pos: Vector2) -> void:
 	var relative_pos: Vector2 = mouse_pos
 	
@@ -85,7 +128,14 @@ func update_attack_direction(mouse_pos: Vector2) -> void:
 	else:  # Góra
 		current_direction = AttackDirection.UP
 
-## Wykonuje atak w wybranym kierunku
+## Wykonuje atak w aktualnie wybranym kierunku.[br]
+## [br]
+## Każdy kierunek ma inne parametry:[br]
+## - [b]Lewo/Prawo[/b]: [member side_attack_range], [member side_attack_angle], [member base_damage][br]
+## - [b]Góra[/b]: [member overhead_attack_range], [member overhead_attack_angle], [member base_damage] * [member overhead_damage_multiplier][br]
+## - [b]Dół[/b]: [member stab_attack_range], 30°, [member stab_damage][br]
+## [br]
+## [b]TODO:[/b] Dodać animacje dla każdego kierunku.
 func perform_attack() -> void:
 	is_attacking = true
 	$DaggerAttackSound.play()
@@ -112,14 +162,24 @@ func perform_attack() -> void:
 	
 	is_attacking = false
 
-## Zadaje obrażenia wrogom w obszarze ataku
+## Zadaje obrażenia wrogom w stożkowym obszarze przed graczem.[br]
+## [br]
+## Używa [PhysicsShapeQueryParameters3D] z [SphereShape3D] do wykrycia wrogów,[br]
+## a następnie sprawdza czy są w kącie ataku.[br]
+## [br]
+## [b]TODO:[/b] Przerobić na [RayCast3D] lub [Area3D] z animowanym [CollisionShape3D].[br]
+## [br]
+## @param range Zasięg ataku (promień sfery).
+## @param angle_degrees Kąt stożka ataku w stopniach.
+## @param damage Obrażenia do zadania.
 func deal_damage_in_area(range: float, angle_degrees: float, damage: float) -> void:
-	var player = get_parent().get_parent()  # TODO: SPRAWDZIĆ CZY NIE OPTYMALNIEJ BĘDZIE PRZENIEŚĆ TROCHĘ SKRYPTU KAMERY DO `Head` Node'a!
+	# TODO: SPRAWDZIĆ CZY NIE OPTYMALNIEJ BĘDZIE PRZENIEŚĆ TROCHĘ SKRYPTU KAMERY DO `Head` Node'a!
+	var player = get_parent().get_parent()
 	
-	# Kierunek patrzenia gracza
+	# Kierunek patrzenia gracza (przód to -Z w Godocie)
 	var forward: Vector3 = -player.global_transform.basis.z
 	
-	# Zajebałem to z internetu, nie wiem jak to działa.
+	# Wykrywanie wrogów w zasięgu za pomocą PhysicsShapeQuery
 	# TODO: Trzeba znaleźć opcję zrobienia tego na inspektorze z layersami.
 	# Zgaduję, że to z animacjami się robi, tzn. collision shape w animacji przelatuje przez collision shape Tatara i to skasujemy
 	var space_state = player.get_world_3d().direct_space_state

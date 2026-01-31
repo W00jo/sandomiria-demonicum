@@ -1,47 +1,90 @@
 extends CharacterBody3D
+## Szef Tatar - boss z atakiem obszarowym.
+##
+## Większy, wolniejszy Tatar z mechaniką ground effect jak w MMO.[br]
+## Zamiast bezpośredniego ataku, tworzy strefę obrażeń pod sobą.[br]
+## [br]
+## [b]Fazy ataku:[/b][br]
+## 1. [b]Warning (1.5s)[/b] - żółta strefa, pulsuje, brak obrażeń[br]
+## 2. [b]Damage (3s)[/b] - czerwona strefa, zadaje obrażenia co 0.5s[br]
+## [br]
+## Boss zmienia kolor wraz ze strefą (wizualny feedback).[br]
+## Gracz powinien uciekać gdy widzi żółtą strefę![br]
+## [br]
+## Inspirowane mechanikami z [i]FFXIV[/i] i innych MMO.
+##
+## @experimental
 
-## Boss Tatar with area damage attack
-var player = null
-const SPEED = 0.8
-const ATTACK_RANGE = 3.0
-## Cooldown between area attacks
-@export var attack_cooldown = 4.0
-## Damage dealt per tick in area
+## Referencja do gracza (ustawiana z [member player_path] w [method _ready]).
+var player: Node3D = null
+
+## Prędkość poruszania się Szefa (wolniejszy od zwykłego Tatara).
+const SPEED: float = 0.8
+
+## Zasięg w którym Szef zaczyna atak obszarowy.
+const ATTACK_RANGE: float = 3.0
+
+## Czas między atakami obszarowymi (dłuższy cooldown, mocniejszy atak).
+@export var attack_cooldown: float = 4.0
+
+## Obrażenia zadawane co tick gdy gracz stoi w strefie.
 @export var damage_per_tick: float = 3.0
-## Total duration of the charged area
+
+## Jak długo trwa faza obrażeń strefy (w sekundach).
 @export var charge_duration: float = 3.0
-## Radius of the damage area
+
+## Promień strefy obrażeń (w jednostkach Godota).
 @export var area_radius: float = 5.0
-## Boss health
+
+## Maksymalne zdrowie Szefa (znacznie więcej niż zwykły Tatar).
 @export var max_health: float = 50.0
+
+## Aktualne zdrowie - resetowane do [member max_health] w [method _ready].
 var current_health: float = 50.0
 
-## Player to track
-@export var player_path : NodePath
+## Ścieżka do node'a gracza (ustawiana w inspektorze).[br]
+## [b]Wymagane![/b]
+@export var player_path: NodePath
 
-@onready var nav_agent = $PathFinding
-@onready var damage_area = $DamageArea
-@onready var boss_model = $BossTatarModel
+## Agent nawigacji do pathfindingu.
+@onready var nav_agent: NavigationAgent3D = $PathFinding
 
-# Attack state variables
+## Wizualna strefa obrażeń (mesh + collider).
+@onready var damage_area: Node3D = $DamageArea
+
+## Model 3D Szefa (do zmiany koloru podczas ataku).
+@onready var boss_model: MeshInstance3D = $BossTatarModel
+
+## Czy Szef może zaatakować (cooldown).
 var can_attack: bool = true
+
+## Czy Szef jest w trakcie ataku obszarowego.
 var is_attacking: bool = false
+
+## Lista graczy obecnie w strefie obrażeń.[br]
+## [b]Uwaga:[/b] Obecnie nieużywane, obrażenia liczone po dystansie.
 var players_in_area: Array[Node3D] = []
+
+## Oryginalny materiał Szefa (do resetu po ataku).
 var original_material: StandardMaterial3D
 
 func _ready() -> void:
 	player = get_node(player_path)
 	current_health = max_health
 	
-	# Store original material
+	# Kopiujemy materiał żeby móc go modyfikować bez wpływu na oryginał
 	original_material = boss_model.material_override.duplicate()
 	
-	# Connect area signals
+	# Sygnały dla śledzenia graczy w strefie
 	damage_area.area_entered.connect(_on_area_entered)
 	damage_area.area_exited.connect(_on_area_exited)
 
+
+## Główna pętla AI Szefa Tatara.[br]
+## [br]
+## Identyczna logika co zwykły Tatar, ale wywołuje [method _perform_area_attack].
 func _process(_delta: float) -> void:
-	# Stop moving during attack
+	# Stoi w miejscu podczas ataku obszarowego
 	if is_attacking:
 		velocity = Vector3.ZERO
 		move_and_slide()
@@ -66,10 +109,22 @@ func _process(_delta: float) -> void:
 	
 	move_and_slide()
 
-func _target_in_range():
+
+## Sprawdza czy gracz jest w zasięgu do rozpoczęcia ataku.
+func _target_in_range() -> bool:
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 
-## Area damage attack - similar to MMO ground effects
+
+## Wykonuje atak obszarowy w stylu MMO ground effect.[br]
+## [br]
+## [b]Sekwencja:[/b][br]
+## 1. Pokaż strefę (żółta, pulsująca) - 1.5s warning[br]
+## 2. Zmień na czerwoną - faza obrażeń[br]
+## 3. Zadawaj obrażenia co 0.5s przez [member charge_duration][br]
+## 4. Schowaj strefę, zresetuj kolory[br]
+## 5. Cooldown [member attack_cooldown][br]
+## [br]
+## Boss i strefa zmieniają kolor synchronicznie dla lepszego feedbacku.
 func _perform_area_attack() -> void:
 	is_attacking = true
 	can_attack = false
@@ -137,30 +192,47 @@ func _perform_area_attack() -> void:
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 
+
+## Zadaje obrażenia graczom w strefie.[br]
+## [br]
+## Sprawdza dystans do gracza vs [member area_radius].[br]
+## Wywoływane co 0.5s podczas fazy damage.
 func _damage_players_in_area() -> void:
-	# Check if player is within the damage area radius
 	if player and global_position.distance_to(player.global_position) <= area_radius:
 		if player.has_method("take_damage"):
 			player.take_damage(damage_per_tick)
 			print("Gracz w obszarze Szefa za ", damage_per_tick, " dmg")
 
+
+## Callback gdy Area3D wejdzie w strefę obrażeń.[br]
+## Dodaje gracza do [member players_in_area] jeśli jest w grupie "player".
 func _on_area_entered(area: Area3D) -> void:
 	if area.is_in_group("player"):
 		if area not in players_in_area:
 			players_in_area.append(area)
 
+
+## Callback gdy Area3D opuści strefę obrażeń.[br]
+## Usuwa gracza z [member players_in_area].
 func _on_area_exited(area: Area3D) -> void:
 	if area.is_in_group("player"):
 		if area in players_in_area:
 			players_in_area.erase(area)
 
-func take_damage(amount: float):
+
+## Zadaje obrażenia Szefowi Tatarowi.[br]
+## [br]
+## @param amount Ilość obrażeń do zadania.
+func take_damage(amount: float) -> void:
 	current_health -= amount
 	print("Szef Tatar otrzymał ", amount, " dmg. Pozostało ", current_health, " HP")
 	
 	if current_health <= 0:
 		_die()
 
-func _die():
+
+## Kończy żywot Szefa Tatara.[br]
+## Wywoływane gdy [member current_health] <= 0.
+func _die() -> void:
 	print("Szef Tatar =/= żywy")
 	queue_free()
