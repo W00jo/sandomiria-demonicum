@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdb4l1854bjv3"]
+
+[ext_resource type="Script" uid="uid://3na5w3wowdjw" path="res://src/shared/roadblock/roadblock.gd" id="1_v5twd"]
+
+[sub_resource type="BoxMesh" id="1_2awhd"]
+size = Vector3(2, 2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o4l41"]
+size = Vector3(2.0048828, 2.0034485, 0.5102539)
+
+[node name="Roadblock" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_v5twd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("1_2awhd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_o4l41")

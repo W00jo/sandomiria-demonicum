@@ -1,29 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://dabf2vqq6byu7"]
+[gd_scene load_steps=12 format=3 uid="uid://dabf2vqq6byu7"]
 
 [ext_resource type="Script" uid="uid://nei5vtgi1n8a" path="res://src/ui/menu/main_menu.gd" id="1_5oo8x"]
-[ext_resource type="Texture2D" uid="uid://c3syrcyv5uyia" path="res://assets/sprites/interface/borders/default/Panel/panel-022.png" id="2_52atu"]
-[ext_resource type="Texture2D" uid="uid://uv800otjmapi" path="res://assets/sprites/interface/borders/default/Border/panel-border-009.png" id="3_py4bp"]
-[ext_resource type="Texture2D" uid="uid://ckmm1dvqlfxy2" path="res://assets/sprites/interface/borders/default/Divider Fade/divider-fade-005.png" id="4_48cso"]
-[ext_resource type="Texture2D" uid="uid://d3q07pw1jc23u" path="res://assets/sprites/interface/borders/default/Transparent center/panel-transparent-center-028.png" id="4_button_border"]
+[ext_resource type="Texture2D" uid="uid://ckmm1dvqlfxy2" path="res://src/ui/borders/default/Divider Fade/divider-fade-005.png" id="4_48cso"]
+[ext_resource type="Texture2D" uid="uid://d3q07pw1jc23u" path="res://src/ui/borders/default/Transparent center/panel-transparent-center-028.png" id="4_button_border"]
 [ext_resource type="FontFile" uid="uid://iw5lyygtld5d" path="res://assets/fonts/alegreya_sans_sc_regular.ttf" id="5_4ty6e"]
-[ext_resource type="Texture2D" uid="uid://oc6otu466h13" path="res://assets/sprites/interface/borders/default/Panel/panel-028.png" id="5_panel"]
+[ext_resource type="Texture2D" uid="uid://oc6otu466h13" path="res://src/ui/borders/default/Panel/panel-028.png" id="5_panel"]
 [ext_resource type="FontFile" uid="uid://5pbnpbqdcoah" path="res://assets/fonts/pirata_one.ttf" id="5_pirata"]
 [ext_resource type="FontFile" uid="uid://jjd650a8cvxa" path="res://assets/fonts/ebgaramond_regular.ttf" id="6_garamond"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_panel"]
-texture = ExtResource("2_52atu")
+texture = ExtResource("5_panel")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
-modulate_color = Color(0.16078432, 0.11764706, 0.08627451, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52atu"]
-texture = ExtResource("3_py4bp")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
+modulate_color = Color(0.5, 0.5, 0.55, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_normal"]
 texture = ExtResource("4_button_border")
@@ -46,7 +37,7 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
-modulate_color = Color(0.16078432, 0.11764706, 0.08627451, 1)
+modulate_color = Color(0.5, 0.5, 0.55, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -64,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2784314, 0.23529412, 0.21176471, 1)
+color = Color(0.35, 0.35, 0.4, 1)
 
 [node name="BookSpine" type="ColorRect" parent="."]
 layout_mode = 1
@@ -76,7 +67,7 @@ offset_left = -3.0
 offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.2, 0.2, 0.25, 1)
 
 [node name="BookContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -90,7 +81,7 @@ theme_override_constants/separation = 20
 [node name="LeftPage" type="VBoxContainer" parent="BookContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = -15
+theme_override_constants/separation = 5
 
 [node name="TopMargin" type="Control" parent="BookContainer/LeftPage"]
 custom_minimum_size = Vector2(0, 60)
@@ -105,26 +96,22 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_menu_panel")
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Panel" type="PanelContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_52atu")
-
-[node name="TitleSection" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/Panel"]
+[node name="TitleSection" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 5
 
-[node name="Title" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/Panel/TitleSection"]
+[node name="Title" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.1, 0.1, 1)
+theme_override_colors/font_color = Color(0.8, 0.8, 0.85, 1)
 theme_override_fonts/font = ExtResource("5_pirata")
 theme_override_font_sizes/font_size = 64
 text = "SANDOMIRIA"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/Panel/TitleSection"]
+[node name="Subtitle" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.65, 0.12, 0.12, 1)
+theme_override_colors/font_color = Color(0.7, 0.7, 0.75, 1)
 theme_override_fonts/font = ExtResource("5_pirata")
 theme_override_font_sizes/font_size = 48
 text = "DEMONICUM"
@@ -136,7 +123,7 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="DividerLeft" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
-modulate = Color(0.36078432, 0.39607844, 0.40784314, 1)
+modulate = Color(0.6, 0.6, 0.65, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("4_48cso")
@@ -149,7 +136,7 @@ theme_override_fonts/font = ExtResource("5_4ty6e")
 text = "v. 0.0.1."
 
 [node name="DividerRight" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
-modulate = Color(0.36078432, 0.39607844, 0.40784314, 1)
+modulate = Color(0.6, 0.6, 0.65, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("4_48cso")
@@ -230,7 +217,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_panel")
 
 [node name="ArtPlaceholder" type="ColorRect" parent="BookContainer/RightPage/ArtContainer"]
 layout_mode = 2
-color = Color(0.2509804, 0.20784314, 0.19215687, 1)
+color = Color(0.4, 0.4, 0.45, 1)
 
 [node name="PlaceholderLabel" type="Label" parent="BookContainer/RightPage/ArtContainer/ArtPlaceholder"]
 layout_mode = 1
@@ -245,9 +232,9 @@ offset_right = 100.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.9411765, 0.8784314, 0.8392157, 1)
+theme_override_colors/font_color = Color(0.75, 0.75, 0.8, 1)
 theme_override_font_sizes/font_size = 18
-text = "[ Artwork Placeholder ]"
+text = "[ Art Placeholder ]"
 horizontal_alignment = 1
 
 [node name="BottomSpacer2" type="Control" parent="BookContainer/RightPage"]

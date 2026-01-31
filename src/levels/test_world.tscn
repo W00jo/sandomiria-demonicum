@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=4 uid="uid://duobiyv8ws4fs"]
+[gd_scene load_steps=19 format=4 uid="uid://duobiyv8ws4fs"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_8a5hx"]
 [ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="2_0huwb"]
-[ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar.tscn" id="3_0huwb"]
+[ext_resource type="PackedScene" uid="uid://b1kmhtrjyer4j" path="res://src/characters/enemies/boss_tatar/boss_tatar.tscn" id="2_0ri6j"]
+[ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar/tatar.tscn" id="3_0huwb"]
 [ext_resource type="PackedScene" uid="uid://bwlmc44iv1d01" path="res://src/objects/potions/health_potion.tscn" id="4_0nfa4"]
 [ext_resource type="PackedScene" uid="uid://lah3a1arll6j" path="res://src/objects/other/ladder.tscn" id="5_6w5xy"]
+[ext_resource type="PackedScene" uid="uid://bdb4l1854bjv3" path="res://src/shared/roadblock/roadblock.tscn" id="7_cpb20"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7k8c1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -130,6 +132,14 @@ collision_mask = 5
 size = Vector3(20, 0.01, 20)
 material = SubResource("StandardMaterial3D_w2p53")
 
+[node name="BossTatar" parent="NavigationRegion3D" instance=ExtResource("2_0ri6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4667501, -0.24499989, -4.68841)
+player_path = NodePath("../../Player")
+
+[node name="Tatar" parent="NavigationRegion3D" instance=ExtResource("3_0huwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.8202868)
+player_path = NodePath("../../Player")
+
 [node name="Player" parent="." instance=ExtResource("1_8a5hx")]
 
 [node name="Dummy" type="RigidBody3D" parent="."]
@@ -146,10 +156,6 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, -4.3711385e-08, 0, 4.3711385e-08, 1, 0, 0.5771885, 0)
 shape = SubResource("CapsuleShape3D_7k8c1")
 
-[node name="Tatar" parent="." instance=ExtResource("3_0huwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.8202868)
-player_path = NodePath("../Player")
-
 [node name="HealthPotion" parent="." instance=ExtResource("4_0nfa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2218475, -1.1949995, -0.84898424)
 healing_amount = 30
@@ -160,3 +166,6 @@ healing_amount = -50
 
 [node name="Ladder" parent="." instance=ExtResource("5_6w5xy")]
 transform = Transform3D(2.9641972, 0, 0, 0, 3.086731, 0, 0, 0, 1, -6.2176843, 0.048365474, -8.301056)
+
+[node name="Roadblock" parent="." instance=ExtResource("7_cpb20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2248592, -0.49499893, 4.0022254)
