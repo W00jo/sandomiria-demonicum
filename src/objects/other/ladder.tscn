@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lah3a1arll6j"]
 
 [ext_resource type="Script" uid="uid://xe0r27gd1t1i" path="res://src/objects/other/ladder.gd" id="1_73cj5"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_fqyxu"]
+[ext_resource type="PackedScene" uid="uid://bustmtimumhrt" path="res://assets/models/ladder/wooden_ladder.glb" id="2_6o6ss"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73cj5"]
 size = Vector3(0.28753662, 1, 0.34869385)
@@ -11,13 +10,12 @@ size = Vector3(0.28753662, 1, 0.34869385)
 transform = Transform3D(2.9641972, 0, 0, 0, 3.086731, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_73cj5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.24780464, 0, 0, 0, 1, 0, 0, 0, 0.16115111, 0, 0, 0)
-mesh = SubResource("BoxMesh_fqyxu")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999106, 0, 0, 0, 0.9999931, 0.015289281, 0, 0.14071588)
 shape = SubResource("BoxShape3D_73cj5")
+
+[node name="wooden_ladder" parent="." instance=ExtResource("2_6o6ss")]
+transform = Transform3D(0.33735943, 0, 0, 0, 0.32396728, 0, 0, 0, 0.9999999, -0.0080729555, 0, -0.0023222042)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
