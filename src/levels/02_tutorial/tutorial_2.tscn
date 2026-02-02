@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://gefhtih4wx1y"]
+[gd_scene load_steps=29 format=4 uid="uid://gefhtih4wx1y"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_30tvn"]
 [ext_resource type="PackedScene" uid="uid://cyoqsxvjvtjob" path="res://src/levels/02_tutorial/tutorialpolished2.glb" id="2_5lyua"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ct274bwd60bxn" path="res://src/levels/02_tutorial/tutorialpolished2_barrel_upscayl_4x_upscayl-standard-4x.png" id="6_db2ix"]
 [ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar.tscn" id="7_mni2i"]
 [ext_resource type="PackedScene" uid="uid://8xjnta7u4oh" path="res://src/shared/traps/arrow_trap/trap.tscn" id="8_f4a7f"]
+[ext_resource type="PackedScene" uid="uid://bwlmc44iv1d01" path="res://src/objects/potions/health_potion.tscn" id="11_xreww"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_30tvn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -274,9 +275,6 @@ shadow_enabled = true
 transform = Transform3D(0.007417567, 0, -0.99997246, 0, 1, 0, 0.99997246, 0, 0.007417567, -5.5926695, 0.69329023, -0.41326404)
 
 [node name="tutorialpolished2" parent="." instance=ExtResource("2_5lyua")]
-
-[node name="ROOFS" parent="tutorialpolished2" index="0"]
-visible = false
 
 [node name="StaticBody3D" parent="tutorialpolished2/ROOFS/roof_001roof" index="0"]
 collision_layer = 2
@@ -4288,6 +4286,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.98
 transform = Transform3D(-1.2956917e-07, 0, 1, 0, 3.9918175, 0, -2.9641972, 0, -4.371139e-08, -22.571133, 12.878158, -12.879973)
 
 [node name="Tatar" parent="." instance=ExtResource("7_mni2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.109354, 2.727061, 0.59258074)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.109354, 2.2614472, 0.59258074)
+player_path = NodePath("../Player")
+
+[node name="HealthPotion" parent="." instance=ExtResource("11_xreww")]
+transform = Transform3D(0.35667282, 0, -0.9342294, 0, 1, 0, 0.9342294, 0, 0.35667282, 17.500301, 1.1712761, 0.18989277)
 
 [editable path="tutorialpolished2"]
