@@ -17,17 +17,23 @@ grow_vertical = 2
 color = Color(1, 0, 0, 0.29411766)
 
 [node name="Crosshair" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+offset_right = 64.0
+offset_bottom = 64.0
 texture = ExtResource("2_bnghb")
-metadata/_edit_use_anchors_ = true
+expand_mode = 1
 
 [node name="DirectionIndicator" type="TextureRect" parent="."]
 offset_right = 64.0
 offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("3_e78wx")
+expand_mode = 1
 
 [node name="Hitmarker" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0

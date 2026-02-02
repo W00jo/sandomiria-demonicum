@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtxqnl1sp0frn"]
+
+[ext_resource type="PackedScene" uid="uid://bandhsjmnxb8e" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets.glb" id="1_o2n66"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="SandomiriaAssets" parent="." instance=ExtResource("1_o2n66")]

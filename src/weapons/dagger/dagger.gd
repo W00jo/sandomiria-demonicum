@@ -1,13 +1,8 @@
 extends Node3D
-## System ataku kierunkowego dla sztyletu.
+## System ataku kierunkowego dla krótkiego miecza.
 ##
 ## Gracz wybiera kierunek ruchem myszy, blokuje go prawym przyciskiem,
-## a następnie atakuje lewym przyciskiem. Inspirowane mechaniką z [i]Dark Messiah[/i].[br]
-## [br]
-## Kierunki ataku:[br]
-## - [b]Lewo/Prawo[/b]: standardowe cięcia boczne[br]
-## - [b]Góra[/b]: overhead z bonusem do obrażeń[br]
-## - [b]Dół[/b]: pchnięcie z większym zasięgiem[br]
+## a następnie atakuje lewym przyciskiem.
 ##
 ## @experimental
 
@@ -29,61 +24,37 @@ enum AttackDirection {
 	DOWN = 4,
 }
 
-## Aktualnie wybrany kierunek ataku (domyślnie pchnięcie).
 var current_direction: AttackDirection = AttackDirection.DOWN
-## Czy kierunek jest zablokowany prawym przyciskiem myszy.
 var direction_locked: bool = false
-## Czy obecnie trwa animacja ataku (blokuje kolejne ataki).
 var is_attacking: bool = false
 
-## Strefa "martwa" dla myszy (aby uniknąć przypadkowych zmian kierunku).[br]
-## Im większa wartość, tym bardziej trzeba machać myszą.
+## Strefa "martwa" dla myszy (aby uniknąć przypadkowych zmian kierunku).
 @export var dead_zone: float = 50.0
 
 ## Statystyki obrażeń dla różnych typów ataków.
 @export_group("Damage stats")
 ## Bazowe obrażenia dla cięć bocznych.
 @export var base_damage: float = 1
-## Mnożnik obrażeń dla overheadu (góra).
 @export var overhead_damage_multiplier: float = 1.5
-## Obrażenia pchnięcia (dół) - niższe, ale za to większy zasięg.
 @export var stab_damage: float = 0.75
 
-## Zasięgi dla różnych typów ataków (w jednostkach Godota).
+## Zasięgi dla różnych typów ataków.
 @export_group("Attack ranges")
-## Zasięg cięć bocznych.
 @export var side_attack_range: float = 1
-## Zasięg overheadu.
 @export var overhead_attack_range: float = 1
-## Zasięg pchnięcia - najdłuższy.
 @export var stab_attack_range: float = 1.2
 
-## Kąty stożka ataku (w stopniach).[br]
 ## Określają jak "szeroki" jest atak.
 @export_group("Attack areas")
-## Kąt cięć bocznych - szeroki łuk.
 @export var side_attack_angle: float = 90.0
-## Kąt overheadu - węższy, bardziej precyzyjny.
 @export var overhead_attack_angle: float = 45.0
 
-## Pozycja środka ekranu (cache'owana w [method _ready]).
 var screen_center: Vector2
-## Akumulowana pozycja myszy do określenia kierunku ataku.[br]
-## Resetuje się po przekroczeniu limitu lub zmianie kierunku.
 var accumulated_mouse_pos: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	screen_center = get_viewport().get_visible_rect().size / 2.0
 
-
-## Obsługuje input gracza dla systemu walki.[br]
-## [br]
-## [b]Sterowanie:[/b][br]
-## - [kbd]LPM[/kbd]: wykonaj atak w wybranym kierunku[br]
-## - [kbd]PPM[/kbd]: zablokuj/odblokuj kierunek ataku[br]
-## - [b]Ruch myszy[/b]: zmień kierunek (gdy odblokowany)[br]
-## [br]
-## Sterowanie można modyfikować w [code]Project > Project Settings[/code].
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		direction_locked = not direction_locked
@@ -98,14 +69,6 @@ func _input(event: InputEvent) -> void:
 		accumulated_mouse_pos = accumulated_mouse_pos.limit_length(200.0)
 		update_attack_direction(accumulated_mouse_pos)
 
-## Określa kierunek ataku na podstawie ruchu myszy.[br]
-## [br]
-## Używa akumulowanej pozycji myszy i dzieli ekran na 4 sektory:[br]
-## - [b]315°-45°[/b]: prawo[br]
-## - [b]45°-135°[/b]: dół (pchnięcie)[br]
-## - [b]135°-225°[/b]: lewo[br]
-## - [b]225°-315°[/b]: góra (overhead)[br]
-## [br]
 ## @param mouse_pos Akumulowana pozycja względna myszy.
 func update_attack_direction(mouse_pos: Vector2) -> void:
 	var relative_pos: Vector2 = mouse_pos
@@ -128,13 +91,6 @@ func update_attack_direction(mouse_pos: Vector2) -> void:
 	else:  # Góra
 		current_direction = AttackDirection.UP
 
-## Wykonuje atak w aktualnie wybranym kierunku.[br]
-## [br]
-## Każdy kierunek ma inne parametry:[br]
-## - [b]Lewo/Prawo[/b]: [member side_attack_range], [member side_attack_angle], [member base_damage][br]
-## - [b]Góra[/b]: [member overhead_attack_range], [member overhead_attack_angle], [member base_damage] * [member overhead_damage_multiplier][br]
-## - [b]Dół[/b]: [member stab_attack_range], 30°, [member stab_damage][br]
-## [br]
 ## [b]TODO:[/b] Dodać animacje dla każdego kierunku.
 func perform_attack() -> void:
 	is_attacking = true

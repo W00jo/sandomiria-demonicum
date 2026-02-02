@@ -61,8 +61,8 @@ var can_attack: bool = true
 ## Czy Szef jest w trakcie ataku obszarowego.
 var is_attacking: bool = false
 
-## Lista graczy obecnie w strefie obrażeń.[br]
-## [b]Uwaga:[/b] Obecnie nieużywane, obrażenia liczone po dystansie.
+## Lista graczy obecnie w strefie obrażeń.
+## Uwaga: Obecnie nieużywane, obrażenia liczone po dystansie.
 var players_in_area: Array[Node3D] = []
 
 ## Oryginalny materiał Szefa (do resetu po ataku).
@@ -168,11 +168,8 @@ func _perform_area_attack() -> void:
 		# Faster pulsing during damage phase
 		var damage_pulse = sin(charge_timer * 6.0) * 0.3 + 0.7
 		damage_area.scale = Vector3(damage_pulse, 1.0, damage_pulse)
-		# Red danger color for area
-		area_material.albedo_color = Color(1.0, 0.1, 0.1, 0.8)
-		area_material.emission = Color(1.0, 0.0, 0.0, 1)
 		# Red danger color for boss
-		boss_material.albedo_color = Color(1.0, 0.0, 0.0, 1)
+		boss_material.albedo_color = Color(1.0, 0.9, 0.0, 1)
 		
 		# Deal damage to players in area periodically
 		if last_damage_time >= damage_tick_interval:

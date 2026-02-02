@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://i8cjo735vev2"]
+
+[ext_resource type="FontFile" uid="uid://5pbnpbqdcoah" path="res://assets/fonts/title.ttf" id="1_egqqs"]
+
+[resource]
+Label/colors/font_color = Color(0.9019608, 0.22352941, 0.27450982, 1)
+Label/colors/font_outline_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_egqqs")

@@ -1,20 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://dabf2vqq6byu7"]
+[gd_scene load_steps=15 format=3 uid="uid://dabf2vqq6byu7"]
 
-[ext_resource type="Script" uid="uid://nei5vtgi1n8a" path="res://src/ui/menu/main_menu.gd" id="1_5oo8x"]
+[ext_resource type="Script" uid="uid://nei5vtgi1n8a" path="res://src/ui/menu/main_menu/main_menu.gd" id="1_5oo8x"]
+[ext_resource type="Texture2D" uid="uid://bghx8abyiyyge" path="res://src/ui/borders/default/Transparent center/panel-transparent-center-000.png" id="2_3htjm"]
+[ext_resource type="Texture2D" uid="uid://40r4rywj8ceq" path="res://src/ui/menu/main_menu/simplepolygon-bvbnrerh.jpg" id="2_sm3lk"]
+[ext_resource type="Theme" uid="uid://i8cjo735vev2" path="res://src/ui/menu/themes/title.tres" id="3_yp8wb"]
 [ext_resource type="Texture2D" uid="uid://ckmm1dvqlfxy2" path="res://src/ui/borders/default/Divider Fade/divider-fade-005.png" id="4_48cso"]
 [ext_resource type="Texture2D" uid="uid://d3q07pw1jc23u" path="res://src/ui/borders/default/Transparent center/panel-transparent-center-028.png" id="4_button_border"]
 [ext_resource type="FontFile" uid="uid://iw5lyygtld5d" path="res://assets/fonts/alegreya_sans_sc_regular.ttf" id="5_4ty6e"]
 [ext_resource type="Texture2D" uid="uid://oc6otu466h13" path="res://src/ui/borders/default/Panel/panel-028.png" id="5_panel"]
-[ext_resource type="FontFile" uid="uid://5pbnpbqdcoah" path="res://assets/fonts/pirata_one.ttf" id="5_pirata"]
 [ext_resource type="FontFile" uid="uid://jjd650a8cvxa" path="res://assets/fonts/ebgaramond_regular.ttf" id="6_garamond"]
+[ext_resource type="Texture2D" uid="uid://dxn3jb0mle715" path="res://src/ui/menu/main_menu/stained_glass_handmade.png" id="8_615rq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_panel"]
-texture = ExtResource("5_panel")
+texture = ExtResource("2_3htjm")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
-modulate_color = Color(0.5, 0.5, 0.55, 1)
+modulate_color = Color(0.74509805, 0.74509805, 0.78039217, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_normal"]
 texture = ExtResource("4_button_border")
@@ -37,7 +40,7 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
-modulate_color = Color(0.5, 0.5, 0.55, 1)
+modulate_color = Color(0.7462244, 0.7464292, 0.7818233, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -57,17 +60,26 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.35, 0.35, 0.4, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.60784316)
+layout_mode = 0
+offset_top = -32.0
+offset_right = 1152.0
+offset_bottom = 668.0
+texture = ExtResource("2_sm3lk")
+stretch_mode = 1
+
 [node name="BookSpine" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_right = 3.0
+offset_left = -8.0
+offset_right = 11.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2, 0.2, 0.25, 1)
+color = Color(0.13333334, 0.13333334, 0.13333334, 1)
 
 [node name="BookContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -78,76 +90,68 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="LeftPage" type="VBoxContainer" parent="BookContainer"]
+[node name="LeftSide" type="VBoxContainer" parent="BookContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
+alignment = 1
 
-[node name="TopMargin" type="Control" parent="BookContainer/LeftPage"]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-
-[node name="MenuContainer" type="PanelContainer" parent="BookContainer/LeftPage"]
+[node name="MenuContainer" type="PanelContainer" parent="BookContainer/LeftSide"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_menu_panel")
 
-[node name="ContentVBox" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer"]
+[node name="ContentVBox" type="VBoxContainer" parent="BookContainer/LeftSide/MenuContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="TitleSection" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+[node name="TitleSection" type="VBoxContainer" parent="BookContainer/LeftSide/MenuContainer/ContentVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 5
 
-[node name="Title" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
+[node name="Title" type="Label" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/TitleSection"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0.8, 0.85, 1)
-theme_override_fonts/font = ExtResource("5_pirata")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_yp8wb")
 text = "SANDOMIRIA"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/TitleSection"]
+[node name="Subtitle" type="Label" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/TitleSection"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.7, 0.75, 1)
-theme_override_fonts/font = ExtResource("5_pirata")
+theme = ExtResource("3_yp8wb")
 theme_override_font_sizes/font_size = 48
 text = "DEMONICUM"
 horizontal_alignment = 1
 
-[node name="DividerContainer" type="HBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+[node name="DividerContainer" type="HBoxContainer" parent="BookContainer/LeftSide/MenuContainer/ContentVBox"]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="DividerLeft" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
-modulate = Color(0.6, 0.6, 0.65, 1)
+[node name="DividerLeft" type="TextureRect" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/DividerContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("4_48cso")
 stretch_mode = 3
 flip_h = true
 
-[node name="Label" type="Label" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
+[node name="Label" type="Label" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/DividerContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_4ty6e")
 text = "v. 0.0.1."
 
-[node name="DividerRight" type="TextureRect" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/DividerContainer"]
-modulate = Color(0.6, 0.6, 0.65, 1)
+[node name="DividerRight" type="TextureRect" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/DividerContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("4_48cso")
 stretch_mode = 3
 
-[node name="MenuButtons" type="VBoxContainer" parent="BookContainer/LeftPage/MenuContainer/ContentVBox"]
+[node name="MenuButtons" type="VBoxContainer" parent="BookContainer/LeftSide/MenuContainer/ContentVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 15
 
-[node name="PlayButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+[node name="PlayButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -159,7 +163,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_button_hover")
 theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
 text = "PLAY_BUTTON"
 
-[node name="SettingsButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+[node name="SettingsButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -171,7 +175,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_button_hover")
 theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
 text = "SETTINGS_BUTTON"
 
-[node name="CreditsButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+[node name="CreditsButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -183,7 +187,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_button_hover")
 theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
 text = "CREDITS_BUTTON"
 
-[node name="QuitButton" type="Button" parent="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons"]
+[node name="QuitButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -195,53 +199,24 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_button_hover")
 theme_override_styles/hover = SubResource("StyleBoxTexture_button_hover")
 text = "QUIT_BUTTON"
 
-[node name="BottomSpacer" type="Control" parent="BookContainer/LeftPage"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RightPage" type="VBoxContainer" parent="BookContainer"]
+[node name="RightSide" type="VBoxContainer" parent="BookContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
+alignment = 1
 
-[node name="TopMargin2" type="Control" parent="BookContainer/RightPage"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-
-[node name="ArtContainer" type="PanelContainer" parent="BookContainer/RightPage"]
+[node name="ArtContainer" type="PanelContainer" parent="BookContainer/RightSide"]
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_panel")
 
-[node name="ArtPlaceholder" type="ColorRect" parent="BookContainer/RightPage/ArtContainer"]
+[node name="ArtPlaceholder" type="TextureRect" parent="BookContainer/RightSide/ArtContainer"]
 layout_mode = 2
-color = Color(0.4, 0.4, 0.45, 1)
+texture = ExtResource("8_615rq")
 
-[node name="PlaceholderLabel" type="Label" parent="BookContainer/RightPage/ArtContainer/ArtPlaceholder"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -14.0
-offset_right = 100.0
-offset_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.75, 0.75, 0.8, 1)
-theme_override_font_sizes/font_size = 18
-text = "[ Art Placeholder ]"
-horizontal_alignment = 1
-
-[node name="BottomSpacer2" type="Control" parent="BookContainer/RightPage"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="BookContainer/LeftPage/MenuContainer/ContentVBox/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]

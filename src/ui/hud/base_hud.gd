@@ -20,8 +20,6 @@ func _ready():
 	var player = get_parent()
 	if player:
 		weapon = player.get_node_or_null("Head/Camera3D/Dagger")
-		if weapon:
-			print("Gracz gotowy na mogging")
 
 func _process(_delta: float) -> void:
 	if not weapon:

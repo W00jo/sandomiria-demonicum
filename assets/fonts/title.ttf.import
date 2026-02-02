@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://5pbnpbqdcoah"
-path="res://.godot/imported/pirata_one.ttf-a6cfa848969e95a5944804ca052593a1.fontdata"
+path="res://.godot/imported/title.ttf-e83f6b7f90670f1738a1c2d3f37523e6.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/pirata_one.ttf"
-dest_files=["res://.godot/imported/pirata_one.ttf-a6cfa848969e95a5944804ca052593a1.fontdata"]
+source_file="res://assets/fonts/title.ttf"
+dest_files=["res://.godot/imported/title.ttf-e83f6b7f90670f1738a1c2d3f37523e6.fontdata"]
 
 [params]
 
