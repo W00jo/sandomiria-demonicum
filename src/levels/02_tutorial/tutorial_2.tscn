@@ -4292,4 +4292,7 @@ player_path = NodePath("../Player")
 [node name="HealthPotion" parent="." instance=ExtResource("11_xreww")]
 transform = Transform3D(0.35667282, 0, -0.9342294, 0, 1, 0, 0.9342294, 0, 0.35667282, 17.500301, 1.1712761, 0.18989277)
 
+[node name="HealthPotion2" parent="." instance=ExtResource("11_xreww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3035345, 11.209348, 25.521168)
+
 [editable path="tutorialpolished2"]
