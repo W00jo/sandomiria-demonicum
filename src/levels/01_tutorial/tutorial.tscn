@@ -1,11 +1,13 @@
-[gd_scene load_steps=52 format=4 uid="uid://b6rgy8f4q74j8"]
+[gd_scene load_steps=56 format=4 uid="uid://b6rgy8f4q74j8"]
 
 [ext_resource type="Script" uid="uid://2lfyf5vt3p4m" path="res://src/levels/01_tutorial/opening_screen.gd" id="1_opening"]
 [ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="1_tlmpr"]
 [ext_resource type="Texture2D" uid="uid://bed8hoqj4ydk6" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_wall_timber_structure_horizontal.png" id="2_jcfy0"]
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="2_tlmpr"]
+[ext_resource type="FontFile" uid="uid://jjd650a8cvxa" path="res://assets/fonts/ebgaramond_regular.ttf" id="3_7lbtp"]
 [ext_resource type="Texture2D" uid="uid://bg316erwr18i4" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_roof_clay_red_center.png" id="3_oywqr"]
 [ext_resource type="Texture2D" uid="uid://bf1c3e4kylgyo" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_door_wood_handle.png" id="4_gkcsc"]
+[ext_resource type="FontFile" uid="uid://dqtacd824v41v" path="res://assets/fonts/ebgaramond_bold.ttf" id="4_kclun"]
 [ext_resource type="Texture2D" uid="uid://drpfch4vuy00r" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_window_tall_divided.png" id="5_rvhgs"]
 [ext_resource type="Texture2D" uid="uid://bauicnav56y7j" path="res://src/levels/01_tutorial/forest.png" id="7_gkcsc"]
 [ext_resource type="MeshLibrary" uid="uid://cwcav1d1yak5p" path="res://src/levels/01_tutorial/tiles/tiles.tres" id="7_oywqr"]
@@ -21,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b1kmhtrjyer4j" path="res://src/characters/enemies/boss_tatar/boss_tatar.tscn" id="17_20aor"]
 [ext_resource type="Script" uid="uid://b3fqe8xtfb4k5" path="res://src/levels/01_tutorial/boss_fight_trigger.gd" id="18_l032j"]
 [ext_resource type="Texture2D" uid="uid://dhu86n2xk1ki1" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_door_metal_gate.png" id="18_rdssk"]
+[ext_resource type="Script" uid="uid://cp5b72gpvnkc7" path="res://src/levels/01_tutorial/world_boundry.gd" id="22_fx5kj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ptjdp"]
 sky_top_color = Color(0.15, 0.2, 0.35, 1)
@@ -624,6 +627,8 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_7sbbd"]
 size = Vector3(13, 1, 13)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q0k3n"]
+
 [node name="Tutorial" type="Node3D"]
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
@@ -664,11 +669,18 @@ offset_right = 400.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_7lbtp")
+theme_override_fonts/bold_font = ExtResource("4_kclun")
 theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
-text = "[center]Year of Our Lord 1259
+text = "[center]Century of Our Lord [b]XIV[/b]
+The undead have rissen...
 
-The Tatars have come...[/center]"
+...Humanity's last hope lies in a small town
+
+[b][color=red]SANDOMIERZ[/color][/b]
+[/center]"
 fit_content = true
 
 [node name="ContinueHint" type="Label" parent="OpeningScreen/Background"]
@@ -760,9 +772,9 @@ skeleton = NodePath("")
 
 [node name="Gorge" type="Node3D" parent="."]
 
-[node name="Node3D" type="Node3D" parent="Gorge"]
+[node name="Path" type="Node3D" parent="Gorge"]
 
-[node name="PathTexture" type="GridMap" parent="Gorge/Node3D"]
+[node name="PathTexture" type="GridMap" parent="Gorge/Path"]
 mesh_library = ExtResource("7_oywqr")
 physics_material = SubResource("PhysicsMaterial_oywqr")
 collision_layer = 2
@@ -772,33 +784,73 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="Entry" type="CSGBox3D" parent="Gorge/Node3D"]
+[node name="Entry" type="CSGBox3D" parent="Gorge/Path"]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881904, 0, -0.25881904, 0.9659259, -6, -0.58822864, -18.848888)
 use_collision = true
 collision_layer = 2
 collision_mask = 5
 size = Vector3(4, 0.01, 4)
 
-[node name="Path" type="CSGBox3D" parent="Gorge/Node3D"]
+[node name="Path" type="CSGBox3D" parent="Gorge/Path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -1, -33.5)
 use_collision = true
 collision_layer = 2
 collision_mask = 5
 size = Vector3(4.4, 0.01, 26)
 
-[node name="Path2" type="CSGBox3D" parent="Gorge/Node3D"]
+[node name="Path2" type="CSGBox3D" parent="Gorge/Path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.75, -1, -44.3)
 use_collision = true
 collision_layer = 2
 collision_mask = 5
 size = Vector3(20.5, 0.01, 4.4)
 
-[node name="Path3" type="CSGBox3D" parent="Gorge/Node3D"]
+[node name="Path3" type="CSGBox3D" parent="Gorge/Path"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.05, -1, -48.3)
 use_collision = true
 collision_layer = 2
 collision_mask = 5
 size = Vector3(4.1, 0.01, 12.400001)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Gorge/Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.9949999, -31.5)
+visible = false
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(0.01, 4, 28)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Gorge/Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.9949999, -29.75)
+visible = false
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(0.01, 4, 24.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Gorge/Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8, 0.9949999, -58.35)
+visible = false
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(0.01, 4, 24.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Gorge/Path"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.150002, 0.9949999, -41.85)
+visible = false
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(0.01, 4, 24)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Gorge/Path"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.750002, 0.9949999, -46.05)
+visible = false
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(0.01, 4, 24)
 
 [node name="Forest" type="Node3D" parent="Gorge"]
 
@@ -1002,6 +1054,16 @@ size = Vector3(9, 5, 9.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -75)
 player_path = NodePath("../../Player")
 
+[node name="GridMap" type="GridMap" parent="Highway"]
+mesh_library = ExtResource("7_oywqr")
+data = {
+"cells": PackedInt32Array(-7, 65501, 10, -7, 65500, 10, -7, 65499, 10, -6, 65499, 10, -6, 65498, 10, -6, 65497, 10, -6, 65496, 10, -6, 65495, 10, -5, 65495, 10, -7, 65498, 10, -6, 65501, 10, -5, 65501, 10, -5, 65500, 10, -5, 65499, 10, -5, 65498, 10, -5, 65497, 10, -5, 65496, 10, -6, 65500, 10, -8, 65499, 10, -7, 65497, 10, -7, 65496, 10, -7, 65495, 10, -8, 65498, 10, -8, 65500, 10, -8, 65501, 10, -6, 65502, 10, -5, 65502, 10, -7, 65502, 10, -8, 65502, 10, -6, 65503, 10, -5, 65503, 10, -7, 65503, 10, -8, 65503, 10, -7, 65504, 10, -6, 65504, 10, -8, 65504, 10, -5, 65504, 10, -5, 65494, 10, -6, 65494, 10, -7, 65494, 10, -7, 65493, 10, -6, 65493, 10, -5, 65493, 10, -8, 65493, 10, -8, 65494, 10, -8, 65495, 10, -8, 65496, 10, -8, 65497, 10, -9, 65501, 10, -9, 65502, 10, -9, 65503, 10, -9, 65504, 10, -5, 65492, 10, -6, 65492, 10, -7, 65492, 10, -8, 65492, 10)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="HealthPotion" parent="Highway" instance=ExtResource("12_7sbbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -1, -75)
+
 [node name="FinalStage" type="Node3D" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="FinalStage"]
@@ -1046,3 +1108,10 @@ shape = SubResource("BoxShape3D_7sbbd")
 [node name="BossTatar" parent="FinalStage/NavigationRegion3D" instance=ExtResource("17_20aor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -111)
 player_path = NodePath("../../../Player")
+
+[node name="WorldBoundry" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28, 0)
+script = ExtResource("22_fx5kj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBoundry"]
+shape = SubResource("WorldBoundaryShape3D_q0k3n")
