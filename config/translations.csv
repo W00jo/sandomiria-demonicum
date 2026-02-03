@@ -1,7 +1,5 @@
 keys,pl,en
-GAME_TITLE,Sandomiria Demonicum,Sandomiria Demonicum
-START,Start,Start
-SETTINGS,Ustawienia,Settings
-EXIT,Wyjd� z gry,Exit
-VERSION,v. ,wer. 
-OBJECTIVE,Cel: ,Objective: 
+PLAY_BUTTON,Graj,Play
+SETTINGS_BUTTON,Ustawienia,Settings
+CREDITS_BUTTON,Twórcy,Credits
+QUIT_BUTTON,Wyjście,Exit

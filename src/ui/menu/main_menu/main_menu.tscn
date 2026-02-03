@@ -25,6 +25,8 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+expand_margin_left = 16.0
+expand_margin_right = 16.0
 modulate_color = Color(0.360784, 0.396078, 0.407843, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button_hover"]
@@ -33,6 +35,8 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+expand_margin_left = 16.0
+expand_margin_right = 16.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_panel"]
 texture = ExtResource("5_panel")
@@ -149,10 +153,12 @@ stretch_mode = 3
 [node name="MenuButtons" type="VBoxContainer" parent="BookContainer/LeftSide/MenuContainer/ContentVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 3
 theme_override_constants/separation = 15
 
 [node name="PlayButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -165,6 +171,7 @@ text = "PLAY_BUTTON"
 
 [node name="SettingsButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -177,6 +184,7 @@ text = "SETTINGS_BUTTON"
 
 [node name="CreditsButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -189,6 +197,7 @@ text = "CREDITS_BUTTON"
 
 [node name="QuitButton" type="Button" parent="BookContainer/LeftSide/MenuContainer/ContentVBox/MenuButtons"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)

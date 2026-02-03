@@ -61,6 +61,10 @@ attack={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://config/translations.pl.translation", "res://config/translations.en.translation")
+
 [layer_names]
 
 3d_physics/layer_1="Player"

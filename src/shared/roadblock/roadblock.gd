@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func take_damage(amount: float) -> void:
 	current_health -= amount
-	print(amount, " dmg", current_health, " HP")
+	print(amount, " dmg; ", current_health, " HP")
 	
 	if current_health <= 0:
 		_die()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://gefhtih4wx1y"]
+[gd_scene load_steps=31 format=4 uid="uid://gefhtih4wx1y"]
 
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="1_30tvn"]
 [ext_resource type="PackedScene" uid="uid://cyoqsxvjvtjob" path="res://src/levels/02_tutorial/tutorialpolished2.glb" id="2_5lyua"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bkqwfh0agtdsh" path="res://assets/FX/fx_torch_light.tscn" id="5_cy8j0"]
 [ext_resource type="Texture2D" uid="uid://dy0t8bn8fe6l3" path="res://src/levels/02_tutorial/tutorialpolished2_Photoreal_Metal_07-512x512.png" id="5_tp6fg"]
 [ext_resource type="Texture2D" uid="uid://ct274bwd60bxn" path="res://src/levels/02_tutorial/tutorialpolished2_barrel_upscayl_4x_upscayl-standard-4x.png" id="6_db2ix"]
-[ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar.tscn" id="7_mni2i"]
+[ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar/tatar.tscn" id="7_mni2i"]
 [ext_resource type="PackedScene" uid="uid://8xjnta7u4oh" path="res://src/shared/traps/arrow_trap/trap.tscn" id="8_f4a7f"]
 [ext_resource type="PackedScene" uid="uid://bwlmc44iv1d01" path="res://src/objects/potions/health_potion.tscn" id="11_xreww"]
+[ext_resource type="Script" uid="uid://6jakbyw7j6eu" path="res://src/levels/02_tutorial/completion_zone.gd" id="12_i0v1j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_30tvn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -261,6 +262,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o7gld")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xreww"]
+size = Vector3(6, 1, 5)
 
 [node name="Tutorial2" type="Node"]
 
@@ -4294,5 +4298,13 @@ transform = Transform3D(0.35667282, 0, -0.9342294, 0, 1, 0, 0.9342294, 0, 0.3566
 
 [node name="HealthPotion2" parent="." instance=ExtResource("11_xreww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3035345, 11.209348, 25.521168)
+
+[node name="CompletionZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.98097, 15.528722, -12.242897)
+script = ExtResource("12_i0v1j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CompletionZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
+shape = SubResource("BoxShape3D_xreww")
 
 [editable path="tutorialpolished2"]
