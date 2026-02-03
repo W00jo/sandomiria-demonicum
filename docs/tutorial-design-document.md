@@ -31,11 +31,11 @@ config:
    plotColorPalette: '#e0e0e0, #8B0000'
 ---
 xychart-beta
-    title "Pacing Tutorialu"
-    x-axis "Sekcja" [Start, Weenie, "Wąwóz", NPC, Hard gate, Tatar, HP, Droga, HUB, Boss]
-    y-axis "Napięcie (0-10)" 0 --> 10
-    bar [1, 3, 4, 2, 5, 7, 2, 8, 4, 9]
-    line [1, 3, 4, 2, 5, 7, 2, 8, 4, 9]
+	title "Pacing Tutorialu"
+	x-axis "Sekcja" [Start, Weenie, "Wąwóz", NPC, Hard gate, Tatar, HP, Droga, HUB, Boss]
+	y-axis "Napięcie (0-10)" 0 --> 10
+	bar [1, 3, 4, 2, 5, 7, 2, 8, 4, 9]
+	line [1, 3, 4, 2, 5, 7, 2, 8, 4, 9]
 ```
 
 ### Level flow

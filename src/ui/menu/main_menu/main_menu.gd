@@ -10,7 +10,7 @@ func _ready():
 
 func _on_play_button_pressed() -> void:
 	print("Play")
-	get_tree().change_scene_to_file("res://src/levels/tutorial.tscn")
+	get_tree().change_scene_to_file("res://src/levels/02_tutorial/tutorial_2.tscn")
 
 func _on_settings_button_pressed() -> void:
 	print("Settings")
