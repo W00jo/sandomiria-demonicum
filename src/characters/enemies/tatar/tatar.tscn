@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxhicargygtk3"]
+[gd_scene load_steps=6 format=3 uid="uid://dxhicargygtk3"]
 
 [ext_resource type="Script" uid="uid://m0gtwqkyi420" path="res://src/characters/enemies/tatar/tatar.gd" id="1_mxd0e"]
+[ext_resource type="Texture2D" uid="uid://im4hsdphdvo8" path="res://src/characters/enemies/tatar/enemy_placeholder.jpg" id="2_2uujm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxd0e"]
 albedo_color = Color(1, 0, 0, 1)
@@ -23,3 +24,7 @@ mesh = SubResource("CapsuleMesh_l5lbi")
 shape = SubResource("ConvexPolygonShape3D_rg75t")
 
 [node name="PathFinding" type="NavigationAgent3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.048, 0, 4.196293e-09, 0, 0.048, 0, -4.196293e-09, 0, -0.048, 0, 0.5, -0.5)
+texture = ExtResource("2_2uujm")

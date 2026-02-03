@@ -1,12 +1,173 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6rgy8f4q74j8"]
+[gd_scene load_steps=25 format=4 uid="uid://b6rgy8f4q74j8"]
 
 [ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="1_tlmpr"]
+[ext_resource type="Texture2D" uid="uid://bed8hoqj4ydk6" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_wall_timber_structure_horizontal.png" id="2_jcfy0"]
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="2_tlmpr"]
+[ext_resource type="Texture2D" uid="uid://bg316erwr18i4" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_roof_clay_red_center.png" id="3_oywqr"]
+[ext_resource type="Texture2D" uid="uid://bf1c3e4kylgyo" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_door_wood_handle.png" id="4_gkcsc"]
+[ext_resource type="Texture2D" uid="uid://drpfch4vuy00r" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_window_tall_divided.png" id="5_rvhgs"]
+[ext_resource type="Texture2D" uid="uid://bauicnav56y7j" path="res://src/levels/01_tutorial/forest.png" id="7_gkcsc"]
+[ext_resource type="MeshLibrary" uid="uid://cwcav1d1yak5p" path="res://src/levels/01_tutorial/tiles/tiles.tres" id="7_oywqr"]
+[ext_resource type="Texture2D" uid="uid://5pu8xqohnmjo" path="res://src/levels/01_tutorial/saint_jakub.png" id="8_rvhgs"]
+[ext_resource type="PackedScene" uid="uid://bdb4l1854bjv3" path="res://src/shared/roadblock/roadblock.tscn" id="10_303of"]
+[ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar/tatar.tscn" id="10_ptjdp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ptjdp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_cy362"]
+sky_material = SubResource("ProceduralSkyMaterial_ptjdp")
+
+[sub_resource type="Environment" id="Environment_2qtjv"]
+background_mode = 2
+sky = SubResource("Sky_cy362")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpfky"]
 albedo_texture = ExtResource("1_tlmpr")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70ltr"]
+resource_name = "Sciany"
+cull_mode = 2
+albedo_texture = ExtResource("2_jcfy0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6wr4"]
+resource_name = "Dach.001"
+cull_mode = 2
+albedo_texture = ExtResource("3_oywqr")
+roughness = 0.81363636
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlbud"]
+resource_name = "Drzwi"
+cull_mode = 2
+albedo_texture = ExtResource("4_gkcsc")
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnpdt"]
+resource_name = "Okno"
+cull_mode = 2
+albedo_texture = ExtResource("5_rvhgs")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_303of"]
+_surfaces = [{
+"aabb": AABB(-1.5649613, 0, -2.086615, 3.1299229, 3.089546, 4.17323),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwACAAQAAwAEAAUAAwAGAAAABQAEAAcABQAHAAgABwAJAAgABgAKAAAABgALAAoACwAMAAoACwANAAwADQAOAAwADQAPAA4AEAAPAAkAEAAOAA8ABwAQAAkAEAARAA4ABwASABAAEAASABEABwATABIAFAASABMAFAAVABIAFQARABIAFQAWABEACgAXAAAACgAYABcAFwAYABkAAAAXAAEAFwAZABoAAQAXABoAAQAaABsA"),
+"name": "Sciany",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("/39Ql1AFAAAAAFCXAAAAAFAFUJdQBQAAUAUAAFAFAABQBVCX/38AAFAFAAD/fwAA/38AAFAFAABQBVCXrvoAAFAFAACu+gAA/38AAK76AACu+lCXUAUAAK76AABQBQAArvpQl/9/AACu+gAA/38AAK76UJeu+gAArvoAAK76AAD/f1CXrvoAAP//UJf//wAA/39Ql///AAAAAFCX//8AAAAAt6X//wAA/3//////AAD//7el//8AAP9/UJcAAAAA//9QlwAAAAD//7elAAAAAP9///8AAAAAAAC3pQAAAAA=")
+}, {
+"aabb": AABB(-1.5649613, 1.8261955, -2.086615, 3.1299229, 1.2633505, 4.17323),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAAQAAEAAwAQAAAAEAAFAAEAAwAEABAAEAARAAUABAARABAAEQAHAAUABAAGABEAEQASAAcABgASABEAEgAJAAcABgAIABIACAATABIAEgATAAkACAAKABMACwATAAoAFAAJABMACwAUABMAFAAMAAkADgAMABQADgAUAA0ADQAUAAsADQALAA8A"),
+"lods": [0.00077135715, PackedByteArray("AAABAAIAAwABAAAAAwAEAAEABAAFAAEABAAGAAUABgAHAAUABgAIAAcACAAJAAcACAAKAAkACwAJAAoACwAMAAkADQAMAAsADgAMAA0ADQALAA8A")],
+"name": "Dach.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 21,
+"vertex_data": PackedByteArray("UAUAAP9/AAAAAAAA//8AAFAFAACu+gAAUAUAAFAFAAAAAAAAAAAAAAAANyP//wAAAAA3IwAAAAD/f/////8AAP9///8AAAAA//83I///AAD//zcjAAAAAP//AAAAAAAA//8AAP//AACu+gAA/38AAK76AACu+gAArvoAAFAFAAAAAAAA/38AAAAANyP/fwAA/3////9/AAD//zcj/38AAP//AAD/fwAA")
+}, {
+"aabb": AABB(-1.5070164, -0.0103468895, -1.6872143, 1.456188, 0.81236166, 3.6909013),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "Drzwi",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD+/wkfAAAAAAAAAAAAAAAAAAAJHwAAAAD+/wAAAAD///////8AAFWxAAD//wAA//8AAP//AABVsf7///8AAA==")
+}, {
+"aabb": AABB(-1.5070164, 0.27447903, -1.8480322, 3.0338557, 0.76043606, 3.493681),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"name": "Okno",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAD+/0lcAAAAAGQBND0AAAAAZAFJXAAAAAD+/zQ9AAAAAP7/B88AAAAAZAHyrwAAAABkAQfPAAAAAP7/8q8AAP////8HowAA//9kARzCAAD//2QBB6MAAP////8cwgAA/////wAAAAD//2QBFR8AAP//ZAEAAAAA/////xUfAAD//5r+6eAAAP//AAD//wAA//8AAOngAAD//5r+//8AAP//mv4rbgAA//8AAEGNAAD//wAAK24AAP//mv5BjQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ptjdp"]
+resource_name = "Sandomiria_Assets_Cube_004"
+_surfaces = [{
+"aabb": AABB(-1.5649613, 0, -2.086615, 3.1299229, 3.089546, 4.17323),
+"attribute_data": PackedByteArray("ZXkQjZtxIRpleeYem3EQjWV5Ofubcf//AABvdLYkzlu2JG90AADOWwAAEI22JBCNy/IQjQHrIRrL8uYeAesQjcvyOfsB6///tiRe5wAA//8AAF7ntiT//7Ykvc4AAL3OtiRLNwAAIVgAAEs3tiQhWLYkdBYAAHQWtiTmrQAAEI22JBCNAADmrbYkvc4AAL3Om3EQjfph//8AABCNm3H//5txIRr6YSEaZXkQjQHrIRoB6xCNYNshGmDb/v8B6///"),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABgAHAAgABgAJAAcACgAGAAgACgAIAAsADAANAA4ADAAPAA0AEAAPAAwAEAARAA8AEgATABQAEgAVABMAFgASABQAFgAUABcAGAAZABoAGAAbABkAHAAYABoAHAAaAB0AHgAfACAAHgAhAB8AIgAhAB4AIgAjACEAJAAlACYAJAAnACUAKAAkACYAKAAmACkAKgArACwAKgAtACsALgAqACwALgAsAC8A"),
+"material": SubResource("StandardMaterial3D_70ltr"),
+"name": "Sciany",
+"primitive": 3,
+"uv_scale": Vector4(14.0471525, 9.796648, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("/39Ql1AFVNUAAFCXAABU1VAFUJdQBVTV/39QlwAAVNWu+lCXUAVU1f//UJcAAFTV/39Ql676/7+u+gAArvr/v/9/AACu+v+/rvpQl676/79QBVCXrvr/v1AFAACu+v+//39Ql676VNX//1CX//9U1a76UJeu+lTV/39Ql///VNVQBVCXrvpU1QAAUJf//1TV/38AAFAF//+u+lCXUAX///9/UJdQBf//rvoAAFAF//9QBQAAUAX//1AFUJdQBf//rvoAAP9/VNWu+lCXrvpU1a76UJf/f1TVrvoAAK76VNWu+gAAUAVU1a76UJdQBVTVUAUAAP9/VNVQBVCXrvpU1VAFAACu+lTVUAVQl/9/VNVQBQAAUAVU1VAFUJdQBVTV/39QlwAA/////7elAAD///9///8AAP////9QlwAA//8AAFCXAAD//wAAt6UAAP///3///////7///1CX////v/9/UJf///+///+3pf///78AALel////vwAAUJf///+/qipU1aoqVNWqKlTVqipU1aoqVNWqKlTV/3//f/9//3//f/9//3//f/9//3//f/9/VFVUVVVVVFVVVVRVVVVUVVVVVFVVVVRV/z//v/8//7//P/+//z//v/8//7//P/+/qqpUVaqqVFWqqlRVqqpUVaqqVFWqqlRVVFWqqlRVqqpUVaqqVFWqqlRVqqpUVaqq/z//v/8//7//P/+//z//v/8//7//P/+//3//f/9//3//f/9//3//f/9//3//f/9/")
+}, {
+"aabb": AABB(-1.5649613, 1.8261955, -2.086615, 3.1299229, 1.2633505, 4.17323),
+"attribute_data": PackedByteArray("+o5UMPUdeDOmIlQwTvtUMP//eDP6jv/////a/E77/v/1Hdr8piL+////4Tv1HSmY9R3hO///KZj//ymY9R1x9PUdKZj//3H0///a/PUdcfT//3H09R3a/P//eDP1HeE79R14M///4Tv6jngz+o54M/qO4Tv6jtr8+o5x9PqOKZj6jnH0+o7hO/qOKZj6jtr8"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAAaAAEAAwAaAAAAAwAEABoAGwAXABgAGwAcABcAFgAcABsAFgAZABwAHQATAB4AHQAVABMAEgAdAB4AEgAeABQAHwAPABAAHwAgAA8ADgAgAB8ADgARACAAIQALAAwAIQAiAAsACgAiACEACgANACIABQAGAAcABQAjAAYACQAjAAUACQAIACMA"),
+"lods": [0.00077135715, PackedByteArray("AAABAAIAAwABAAAAAwAEAAEABQAGAAcABQAIAAYACQAIAAUACgALAAwACgANAAsADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcA")],
+"material": SubResource("StandardMaterial3D_t6wr4"),
+"name": "Dach.001",
+"primitive": 3,
+"uv_scale": Vector4(8.309349, 5.297028, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("UAUAAP9/VNUAAAAA//9U1VAFAACu+lTVUAUAAFAFVNUAAAAAAABU1a76AAD/f1TV//8AAAAAVNWu+gAAUAVU1f//AAD//1TVrvoAAK76VNUAADcjAADS5P9//////9LkAAA3I///0uT/f///AADS5P9///8AAMvI//83I///y8j/f//////LyP//NyMAAMvI//8AAAAA/7///zcj////v///NyMAAP+///8AAP///78AAAAAAAD//wAANyP/////AAAAAP////8AADcjAAD//wAAAAD/f1TVAAAAAP9///8AADcj/3//////AAD/f/+///83I/9//7//f////3/LyP//NyP/f8vIAAA3I/9/0uT/f////3/S5P//AAD/f1TVVFVUVVRVVFVUVVRVVFVUVVRVVFVUVVRVVVVUVVVVVFVUVVRVVFVUVX7lvzJ+5b8yfuW/Mn7lvzJkwbIgZMGyIGTBsiBkwbIg/38AAP9/AAD/fwAA/38AAP8//3//P/9//z//f/8//39UVVRV/z//f/8//3//fwAA/38AAGTBsiBkwbIgfuW/Mn7lvzJUVVRV")
+}, {
+"aabb": AABB(-1.5070164, -0.0103468895, -1.6872143, 1.456188, 0.81236166, 3.6909013),
+"attribute_data": PackedByteArray("/396f///////f/////96f/9/en///////3//////en8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_wlbud"),
+"name": "Drzwi",
+"primitive": 3,
+"uv_scale": Vector4(2.0043101, 1.97447, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD+/wkf/78AAAAAAAD/vwAAAAAJH/+/AAD+/wAA/7///////////1WxAAD///////8AAP////9Vsf7///////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f/7/")
+}, {
+"aabb": AABB(-1.5070164, 0.27447903, -1.8480322, 3.0338557, 0.76043606, 3.493681),
+"attribute_data": PackedByteArray("/3//////AIH/fwCB//////9//////wCB/38Agf//////f/////8Agf9/AIH//////3//////AIH/fwCB//////9//////wCB/38Agf//////f/////8Agf9/AIH/////"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_fnpdt"),
+"name": "Okno",
+"primitive": 3,
+"uv_scale": Vector4(2.0436826, 2, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAD+/0lc/z8AAGQBND3/PwAAZAFJXP8/AAD+/zQ9/z8AAP7/B8//PwAAZAHyr/8/AABkAQfP/z8AAP7/8q//P/////8Ho/8///9kARzC/z///2QBB6P/P/////8cwv8//////wAA/z///2QBFR//P///ZAEAAP8//////xUf/z///5r+6eD/P///AAD///8///8AAOng/z///5r+////P///mv4rbv8///8AAEGN/z///wAAK27/P///mv5Bjf8//38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_303of")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oywqr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptjdp"]
+size = Vector3(3, 3, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_303of"]
+vertices = PackedVector3Array(-40, -0.505, -54.75, -40, -0.505, -56, -41, -0.505, -56.25, -42.25, -0.505, -54.75, -41, -0.505, -57.75, -39.5, -0.505, -58, -39.5, -0.505, -65, -45.5, -0.505, -52.5, -42.5, -0.505, -52.5, -45.5, -0.505, -65, -39, -0.505, -56.25, -28.5, -0.505, -54.5, -39, -0.505, -57.75, -28.5, -0.505, -65, -45.5, -0.505, -36.5, -42.5, -0.505, -36.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(4, 2, 3), PackedInt32Array(3, 8, 7), PackedInt32Array(3, 7, 4), PackedInt32Array(4, 7, 9), PackedInt32Array(4, 9, 6), PackedInt32Array(1, 10, 0), PackedInt32Array(0, 10, 11), PackedInt32Array(5, 6, 12), PackedInt32Array(12, 6, 13), PackedInt32Array(12, 13, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(15, 14, 8), PackedInt32Array(8, 14, 7)]
+
 [node name="Tutorial" type="Node3D"]
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2qtjv")
 
 [node name="OpeningBackground" type="ColorRect" parent="."]
 offset_right = 40.0
@@ -18,6 +179,10 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 text = "OPENING_DIALOGUE"
+
+[node name="SaintJakub" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 12, -105)
+texture = ExtResource("8_rvhgs")
 
 [node name="StartingZone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21)
@@ -31,18 +196,170 @@ collision_mask = 5
 size = Vector3(24, 0.01, 32)
 
 [node name="Wall" type="CSGBox3D" parent="StartingZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.5, 36)
-size = Vector3(10, 2, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 36)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(9, 3, 1)
 
 [node name="Wall2" type="CSGBox3D" parent="StartingZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.5, 36)
-size = Vector3(10, 2, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1, 36)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(10, 3, 1)
+
+[node name="Wall3" type="CSGBox3D" parent="StartingZone"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.000001, 1, 19.25)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(32.5, 3, 1)
+
+[node name="Wall4" type="CSGBox3D" parent="StartingZone"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.999999, 1, 19.75)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(33.5, 3, 1)
+
+[node name="Wall5" type="CSGBox3D" parent="StartingZone"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, 3.7999992, 1, 3.5)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(15.6, 3, 1)
+
+[node name="Wall6" type="CSGBox3D" parent="StartingZone"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -9.750001, 1, 3.5)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(3.5, 3, 1)
 
 [node name="Gate" type="CSGBox3D" parent="StartingZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 36)
-size = Vector3(5, 1.6, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 36)
+size = Vector3(5, 2, 0.2)
 
-[node name="GorgeEntrance" type="Node3D" parent="."]
+[node name="Tawerna" type="MeshInstance3D" parent="StartingZone"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20, 1.5, 29)
+mesh = SubResource("ArrayMesh_ptjdp")
+skeleton = NodePath("")
+
+[node name="Gorge" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Gorge"]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881904, 0, -0.25881904, 0.9659259, -6, -0.58822864, -18.848888)
+size = Vector3(4, 0.01, 4)
+
+[node name="GridMap" type="GridMap" parent="Gorge"]
+mesh_library = ExtResource("7_oywqr")
+physics_material = SubResource("PhysicsMaterial_oywqr")
+collision_layer = 2
+collision_mask = 5
+data = {
+"cells": PackedInt32Array(-4, 65524, 1441800, -4, 65525, 1441800, -3, 65525, 1441800, -3, 65524, 1441800, -3, 65523, 1441800, -4, 65523, 1441800, -3, 65522, 1441800, -4, 65522, 1441800, -3, 65521, 1441800, -4, 65521, 1441800, -3, 65520, 1441800, -4, 65520, 1441800, -4, 65519, 1441800, -4, 65518, 1441800, -3, 65519, 1441800, -4, 65517, 1441800, -4, 65516, 1441800, -4, 65514, 1441800, -3, 65518, 1441800, -3, 65517, 1441800, -3, 65516, 1441800, -3, 65515, 1441800, -3, 65514, 1441800, -3, 65513, 1441800, -4, 65513, 1441800, -5, 65514, 1441800, -5, 65513, 1441800, -6, 65514, 1441800, -6, 65513, 1441800, -7, 65513, 1441800, -7, 65514, 1441800, -8, 65514, 1441800, -8, 65513, 1441800, -9, 65513, 1441800, -10, 65513, 1441800, -9, 65514, 1441800, -10, 65514, 1441800, -11, 65514, 1441800, -11, 65513, 1441800, -12, 65514, 1441800, -12, 65513, 1441800, -4, 65515, 1441800, -13, 65514, 1441800, -13, 65513, 1441800, -14, 65514, 1441800, -14, 65513, 1441800, -15, 65513, 1441800, -15, 65514, 1441800, -16, 65514, 1441800, -16, 65513, 1441800, -15, 65512, 1441800, -16, 65512, 1441800, -16, 65511, 1441800, -15, 65511, 1441800, -15, 65510, 1441800, -16, 65510, 1441800, -15, 65509, 1441800)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Forest" type="Node3D" parent="Gorge"]
+
+[node name="Trees" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.8412401e-08, -8, 2.5, -24.2)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees2" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.8412401e-08, -8, 2.5, -35.6)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees3" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.8412401e-08, -4, 2.5, -24.2)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees4" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.8412401e-08, -4, 2.5, -34.7)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees5" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.8412401e-08, -4, 2.5, -46)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees6" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -10.2, 2.5, -46)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees7" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -21.7, 2.5, -46)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees8" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -13.700001, 2.5, -42)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees9" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -25.800001, 2.5, -42)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees10" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.8412401e-08, -32, 2.5, -48.3)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees11" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.8412401e-08, -28, 2.5, -52.2)
+texture = ExtResource("7_gkcsc")
+
+[node name="Trees12" type="Sprite3D" parent="Gorge/Forest"]
+transform = Transform3D(-2.8412401e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.8412401e-08, -28, 2.5, -59.9)
+texture = ExtResource("7_gkcsc")
+
+[node name="Area3D" type="Area3D" parent="Gorge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -53)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gorge/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_ptjdp")
+
+[node name="FirstEnemyZone" type="Node3D" parent="."]
+
+[node name="Roadblock" parent="FirstEnemyZone" instance=ExtResource("10_303of")]
+transform = Transform3D(2.1650634, 0, 1.25, 0, 2.5, 0, -1.25, 0, 2.1650634, -29.1, -0.3, -53.6)
+
+[node name="Roadblock2" parent="FirstEnemyZone" instance=ExtResource("10_303of")]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278474e-07, -2.5, 0, 2.5, -1.09278474e-07, -30.900002, -0.3, -53.6)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="FirstEnemyZone"]
+navigation_mesh = SubResource("NavigationMesh_303of")
+
+[node name="Ground" type="CSGBox3D" parent="FirstEnemyZone/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, -1, -60)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(18, 0.01, 12)
+
+[node name="Ground2" type="CSGBox3D" parent="FirstEnemyZone/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -1, -45)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(4, 0.01, 18)
+
+[node name="Tatar" parent="FirstEnemyZone/NavigationRegion3D" instance=ExtResource("10_ptjdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -57)
+
+[node name="Wall" type="CSGBox3D" parent="FirstEnemyZone/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.999996, -0.5, -66)
+use_collision = true
+collision_layer = 2
+collision_mask = 5
+size = Vector3(18, 1, 0.5)
+
+[node name="GridMap" type="GridMap" parent="FirstEnemyZone"]
+mesh_library = ExtResource("7_oywqr")
+data = {
+"cells": PackedInt32Array(-15, 65508, 1441793, -15, 65507, 1441793, -15, 65506, 1441793, -15, 65505, 1441793, -15, 65504, 1441793, -15, 65503, 1441793, -16, 65503, 1441793, -16, 65504, 1441793, -16, 65505, 1441793, -16, 65506, 1441793, -16, 65507, 1441793, -16, 65508, 1441793, -16, 65509, 1441793, -17, 65508, 1441793, -17, 65507, 1441793, -17, 65506, 1441793, -17, 65505, 1441793, -17, 65504, 1441793, -17, 65503, 1441793, -18, 65503, 1441793, -18, 65504, 1441793, -18, 65505, 1441793, -18, 65506, 1441793, -18, 65507, 1441793, -18, 65508, 1441793, -19, 65503, 1441793, -19, 65504, 1441793, -19, 65505, 1441793, -19, 65506, 1441793, -19, 65507, 1441793, -19, 65508, 1441793, -20, 65508, 1441793, -20, 65507, 1441793, -20, 65506, 1441793, -20, 65505, 1441793, -20, 65504, 1441793, -20, 65503, 1441793, -21, 65503, 1441793, -21, 65504, 1441793, -21, 65505, 1441793, -21, 65506, 1441793, -21, 65507, 1441793, -21, 65508, 1441793, -22, 65509, 1441793, -22, 65508, 1441793, -22, 65507, 1441793, -22, 65506, 1441793, -22, 65505, 1441793, -22, 65504, 1441793, -22, 65503, 1441793, -22, 65510, 1441793, -23, 65503, 1441793, -23, 65504, 1441793, -23, 65505, 1441793, -23, 65506, 1441793, -23, 65507, 1441793, -23, 65510, 1441793, -23, 65509, 1441793, -23, 65508, 1441793, -22, 65511, 1441793, -23, 65511, 1441793, -23, 65512, 1441793, -22, 65512, 1441793, -22, 65513, 1441793, -23, 65513, 1441793, -22, 65514, 1441793, -23, 65514, 1441793, -22, 65515, 1441793, -23, 65515, 1441793, -22, 65517, 1441793, -22, 65516, 1441793, -23, 65516, 1441793, -23, 65517, 1441793)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_tlmpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
