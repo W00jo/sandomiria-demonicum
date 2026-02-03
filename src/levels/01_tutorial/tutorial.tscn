@@ -1,5 +1,6 @@
-[gd_scene load_steps=49 format=4 uid="uid://b6rgy8f4q74j8"]
+[gd_scene load_steps=52 format=4 uid="uid://b6rgy8f4q74j8"]
 
+[ext_resource type="Script" uid="uid://2lfyf5vt3p4m" path="res://src/levels/01_tutorial/opening_screen.gd" id="1_opening"]
 [ext_resource type="Texture2D" uid="uid://kr0mxy18erdx" path="res://assets/greybox_textures/greybox_checker_small.png" id="1_tlmpr"]
 [ext_resource type="Texture2D" uid="uid://bed8hoqj4ydk6" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_wall_timber_structure_horizontal.png" id="2_jcfy0"]
 [ext_resource type="PackedScene" uid="uid://bljq3vkud567q" path="res://src/characters/player/player.tscn" id="2_tlmpr"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bauicnav56y7j" path="res://src/levels/01_tutorial/forest.png" id="7_gkcsc"]
 [ext_resource type="MeshLibrary" uid="uid://cwcav1d1yak5p" path="res://src/levels/01_tutorial/tiles/tiles.tres" id="7_oywqr"]
 [ext_resource type="Texture2D" uid="uid://5pu8xqohnmjo" path="res://src/levels/01_tutorial/saint_jakub.png" id="8_rvhgs"]
+[ext_resource type="Script" uid="uid://dv32l8bdg5d0x" path="res://src/levels/01_tutorial/church_pic_trigger_zone.gd" id="10_0u2fy"]
 [ext_resource type="PackedScene" uid="uid://bdb4l1854bjv3" path="res://src/shared/roadblock/roadblock.tscn" id="10_303of"]
 [ext_resource type="PackedScene" uid="uid://dxhicargygtk3" path="res://src/characters/enemies/tatar/tatar.tscn" id="10_ptjdp"]
 [ext_resource type="PackedScene" uid="uid://lah3a1arll6j" path="res://src/objects/other/ladder.tscn" id="11_khcpl"]
@@ -17,11 +19,15 @@
 [ext_resource type="Texture2D" uid="uid://bey6372y22t5" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_roof_clay_grey_center.png" id="13_khcpl"]
 [ext_resource type="Texture2D" uid="uid://10mbf8hw6f52" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_wall_stone.png" id="14_7sbbd"]
 [ext_resource type="PackedScene" uid="uid://b1kmhtrjyer4j" path="res://src/characters/enemies/boss_tatar/boss_tatar.tscn" id="17_20aor"]
+[ext_resource type="Script" uid="uid://b3fqe8xtfb4k5" path="res://src/levels/01_tutorial/boss_fight_trigger.gd" id="18_l032j"]
 [ext_resource type="Texture2D" uid="uid://dhu86n2xk1ki1" path="res://src/levels/01_tutorial/tiles/Sandomiria_Assets_door_metal_gate.png" id="18_rdssk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ptjdp"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.15, 0.2, 0.35, 1)
+sky_horizon_color = Color(0.8, 0.35, 0.25, 1)
+ground_bottom_color = Color(0.1, 0.08, 0.12, 1)
+ground_horizon_color = Color(0.45, 0.25, 0.2, 1)
+sun_angle_max = 15.0
 
 [sub_resource type="Sky" id="Sky_cy362"]
 sky_material = SubResource("ProceduralSkyMaterial_ptjdp")
@@ -29,8 +35,21 @@ sky_material = SubResource("ProceduralSkyMaterial_ptjdp")
 [sub_resource type="Environment" id="Environment_2qtjv"]
 background_mode = 2
 sky = SubResource("Sky_cy362")
+ambient_light_source = 3
+ambient_light_color = Color(0.35, 0.25, 0.35, 1)
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.4
 tonemap_mode = 2
+tonemap_exposure = 0.85
+tonemap_white = 0.9
 glow_enabled = true
+glow_intensity = 1.2
+glow_strength = 0.9
+glow_blend_mode = 0
+adjustment_enabled = true
+adjustment_brightness = 0.95
+adjustment_contrast = 1.1
+adjustment_saturation = 1.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpfky"]
 albedo_texture = ExtResource("1_tlmpr")
@@ -157,6 +176,44 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_303of")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm60b"]
+resource_name = "Plot.001"
+cull_mode = 2
+albedo_texture = ExtResource("18_rdssk")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_oosgh"]
+_surfaces = [{
+"aabb": AABB(0, 0, -1, 1e-05, 0.4646572, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "Plot.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l032j"]
+resource_name = "Sandomiria_Assets_Cube_006"
+_surfaces = [{
+"aabb": AABB(0, 0, -1, 1e-05, 0.4646572, 2),
+"attribute_data": PackedByteArray("///+/xR/t97//7feFH///w=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_bm60b"),
+"name": "Plot.001",
+"primitive": 3,
+"uv_scale": Vector4(4.0172553, 1.9753249, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAP///7//fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_oosgh")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oywqr"]
 
@@ -567,49 +624,14 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_7sbbd"]
 size = Vector3(13, 1, 13)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm60b"]
-resource_name = "Plot.001"
-cull_mode = 2
-albedo_texture = ExtResource("18_rdssk")
-roughness = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_oosgh"]
-_surfaces = [{
-"aabb": AABB(0, 0, -1, 1e-05, 0.4646572, 2),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"name": "Plot.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AAAAAAAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_l032j"]
-resource_name = "Sandomiria_Assets_Cube_006"
-_surfaces = [{
-"aabb": AABB(0, 0, -1, 1e-05, 0.4646572, 2),
-"attribute_data": PackedByteArray("///+/xR/t97//7feFH///w=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
-"material": SubResource("StandardMaterial3D_bm60b"),
-"name": "Plot.001",
-"primitive": 3,
-"uv_scale": Vector4(4.0172553, 1.9753249, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAP///7//fwAA/38AAP9/AAD/fwAA")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_oosgh")
-
 [node name="Tutorial" type="Node3D"]
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.95, 0.55, 0.35, 1)
+light_energy = 0.6
 shadow_enabled = true
+shadow_opacity = 0.85
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2qtjv")
@@ -617,16 +639,53 @@ environment = SubResource("Environment_2qtjv")
 [node name="Player" parent="." instance=ExtResource("2_tlmpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="OpeningBackground" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="OpeningScreen" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 100
+script = ExtResource("1_opening")
+
+[node name="Background" type="ColorRect" parent="OpeningScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="OpeningDialogue" type="RichTextLabel" parent="OpeningBackground"]
+[node name="DialogueLabel" type="RichTextLabel" parent="OpeningScreen/Background"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-text = "OPENING_DIALOGUE"
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Year of Our Lord 1259
+
+The Tatars have come...[/center]"
+fit_content = true
+
+[node name="ContinueHint" type="Label" parent="OpeningScreen/Background"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "Press SPACE or ENTER to continue..."
+horizontal_alignment = 1
 
 [node name="SaintJakub" type="Sprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 12, -105)
@@ -692,6 +751,11 @@ size = Vector3(3.5, 3, 1)
 [node name="Tawerna" type="MeshInstance3D" parent="StartingZone"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 15.9, -0.20000003, 28)
 mesh = SubResource("ArrayMesh_ptjdp")
+skeleton = NodePath("")
+
+[node name="Plot" type="MeshInstance3D" parent="StartingZone"]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -0.100000024, 0, 36)
+mesh = SubResource("ArrayMesh_l032j")
 skeleton = NodePath("")
 
 [node name="Gorge" type="Node3D" parent="."]
@@ -786,10 +850,11 @@ texture = ExtResource("7_gkcsc")
 transform = Transform3D(-2.8412401e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.8412401e-08, -28, 2.5, -63.9)
 texture = ExtResource("7_gkcsc")
 
-[node name="Area3D" type="Area3D" parent="Gorge"]
+[node name="ChurchPicTriggerZone" type="Area3D" parent="Gorge"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -53)
+script = ExtResource("10_0u2fy")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gorge/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gorge/ChurchPicTriggerZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_ptjdp")
 
@@ -963,7 +1028,7 @@ collision_layer = 2
 collision_mask = 5
 size = Vector3(10, 8, 8)
 
-[node name="Gate" type="CSGBox3D" parent="FinalStage/NavigationRegion3D"]
+[node name="BossGate" type="CSGBox3D" parent="FinalStage/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 2.3, -102.8)
 use_collision = true
 collision_layer = 2
@@ -972,6 +1037,7 @@ size = Vector3(8, 7, 0.6)
 
 [node name="BossFightTrigger" type="Area3D" parent="FinalStage/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -93)
+script = ExtResource("18_l032j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalStage/NavigationRegion3D/BossFightTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 16)
@@ -980,8 +1046,3 @@ shape = SubResource("BoxShape3D_7sbbd")
 [node name="BossTatar" parent="FinalStage/NavigationRegion3D" instance=ExtResource("17_20aor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -111)
 player_path = NodePath("../../../Player")
-
-[node name="Plot" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -0.100000024, 0, 15)
-mesh = SubResource("ArrayMesh_l032j")
-skeleton = NodePath("")
